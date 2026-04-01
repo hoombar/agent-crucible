@@ -88,19 +88,96 @@ Follow the interaction sequence defined in the methodology file **exactly**. For
 
 ## Run All Experiments
 
-Execute these 9 runs in order:
+All 9 runs execute **in parallel** — there are no dependencies between runs. Each run is spawned as a separate background agent that manages its own 6-step sequence internally.
 
-1. adversarial × tier-1-mandala
-2. adversarial × tier-2-isometric-room
-3. adversarial × tier-3-mountain-landscape
-4. six-hats × tier-1-mandala
-5. six-hats × tier-2-isometric-room
-6. six-hats × tier-3-mountain-landscape
-7. prompt-mutation × tier-1-mandala
-8. prompt-mutation × tier-2-isometric-room
-9. prompt-mutation × tier-3-mountain-landscape
+### Procedure
 
-After each run, briefly report the methodology, challenge, and a one-line assessment before moving to the next.
+1. **Spawn 9 agents in a single message** using the Agent tool with `run_in_background: true`. Each agent receives:
+   - The full methodology file content
+   - The full challenge file content
+   - The output directory path for that run
+   - The complete Single Run Procedure (copy the relevant sections into the agent prompt so it is self-contained)
+   - Instruction to write all output files (config.json, iterations/, final.svg, metrics.json, summary.md) directly to the output directory
+
+2. Each agent prompt must be **fully self-contained** — include the methodology definition, challenge prompt, SVG extraction rules, conversation log format, and output file structure. The agent cannot read CLAUDE.md, so everything it needs must be in its prompt.
+
+3. As agents complete, they will report back. Note completions and any failures.
+
+4. Once all 9 are done, report a summary: which runs completed successfully, one-line assessment per run.
+
+### The 9 combinations
+
+| # | Methodology | Challenge |
+|---|---|---|
+| 1 | adversarial | tier-1-mandala |
+| 2 | adversarial | tier-2-isometric-room |
+| 3 | adversarial | tier-3-mountain-landscape |
+| 4 | six-hats | tier-1-mandala |
+| 5 | six-hats | tier-2-isometric-room |
+| 6 | six-hats | tier-3-mountain-landscape |
+| 7 | prompt-mutation | tier-1-mandala |
+| 8 | prompt-mutation | tier-2-isometric-room |
+| 9 | prompt-mutation | tier-3-mountain-landscape |
+
+### Agent prompt template for parallel runs
+
+Each of the 9 agents should be prompted with:
+
+```
+You are running a single Agent Crucible experiment. Your job is to execute the methodology
+and save all output files. Work autonomously — do not ask questions, just execute.
+
+## Output Directory
+{runs/methodology-challenge-YYYYMMDD-HHmm/}
+
+Create this directory and an iterations/ subdirectory inside it.
+
+## Config
+Save config.json with: methodology, challenge, tier, timestamp, agent_call_budget: 6
+
+## Challenge
+{paste full challenge file content}
+
+## Methodology
+{paste full methodology file content}
+
+## Execution
+Follow the methodology's interaction sequence exactly. For each step:
+1. The step's agent work is done by YOU directly (you cannot spawn sub-agents).
+   Adopt the role described for that step — follow the system prompt and constraints
+   for that agent role. Clearly separate your work for each step.
+2. Extract the SVG from your output and save as iterations/step-NN.svg
+3. Save the conversation log as iterations/step-NN-conversation.md in this format:
+
+   # Step N — {Agent Role} — {Hat/Phase if applicable}
+
+   ## Prompt Given
+   {Brief summary of the task for this step}
+
+   ## Response Summary
+   {Key decisions, trade-offs, corrections}
+
+   ## SVG Changes
+   {What changed from previous step}
+
+4. For the final step, also copy the SVG as final.svg in the run directory
+
+## SVG Rules
+- Extract only the <svg>...</svg> element
+- If multiple SVGs, use the last one
+- Save failures as-is — failure is data
+- Valid SVG 1.1, self-contained, match challenge viewport
+
+## Finalise
+Save metrics.json with: agent_calls: 6, steps, started_at, completed_at (ISO 8601)
+Save summary.md: 5-10 sentence narrative of how the run went
+
+## Important
+- Budget: exactly 6 steps, no more
+- Adopt each agent role fully when executing that step
+- Failure is data — save bad SVGs, don't retry
+- Conversation logs are essential — document every step
+```
 
 ## Report Generation
 

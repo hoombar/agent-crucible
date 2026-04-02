@@ -1,0 +1,375 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; }
+    </style>
+    <radialGradient id="skinMid" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FCDBB5"/>
+      <stop offset="80%" stop-color="#E8AD78"/>
+      <stop offset="100%" stop-color="#D49A68"/>
+    </radialGradient>
+    <radialGradient id="skinAdv" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#FDE0BF"/>
+      <stop offset="50%" stop-color="#F0C48A"/>
+      <stop offset="85%" stop-color="#D89E68"/>
+      <stop offset="100%" stop-color="#C08858"/>
+    </radialGradient>
+    <radialGradient id="blush">
+      <stop offset="0%" stop-color="#FF8888" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FF8888" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7A4E3A"/>
+      <stop offset="100%" stop-color="#3E1A0A"/>
+    </linearGradient>
+    <linearGradient id="lipGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D05555"/>
+      <stop offset="100%" stop-color="#8B2020"/>
+    </linearGradient>
+    <linearGradient id="warmBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF8F0"/>
+      <stop offset="100%" stop-color="#FFF2E0"/>
+    </linearGradient>
+    <linearGradient id="coolBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0F4FA"/>
+      <stop offset="100%" stop-color="#E4ECF6"/>
+    </linearGradient>
+    <filter id="cellShadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="1" dy="3" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+    <linearGradient id="neckShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D49A68"/>
+      <stop offset="100%" stop-color="#C08050"/>
+    </linearGradient>
+    <!-- New: Collar/shirt hint gradient -->
+    <linearGradient id="shirtGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8899AA"/>
+      <stop offset="100%" stop-color="#667788"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#E8E8E8"/>
+
+  <!-- Title -->
+  <text x="600" y="32" text-anchor="middle" font-size="18" fill="#666" font-style="italic">Six Faces: Skill Level vs Emotion</text>
+
+  <!-- Column labels -->
+  <text x="400" y="62" text-anchor="middle" font-size="26" font-weight="bold" fill="#B87030">HAPPY</text>
+  <line x1="330" y1="68" x2="470" y2="68" stroke="#FFCC88" stroke-width="2"/>
+  <text x="900" y="62" text-anchor="middle" font-size="26" font-weight="bold" fill="#4070A0">SAD</text>
+  <line x1="845" y1="68" x2="955" y2="68" stroke="#88AADD" stroke-width="2"/>
+
+  <!-- Row labels -->
+  <text x="85" y="195" text-anchor="middle" font-size="18" font-weight="bold" fill="#555">BEGINNER</text>
+  <text x="85" y="440" text-anchor="middle" font-size="15" font-weight="bold" fill="#555">INTERMEDIATE</text>
+  <text x="85" y="680" text-anchor="middle" font-size="18" font-weight="bold" fill="#555">ADVANCED</text>
+
+  <!-- Grid cells -->
+  <rect x="155" y="80" width="488" height="225" fill="url(#warmBg)" rx="12" filter="url(#cellShadow)"/>
+  <rect x="155" y="320" width="488" height="230" fill="url(#warmBg)" rx="12" filter="url(#cellShadow)"/>
+  <rect x="155" y="565" width="488" height="225" fill="url(#warmBg)" rx="12" filter="url(#cellShadow)"/>
+  <rect x="655" y="80" width="488" height="225" fill="url(#coolBg)" rx="12" filter="url(#cellShadow)"/>
+  <rect x="655" y="320" width="488" height="230" fill="url(#coolBg)" rx="12" filter="url(#cellShadow)"/>
+  <rect x="655" y="565" width="488" height="225" fill="url(#coolBg)" rx="12" filter="url(#cellShadow)"/>
+
+  <!-- ==================== BEGINNER HAPPY ==================== -->
+  <g transform="translate(400, 192)">
+    <circle cx="0" cy="0" r="75" fill="#FFE0A0" stroke="#555" stroke-width="2.5"/>
+    <!-- Consistent hair shape hint (same person across all levels) -->
+    <path d="M -40 -62 Q -25 -80 0 -78 Q 25 -80 40 -62" fill="none" stroke="#8B5E3C" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -30 -68 Q -10 -85 10 -70" fill="none" stroke="#8B5E3C" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M -15 -72 Q 5 -88 25 -68" fill="none" stroke="#8B5E3C" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Cheeks -->
+    <circle cx="-30" cy="15" r="12" fill="url(#blush)"/>
+    <circle cx="30" cy="15" r="12" fill="url(#blush)"/>
+    <!-- Eyes - bigger dots, more expressive -->
+    <circle cx="-22" cy="-12" r="7" fill="#333"/>
+    <circle cx="-19" cy="-15" r="2" fill="white"/>
+    <circle cx="22" cy="-12" r="7" fill="#333"/>
+    <circle cx="25" cy="-15" r="2" fill="white"/>
+    <!-- Big happy smile -->
+    <path d="M -32 18 Q 0 55 32 18" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+    <!-- Simple nose dot -->
+    <circle cx="0" cy="4" r="2" fill="#DAB880"/>
+  </g>
+
+  <!-- ==================== BEGINNER SAD ==================== -->
+  <g transform="translate(900, 192)">
+    <circle cx="0" cy="0" r="75" fill="#FFE0A0" stroke="#555" stroke-width="2.5"/>
+    <!-- Same hair as happy beginner -->
+    <path d="M -40 -62 Q -25 -80 0 -78 Q 25 -80 40 -62" fill="none" stroke="#8B5E3C" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -30 -68 Q -10 -85 10 -70" fill="none" stroke="#8B5E3C" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M -15 -72 Q 5 -88 25 -68" fill="none" stroke="#8B5E3C" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Eyes - same position, same size -->
+    <circle cx="-22" cy="-8" r="7" fill="#333"/>
+    <circle cx="-19" cy="-10" r="2" fill="white"/>
+    <circle cx="22" cy="-8" r="7" fill="#333"/>
+    <circle cx="25" cy="-10" r="2" fill="white"/>
+    <!-- Simple eyebrow lines -->
+    <line x1="-30" y1="-22" x2="-14" y2="-20" stroke="#8B5E3C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="14" y1="-20" x2="30" y2="-22" stroke="#8B5E3C" stroke-width="2" stroke-linecap="round"/>
+    <!-- Frown -->
+    <path d="M -25 28 Q 0 12 25 28" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+    <!-- Simple nose dot -->
+    <circle cx="0" cy="4" r="2" fill="#DAB880"/>
+    <!-- Teardrop -->
+    <path d="M -18 0 Q -17 5 -18 8 Q -20 10 -22 8 Q -21 5 -18 0 Z" fill="#88CCEE" opacity="0.5"/>
+  </g>
+
+  <!-- ==================== INTERMEDIATE HAPPY ==================== -->
+  <g transform="translate(400, 435)">
+    <ellipse cx="0" cy="0" rx="68" ry="82" fill="url(#skinMid)"/>
+    <!-- Ears -->
+    <ellipse cx="-68" cy="-5" rx="12" ry="20" fill="#E8B070" stroke="#D4A060" stroke-width="1"/>
+    <path d="M -66 -12 Q -60 -5 -66 5" fill="none" stroke="#C8966A" stroke-width="0.8"/>
+    <ellipse cx="68" cy="-5" rx="12" ry="20" fill="#E8B070" stroke="#D4A060" stroke-width="1"/>
+    <path d="M 66 -12 Q 60 -5 66 5" fill="none" stroke="#C8966A" stroke-width="0.8"/>
+    <!-- Hair - consistent shape with beginner but filled -->
+    <path d="M -58 -55 Q -65 -95 -25 -98 Q 0 -108 25 -98 Q 65 -95 58 -55 Q 40 -70 0 -75 Q -40 -70 -58 -55 Z" fill="url(#hairGrad)"/>
+    <path d="M -50 -60 Q -45 -78 -15 -82 Q 10 -85 30 -78 Q 50 -72 52 -58" fill="none" stroke="#8B6040" stroke-width="2" opacity="0.3"/>
+    <path d="M -45 -65 Q -35 -75 -20 -78" fill="none" stroke="#6A4030" stroke-width="1" opacity="0.25"/>
+    <path d="M 20 -78 Q 35 -75 45 -65" fill="none" stroke="#6A4030" stroke-width="1" opacity="0.25"/>
+    <path d="M -30 -72 Q -15 -80 0 -80 Q 15 -80 30 -72" fill="none" stroke="#8B6040" stroke-width="1" opacity="0.2"/>
+    <path d="M -60 -45 Q -70 -30 -65 -10" fill="none" stroke="#5A2E1A" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 60 -45 Q 70 -30 65 -10" fill="none" stroke="#5A2E1A" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+    <!-- Eyebrows - raised, expressive -->
+    <path d="M -38 -40 Q -27 -52 -10 -43" fill="none" stroke="#5A3520" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 10 -43 Q 27 -52 38 -40" fill="none" stroke="#5A3520" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Eyes with eyelashes -->
+    <ellipse cx="-23" cy="-24" rx="11" ry="7" fill="white" stroke="#555" stroke-width="1"/>
+    <circle cx="-21" cy="-23" r="4.5" fill="#4A7A5B"/>
+    <circle cx="-21" cy="-23" r="2.2" fill="#1A1A1A"/>
+    <circle cx="-19" cy="-25" r="1" fill="white" opacity="0.8"/>
+    <line x1="-30" y1="-30" x2="-32" y2="-34" stroke="#3E1A08" stroke-width="0.8"/>
+    <line x1="-26" y1="-31" x2="-27" y2="-35" stroke="#3E1A08" stroke-width="0.8"/>
+    <line x1="-20" y1="-31" x2="-20" y2="-35" stroke="#3E1A08" stroke-width="0.8"/>
+    <ellipse cx="23" cy="-24" rx="11" ry="7" fill="white" stroke="#555" stroke-width="1"/>
+    <circle cx="21" cy="-23" r="4.5" fill="#4A7A5B"/>
+    <circle cx="21" cy="-23" r="2.2" fill="#1A1A1A"/>
+    <circle cx="23" cy="-25" r="1" fill="white" opacity="0.8"/>
+    <line x1="20" y1="-31" x2="20" y2="-35" stroke="#3E1A08" stroke-width="0.8"/>
+    <line x1="26" y1="-31" x2="27" y2="-35" stroke="#3E1A08" stroke-width="0.8"/>
+    <line x1="30" y1="-30" x2="32" y2="-34" stroke="#3E1A08" stroke-width="0.8"/>
+    <!-- Lower eyelid crease -->
+    <path d="M -34 -20 Q -23 -16 -12 -20" fill="none" stroke="#C8966A" stroke-width="0.7" opacity="0.5"/>
+    <path d="M 12 -20 Q 23 -16 34 -20" fill="none" stroke="#C8966A" stroke-width="0.7" opacity="0.5"/>
+    <!-- Nose -- consistent shape across levels -->
+    <path d="M 0 -12 Q 4 2 0 10 Q -3 13 -8 10" fill="none" stroke="#C8966A" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="-5" cy="11" r="2" fill="none" stroke="#C8966A" stroke-width="0.8" opacity="0.4"/>
+    <circle cx="5" cy="11" r="2" fill="none" stroke="#C8966A" stroke-width="0.8" opacity="0.4"/>
+    <!-- Wide genuine smile with teeth -->
+    <path d="M -28 22 Q -10 42 0 44 Q 10 42 28 22" fill="url(#lipGrad)" stroke="#903030" stroke-width="1"/>
+    <path d="M -22 24 Q 0 32 22 24" fill="white" stroke="none" opacity="0.7"/>
+    <!-- Cheek blush - stronger for happy -->
+    <circle cx="-38" cy="10" r="16" fill="url(#blush)"/>
+    <circle cx="38" cy="10" r="16" fill="url(#blush)"/>
+    <!-- Dimples -->
+    <path d="M -32 26 Q -34 30 -32 34" fill="none" stroke="#C8966A" stroke-width="0.8" opacity="0.35"/>
+    <path d="M 32 26 Q 34 30 32 34" fill="none" stroke="#C8966A" stroke-width="0.8" opacity="0.35"/>
+  </g>
+
+  <!-- ==================== INTERMEDIATE SAD ==================== -->
+  <g transform="translate(900, 435)">
+    <ellipse cx="0" cy="0" rx="68" ry="82" fill="url(#skinMid)"/>
+    <ellipse cx="-68" cy="-5" rx="12" ry="20" fill="#E8B070" stroke="#D4A060" stroke-width="1"/>
+    <ellipse cx="68" cy="-5" rx="12" ry="20" fill="#E8B070" stroke="#D4A060" stroke-width="1"/>
+    <!-- Same hair shape -->
+    <path d="M -58 -55 Q -65 -95 -25 -98 Q 0 -108 25 -98 Q 65 -95 58 -55 Q 40 -70 0 -75 Q -40 -70 -58 -55 Z" fill="url(#hairGrad)"/>
+    <path d="M -60 -45 Q -70 -30 -65 -10" fill="none" stroke="#5A2E1A" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 60 -45 Q 70 -30 65 -10" fill="none" stroke="#5A2E1A" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+    <path d="M -45 -65 Q -35 -75 -20 -78" fill="none" stroke="#6A4030" stroke-width="1" opacity="0.25"/>
+    <path d="M 20 -78 Q 35 -75 45 -65" fill="none" stroke="#6A4030" stroke-width="1" opacity="0.25"/>
+    <!-- Eyebrows - inner raised, outer lowered (worried) -->
+    <path d="M -36 -38 Q -28 -45 -10 -42" fill="none" stroke="#5A3520" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 10 -42 Q 28 -45 36 -38" fill="none" stroke="#5A3520" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Eyes with eyelashes -->
+    <ellipse cx="-23" cy="-24" rx="11" ry="9" fill="white" stroke="#555" stroke-width="1"/>
+    <circle cx="-23" cy="-21" r="4.5" fill="#4A7A5B"/>
+    <circle cx="-23" cy="-21" r="2.2" fill="#1A1A1A"/>
+    <circle cx="-21" cy="-23" r="1" fill="white" opacity="0.7"/>
+    <line x1="-30" y1="-32" x2="-32" y2="-36" stroke="#3E1A08" stroke-width="0.8"/>
+    <line x1="-26" y1="-33" x2="-27" y2="-37" stroke="#3E1A08" stroke-width="0.8"/>
+    <line x1="-20" y1="-33" x2="-20" y2="-37" stroke="#3E1A08" stroke-width="0.8"/>
+    <ellipse cx="23" cy="-24" rx="11" ry="9" fill="white" stroke="#555" stroke-width="1"/>
+    <circle cx="23" cy="-21" r="4.5" fill="#4A7A5B"/>
+    <circle cx="23" cy="-21" r="2.2" fill="#1A1A1A"/>
+    <circle cx="25" cy="-23" r="1" fill="white" opacity="0.7"/>
+    <line x1="20" y1="-33" x2="20" y2="-37" stroke="#3E1A08" stroke-width="0.8"/>
+    <line x1="26" y1="-33" x2="27" y2="-37" stroke="#3E1A08" stroke-width="0.8"/>
+    <line x1="30" y1="-32" x2="32" y2="-36" stroke="#3E1A08" stroke-width="0.8"/>
+    <!-- Nose -->
+    <path d="M 0 -12 Q 4 2 0 10 Q -3 13 -8 10" fill="none" stroke="#C8966A" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Drooped mouth -->
+    <path d="M -22 26 Q -12 23 0 24 Q 12 23 22 26" fill="none" stroke="#B06060" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Under-eye shadow -->
+    <path d="M -34 -18 Q -23 -14 -12 -18" fill="none" stroke="#C8A880" stroke-width="1.5" opacity="0.3"/>
+    <path d="M 12 -18 Q 23 -14 34 -18" fill="none" stroke="#C8A880" stroke-width="1.5" opacity="0.3"/>
+    <!-- Tear track -->
+    <path d="M -20 -14 Q -22 0 -24 10 Q -25 15 -23 18" fill="none" stroke="#88BBDD" stroke-width="1" opacity="0.35"/>
+    <circle cx="-23" cy="20" r="2" fill="#88CCEE" opacity="0.3"/>
+    <!-- Slight redness around nose from crying -->
+    <ellipse cx="0" cy="8" rx="8" ry="4" fill="#DD9988" opacity="0.08"/>
+  </g>
+
+  <!-- ==================== ADVANCED HAPPY ==================== -->
+  <g transform="translate(400, 678)">
+    <!-- Shirt/collar hint -->
+    <path d="M -30 90 Q -60 92 -85 98 L -85 105 L 85 105 L 85 98 Q 60 92 30 90" fill="url(#shirtGrad)" stroke="none" opacity="0.5"/>
+    <!-- Neck -->
+    <path d="M -22 65 Q -22 85 -28 92 L 28 92 Q 22 85 22 65" fill="url(#skinAdv)" stroke="none"/>
+    <!-- Neck shadow -->
+    <path d="M -18 72 Q 0 78 18 72" fill="none" stroke="#C08050" stroke-width="1.5" opacity="0.15"/>
+    <!-- Face shape -->
+    <path d="M -52 -55 Q -62 -15 -52 22 Q -42 62 0 72 Q 42 62 52 22 Q 62 -15 52 -55 Q 42 -82 0 -88 Q -42 -82 -52 -55 Z" fill="url(#skinAdv)" stroke="none"/>
+    <!-- Jaw shadow -->
+    <path d="M -40 40 Q -30 60 0 68 Q 30 60 40 40" fill="none" stroke="#C08050" stroke-width="2" opacity="0.15"/>
+    <!-- Temple shadow -->
+    <path d="M -50 -50 Q -55 -30 -52 -10" fill="none" stroke="#C89060" stroke-width="6" opacity="0.15" stroke-linecap="round"/>
+    <path d="M 50 -50 Q 55 -30 52 -10" fill="none" stroke="#C89060" stroke-width="6" opacity="0.15" stroke-linecap="round"/>
+    <!-- Ears -->
+    <path d="M -55 -22 Q -70 -28 -70 -2 Q -70 18 -55 12" fill="#E5AD6E" stroke="#D09858" stroke-width="1"/>
+    <path d="M -63 -12 Q -58 -5 -63 5" fill="none" stroke="#C08550" stroke-width="0.8" opacity="0.5"/>
+    <path d="M 55 -22 Q 70 -28 70 -2 Q 70 18 55 12" fill="#E5AD6E" stroke="#D09858" stroke-width="1"/>
+    <path d="M 63 -12 Q 58 -5 63 5" fill="none" stroke="#C08550" stroke-width="0.8" opacity="0.5"/>
+    <!-- Hair - consistent silhouette with intermediate but more textured -->
+    <path d="M -52 -55 Q -58 -92 -28 -98 Q -8 -106 12 -102 Q 38 -98 50 -90 Q 62 -80 56 -50 Q 48 -68 28 -76 Q 8 -82 -12 -80 Q -38 -76 -48 -64 Z" fill="#4A2010" stroke="none"/>
+    <path d="M -46 -60 Q -38 -78 -12 -80 Q 8 -82 28 -76 Q 46 -70 50 -55" fill="none" stroke="#6A3E28" stroke-width="2.5" opacity="0.4" stroke-linecap="round"/>
+    <path d="M -40 -62 Q -30 -72 -5 -76 Q 15 -78 32 -72" fill="none" stroke="#7A5040" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+    <path d="M -35 -68 Q -20 -76 -5 -78" fill="none" stroke="#5A3018" stroke-width="0.8" opacity="0.2"/>
+    <path d="M 5 -78 Q 20 -76 35 -68" fill="none" stroke="#5A3018" stroke-width="0.8" opacity="0.2"/>
+    <path d="M -28 -73 Q -10 -80 10 -79 Q 25 -78 38 -70" fill="none" stroke="#6A4028" stroke-width="0.6" opacity="0.15"/>
+    <!-- Forehead highlight -->
+    <ellipse cx="0" cy="-55" rx="25" ry="10" fill="white" opacity="0.06"/>
+    <!-- Eyebrows -->
+    <path d="M -38 -44 Q -30 -52 -10 -47" fill="none" stroke="#3E1A08" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M 10 -47 Q 30 -52 38 -44" fill="none" stroke="#3E1A08" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Left eye - Duchenne squint -->
+    <ellipse cx="-21" cy="-28" rx="12" ry="7.5" fill="white" stroke="#555" stroke-width="0.8"/>
+    <circle cx="-19" cy="-27" r="5" fill="#3E6E45"/>
+    <circle cx="-19" cy="-27" r="2.5" fill="#111"/>
+    <circle cx="-17" cy="-29" r="1.3" fill="white" opacity="0.85"/>
+    <circle cx="-20" cy="-26" r="0.6" fill="white" opacity="0.4"/>
+    <!-- Left eyelashes -->
+    <path d="M -33 -33 Q -35 -38 -34 -40" fill="none" stroke="#2A1008" stroke-width="0.8"/>
+    <path d="M -29 -35 Q -30 -40 -28 -42" fill="none" stroke="#2A1008" stroke-width="0.8"/>
+    <path d="M -24 -35.5 Q -24 -41 -22 -43" fill="none" stroke="#2A1008" stroke-width="0.7"/>
+    <path d="M -18 -35 Q -17 -40 -15 -42" fill="none" stroke="#2A1008" stroke-width="0.7"/>
+    <path d="M -12 -34 Q -10 -38 -8 -39" fill="none" stroke="#2A1008" stroke-width="0.6"/>
+    <path d="M -33 -34 Q -21 -38 -9 -34" fill="none" stroke="#C8966A" stroke-width="0.7" opacity="0.4"/>
+    <!-- Right eye -->
+    <ellipse cx="21" cy="-28" rx="12" ry="7.5" fill="white" stroke="#555" stroke-width="0.8"/>
+    <circle cx="19" cy="-27" r="5" fill="#3E6E45"/>
+    <circle cx="19" cy="-27" r="2.5" fill="#111"/>
+    <circle cx="21" cy="-29" r="1.3" fill="white" opacity="0.85"/>
+    <circle cx="18" cy="-26" r="0.6" fill="white" opacity="0.4"/>
+    <!-- Right eyelashes -->
+    <path d="M 12 -34 Q 10 -38 8 -39" fill="none" stroke="#2A1008" stroke-width="0.6"/>
+    <path d="M 18 -35 Q 17 -40 15 -42" fill="none" stroke="#2A1008" stroke-width="0.7"/>
+    <path d="M 24 -35.5 Q 24 -41 22 -43" fill="none" stroke="#2A1008" stroke-width="0.7"/>
+    <path d="M 29 -35 Q 30 -40 28 -42" fill="none" stroke="#2A1008" stroke-width="0.8"/>
+    <path d="M 33 -33 Q 35 -38 34 -40" fill="none" stroke="#2A1008" stroke-width="0.8"/>
+    <path d="M 9 -34 Q 21 -38 33 -34" fill="none" stroke="#C8966A" stroke-width="0.7" opacity="0.4"/>
+    <!-- Crow's feet -->
+    <line x1="-35" y1="-31" x2="-40" y2="-35" stroke="#C8966A" stroke-width="0.7" opacity="0.4"/>
+    <line x1="-35" y1="-28" x2="-41" y2="-28" stroke="#C8966A" stroke-width="0.7" opacity="0.4"/>
+    <line x1="-34" y1="-25" x2="-39" y2="-22" stroke="#C8966A" stroke-width="0.7" opacity="0.4"/>
+    <line x1="35" y1="-31" x2="40" y2="-35" stroke="#C8966A" stroke-width="0.7" opacity="0.4"/>
+    <line x1="35" y1="-28" x2="41" y2="-28" stroke="#C8966A" stroke-width="0.7" opacity="0.4"/>
+    <line x1="34" y1="-25" x2="39" y2="-22" stroke="#C8966A" stroke-width="0.7" opacity="0.4"/>
+    <!-- Nose -->
+    <path d="M 0 -16 Q 3 -4 1 6 Q -1 10 -6 11" fill="none" stroke="#C08558" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M -6 11 Q -3 14 1 13 Q 5 14 7 11" fill="none" stroke="#C08558" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M -1 -10 Q 0 -5 1 0" fill="none" stroke="white" stroke-width="1" opacity="0.15"/>
+    <!-- Duchenne smile -->
+    <path d="M -24 16 Q -12 34 0 36 Q 12 34 24 16" fill="url(#lipGrad)" stroke="#903030" stroke-width="0.8"/>
+    <path d="M -18 18 Q 0 26 18 18" fill="white" stroke="none" opacity="0.65"/>
+    <path d="M -18 30 Q 0 38 18 30" fill="#C04848" stroke="none" opacity="0.3"/>
+    <!-- Nasolabial folds -->
+    <path d="M -13 2 Q -20 16 -26 24" fill="none" stroke="#C8966A" stroke-width="0.8" opacity="0.3"/>
+    <path d="M 13 2 Q 20 16 26 24" fill="none" stroke="#C8966A" stroke-width="0.8" opacity="0.3"/>
+    <!-- Cheek muscles -->
+    <ellipse cx="-30" cy="6" rx="16" ry="10" fill="#EEAA80" opacity="0.18"/>
+    <ellipse cx="30" cy="6" rx="16" ry="10" fill="#EEAA80" opacity="0.18"/>
+    <!-- Chin -->
+    <path d="M -3 55 Q 0 58 3 55" fill="none" stroke="#C8966A" stroke-width="0.6" opacity="0.25"/>
+  </g>
+
+  <!-- ==================== ADVANCED SAD ==================== -->
+  <g transform="translate(900, 678)">
+    <g transform="rotate(3)">
+      <!-- Shirt/collar -->
+      <path d="M -30 90 Q -60 92 -85 98 L -85 105 L 85 105 L 85 98 Q 60 92 30 90" fill="url(#shirtGrad)" stroke="none" opacity="0.5"/>
+      <!-- Neck -->
+      <path d="M -22 65 Q -22 85 -28 92 L 28 92 Q 22 85 22 65" fill="url(#skinAdv)" stroke="none"/>
+      <!-- Face shape -->
+      <path d="M -52 -55 Q -62 -15 -52 22 Q -42 62 0 72 Q 42 62 52 22 Q 62 -15 52 -55 Q 42 -82 0 -88 Q -42 -82 -52 -55 Z" fill="url(#skinAdv)" stroke="none"/>
+      <!-- Jaw/temple shadows -->
+      <path d="M -40 40 Q -30 60 0 68 Q 30 60 40 40" fill="none" stroke="#C08050" stroke-width="2" opacity="0.15"/>
+      <path d="M -50 -50 Q -55 -30 -52 -10" fill="none" stroke="#C89060" stroke-width="6" opacity="0.15" stroke-linecap="round"/>
+      <path d="M 50 -50 Q 55 -30 52 -10" fill="none" stroke="#C89060" stroke-width="6" opacity="0.15" stroke-linecap="round"/>
+      <!-- Ears -->
+      <path d="M -55 -22 Q -70 -28 -70 -2 Q -70 18 -55 12" fill="#E5AD6E" stroke="#D09858" stroke-width="1"/>
+      <path d="M 55 -22 Q 70 -28 70 -2 Q 70 18 55 12" fill="#E5AD6E" stroke="#D09858" stroke-width="1"/>
+      <!-- Hair - same silhouette -->
+      <path d="M -52 -55 Q -58 -92 -28 -98 Q -8 -106 12 -102 Q 38 -98 50 -90 Q 62 -80 56 -50 Q 48 -68 28 -76 Q 8 -82 -12 -80 Q -38 -76 -48 -64 Z" fill="#4A2010" stroke="none"/>
+      <path d="M -46 -60 Q -38 -78 -12 -80 Q 8 -82 28 -76 Q 46 -70 50 -55" fill="none" stroke="#6A3E28" stroke-width="2.5" opacity="0.4" stroke-linecap="round"/>
+      <path d="M -35 -68 Q -20 -76 -5 -78" fill="none" stroke="#5A3018" stroke-width="0.8" opacity="0.2"/>
+      <path d="M 5 -78 Q 20 -76 35 -68" fill="none" stroke="#5A3018" stroke-width="0.8" opacity="0.2"/>
+      <!-- Forehead tension -->
+      <line x1="-18" y1="-58" x2="18" y2="-58" stroke="#D0A878" stroke-width="0.6" opacity="0.25"/>
+      <line x1="-14" y1="-53" x2="14" y2="-53" stroke="#D0A878" stroke-width="0.5" opacity="0.18"/>
+      <!-- Eyebrows - inner raised grief -->
+      <path d="M -36 -46 Q -28 -48 -10 -44" fill="none" stroke="#3E1A08" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 10 -44 Q 28 -48 36 -46" fill="none" stroke="#3E1A08" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Left eye - glistening -->
+      <ellipse cx="-21" cy="-28" rx="12" ry="9.5" fill="white" stroke="#555" stroke-width="0.8"/>
+      <circle cx="-21" cy="-26" r="5" fill="#3E6E45"/>
+      <circle cx="-21" cy="-26" r="2.5" fill="#111"/>
+      <circle cx="-19" cy="-29" r="1.5" fill="white" opacity="0.9"/>
+      <!-- Left eyelashes -->
+      <path d="M -33 -35 Q -35 -40 -34 -42" fill="none" stroke="#2A1008" stroke-width="0.8"/>
+      <path d="M -29 -37 Q -30 -42 -28 -44" fill="none" stroke="#2A1008" stroke-width="0.8"/>
+      <path d="M -24 -37.5 Q -24 -43 -22 -45" fill="none" stroke="#2A1008" stroke-width="0.7"/>
+      <path d="M -18 -37 Q -17 -42 -15 -44" fill="none" stroke="#2A1008" stroke-width="0.7"/>
+      <path d="M -12 -36 Q -10 -40 -8 -41" fill="none" stroke="#2A1008" stroke-width="0.6"/>
+      <!-- Glistening tear line -->
+      <path d="M -33 -24 Q -32 -18 -29 -14" fill="none" stroke="white" stroke-width="1" opacity="0.45"/>
+      <circle cx="-29" cy="-13" r="1.5" fill="white" opacity="0.3"/>
+      <!-- Right eye -->
+      <ellipse cx="21" cy="-28" rx="12" ry="9.5" fill="white" stroke="#555" stroke-width="0.8"/>
+      <circle cx="21" cy="-26" r="5" fill="#3E6E45"/>
+      <circle cx="21" cy="-26" r="2.5" fill="#111"/>
+      <circle cx="23" cy="-29" r="1.5" fill="white" opacity="0.9"/>
+      <!-- Right eyelashes -->
+      <path d="M 12 -36 Q 10 -40 8 -41" fill="none" stroke="#2A1008" stroke-width="0.6"/>
+      <path d="M 18 -37 Q 17 -42 15 -44" fill="none" stroke="#2A1008" stroke-width="0.7"/>
+      <path d="M 24 -37.5 Q 24 -43 22 -45" fill="none" stroke="#2A1008" stroke-width="0.7"/>
+      <path d="M 29 -37 Q 30 -42 28 -44" fill="none" stroke="#2A1008" stroke-width="0.8"/>
+      <path d="M 33 -35 Q 35 -40 34 -42" fill="none" stroke="#2A1008" stroke-width="0.8"/>
+      <!-- Upper eyelid heaviness -->
+      <path d="M -33 -34 Q -21 -37 -9 -34" fill="none" stroke="#B88858" stroke-width="1.2" opacity="0.3"/>
+      <path d="M 9 -34 Q 21 -37 33 -34" fill="none" stroke="#B88858" stroke-width="1.2" opacity="0.3"/>
+      <!-- Under-eye shadow -->
+      <path d="M -33 -22 Q -21 -17 -9 -22" fill="none" stroke="#B89878" stroke-width="1.5" opacity="0.25"/>
+      <path d="M 9 -22 Q 21 -17 33 -22" fill="none" stroke="#B89878" stroke-width="1.5" opacity="0.25"/>
+      <!-- Nose -->
+      <path d="M 0 -16 Q 3 -4 1 6 Q -1 10 -6 11" fill="none" stroke="#C08558" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M -6 11 Q -3 14 1 13 Q 5 14 7 11" fill="none" stroke="#C08558" stroke-width="0.8" stroke-linecap="round"/>
+      <!-- Nose redness -->
+      <ellipse cx="0" cy="8" rx="6" ry="4" fill="#DD9988" opacity="0.1"/>
+      <!-- Compressed mouth -->
+      <path d="M -18 20 Q -8 18 0 19 Q 8 18 18 20" fill="#C08070" stroke="#A06050" stroke-width="1"/>
+      <path d="M -14 22 Q 0 24 14 22" fill="#B87068" stroke="none" opacity="0.4"/>
+      <line x1="-12" y1="20" x2="12" y2="20" stroke="#A06050" stroke-width="0.4" opacity="0.3"/>
+      <!-- Nasolabial folds -->
+      <path d="M -13 2 Q -22 16 -28 28" fill="none" stroke="#C8966A" stroke-width="1" opacity="0.4"/>
+      <path d="M 13 2 Q 22 16 28 28" fill="none" stroke="#C8966A" stroke-width="1" opacity="0.4"/>
+      <!-- Chin tension -->
+      <path d="M -8 50 Q 0 55 8 50" fill="none" stroke="#C8966A" stroke-width="0.6" opacity="0.2"/>
+      <circle cx="0" cy="48" r="3" fill="#C8966A" opacity="0.08"/>
+      <!-- Single tear -->
+      <path d="M -28 -12 Q -30 2 -28 10 Q -27 14 -26 12 Q -27 8 -27 0 Q -27 -8 -28 -12 Z" fill="#88CCEE" opacity="0.25"/>
+    </g>
+  </g>
+</svg>

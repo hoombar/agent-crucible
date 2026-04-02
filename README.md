@@ -41,10 +41,11 @@ After runs complete, a self-contained `runs/report.html` inlines all SVGs and lo
 | Six Thinking Hats | Two agents cycling hats in different orders | 2 |
 | Prompt Mutation | Parallel generation + synthesis | 3 |
 
-## Challenge Tiers
+## Challenges
 
-| Tier | Example | Difficulty |
+| Challenge | Description | Difficulty |
 |---|---|---|
-| 1 | Geometric mandala | Baseline — any approach should handle |
-| 2 | Isometric room | Differentiating — naive single-pass fails |
-| 3 | Mountain landscape | Stress test — tests graceful degradation |
+| Tier 1 — Mandala | Geometric mandala with 8-fold symmetry | Baseline — any approach should handle |
+| Tier 2 — Isometric Room | Furnished room with consistent perspective | Differentiating — naive single-pass fails |
+| Tier 3 — Mountain Landscape | Layered landscape with atmospheric perspective | Stress test — tests graceful degradation |
+| Faces | Expressive faces at 3 skill levels × 2 emotions | Human perception — exploits uncanny valley |

@@ -11,7 +11,7 @@ When the user says:
 
 ## File Locations
 
-- Challenges: `challenges/tier-{N}-{name}.md`
+- Challenges: `challenges/{name}.md` (e.g. `tier-1-mandala.md`, `faces.md`)
 - Methodologies: `methodologies/{name}.md`
 - Workspace (raw data, gitignored): `workspace/{methodology}-{challenge}-{YYYYMMDD-HHmm}/`
 - Published runs: `runs/{NNN}-{YYYYMMDD-HHmm}/`
@@ -136,11 +136,11 @@ Follow the interaction sequence defined in the methodology file **exactly**. For
 
 ## Run All Experiments
 
-All 9 runs execute **in parallel** — there are no dependencies between runs. Each run is spawned as a separate background agent that manages its own 6-step sequence internally.
+All 12 runs execute **in parallel** — there are no dependencies between runs. Each run is spawned as a separate background agent that manages its own 6-step sequence internally.
 
 ### Procedure
 
-1. **Spawn 9 agents in a single message** using the Agent tool with `run_in_background: true`. Each agent receives:
+1. **Spawn 12 agents in a single message** using the Agent tool with `run_in_background: true`. Each agent receives:
    - The full methodology file content
    - The full challenge file content
    - The workspace directory path for that run
@@ -151,25 +151,28 @@ All 9 runs execute **in parallel** — there are no dependencies between runs. E
 
 3. As agents complete, they will report back. Note completions and any failures.
 
-4. Once all 9 are done, **publish the results** (see Publish Procedure below).
+4. Once all 12 are done, **publish the results** (see Publish Procedure below).
 
-### The 9 combinations
+### The 12 combinations
 
 | # | Methodology | Challenge |
 |---|---|---|
 | 1 | adversarial | tier-1-mandala |
 | 2 | adversarial | tier-2-isometric-room |
 | 3 | adversarial | tier-3-mountain-landscape |
-| 4 | six-hats | tier-1-mandala |
-| 5 | six-hats | tier-2-isometric-room |
-| 6 | six-hats | tier-3-mountain-landscape |
-| 7 | prompt-mutation | tier-1-mandala |
-| 8 | prompt-mutation | tier-2-isometric-room |
-| 9 | prompt-mutation | tier-3-mountain-landscape |
+| 4 | adversarial | faces |
+| 5 | six-hats | tier-1-mandala |
+| 6 | six-hats | tier-2-isometric-room |
+| 7 | six-hats | tier-3-mountain-landscape |
+| 8 | six-hats | faces |
+| 9 | prompt-mutation | tier-1-mandala |
+| 10 | prompt-mutation | tier-2-isometric-room |
+| 11 | prompt-mutation | tier-3-mountain-landscape |
+| 12 | prompt-mutation | faces |
 
 ### Agent prompt template for parallel runs
 
-Each of the 9 agents should be prompted with:
+Each of the 12 agents should be prompted with:
 
 ```
 You are running a single Agent Crucible experiment. Your job is to execute the methodology
@@ -258,16 +261,16 @@ Build a single self-contained `report.html` file inside the published run direct
 ### HTML layout:
 
 ```
-+---------------------------------------------------------+
-|  Agent Crucible Report - {date}                         |
-|  Metrics summary table                                  |
-+-------------+-------------+-----------------------------+
-|             | Tier 1      | Tier 2      | Tier 3        |
-+-------------+-------------+-------------+---------------+
-| Adversarial | [final SVG] | [final SVG] | [final SVG]   |
-| Six Hats    | [final SVG] | [final SVG] | [final SVG]   |
-| Prompt Mut. | [final SVG] | [final SVG] | [final SVG]   |
-+-------------+-------------+-------------+---------------+
++----------------------------------------------------------------------+
+|  Agent Crucible Report - {date}                                      |
+|  Metrics summary table                                               |
++-------------+-------------+-------------+-------------+--------------+
+|             | Tier 1      | Tier 2      | Tier 3      | Faces        |
++-------------+-------------+-------------+-------------+--------------+
+| Adversarial | [final SVG] | [final SVG] | [final SVG] | [final SVG]  |
+| Six Hats    | [final SVG] | [final SVG] | [final SVG] | [final SVG]  |
+| Prompt Mut. | [final SVG] | [final SVG] | [final SVG] | [final SVG]  |
++-------------+-------------+-------------+-------------+--------------+
   Each cell expands to show iteration filmstrip + conversation logs
 ```
 
@@ -275,7 +278,7 @@ Build a single self-contained `report.html` file inside the published run direct
 - **Inline all SVGs** as `<svg>` elements directly in the HTML (not as `<img>` or `<object>`)
 - **All CSS and JS inline** — no external files, the report must work as a standalone file
 - **Metrics table** at the top showing: methodology, challenge, tier, agent calls, time elapsed
-- **3x3 grid** of final SVGs, labelled by methodology (rows) and tier (columns)
+- **3×4 grid** of final SVGs, labelled by methodology (rows) and challenge (columns)
 - **Click to expand** each cell to reveal:
   - An iteration filmstrip: all step SVGs displayed left-to-right, small, showing the trajectory
   - Conversation logs: collapsible sections for each step's conversation log, rendered as formatted text

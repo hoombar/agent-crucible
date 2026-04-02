@@ -35,11 +35,12 @@ After runs complete, a self-contained `runs/report.html` inlines all SVGs and lo
 
 ## Methodologies
 
-| Methodology | Pattern | Agents |
-|---|---|---|
-| Adversarial | Generator + Critic loop | 2 |
-| Six Thinking Hats | Two agents cycling hats in different orders | 2 |
-| Prompt Mutation | Parallel generation + synthesis | 3 |
+| Methodology | Pattern | Agents | Calls |
+|---|---|---|---|
+| Baseline | Single agent, no iteration (control) | 1 | 1 |
+| Adversarial | Generator + Critic loop | 2 | 6 |
+| Six Thinking Hats | Two agents cycling hats in different orders | 2 | 6 |
+| Prompt Mutation | Parallel generation + synthesis | 3 | 6 |
 
 ## Challenges
 

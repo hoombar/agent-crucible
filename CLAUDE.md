@@ -6,7 +6,7 @@ You are the orchestrator for Agent Crucible, a framework for evaluating AI agent
 
 When the user says:
 - **"Run {methodology} against {challenge}"** — execute a single run (see Single Run Procedure below)
-- **"Run all experiments"** — execute all 9 combinations (3 methodologies × 3 challenges), then publish results
+- **"Run all experiments"** — execute all 16 combinations (4 methodologies × 4 challenges), then publish results
 - **"Generate the report"** — build `report.html` from the most recent workspace data (see Report Generation below)
 
 ## File Locations
@@ -77,7 +77,7 @@ To determine the next run number:
      "challenge": "{name}",
      "tier": {N},
      "timestamp": "{ISO 8601}",
-     "agent_call_budget": 6
+     "agent_call_budget": "{as defined in methodology file}"
    }
    ```
 5. Copy the challenge file as `challenge.md` into the workspace directory
@@ -136,11 +136,11 @@ Follow the interaction sequence defined in the methodology file **exactly**. For
 
 ## Run All Experiments
 
-All 12 runs execute **in parallel** — there are no dependencies between runs. Each run is spawned as a separate background agent that manages its own 6-step sequence internally.
+All 16 runs execute **in parallel** — there are no dependencies between runs. Each run is spawned as a separate background agent that manages its own step sequence internally.
 
 ### Procedure
 
-1. **Spawn 12 agents in a single message** using the Agent tool with `run_in_background: true`. Each agent receives:
+1. **Spawn 16 agents in a single message** using the Agent tool with `run_in_background: true`. Each agent receives:
    - The full methodology file content
    - The full challenge file content
    - The workspace directory path for that run
@@ -151,28 +151,32 @@ All 12 runs execute **in parallel** — there are no dependencies between runs. 
 
 3. As agents complete, they will report back. Note completions and any failures.
 
-4. Once all 12 are done, **publish the results** (see Publish Procedure below).
+4. Once all 16 are done, **publish the results** (see Publish Procedure below).
 
-### The 12 combinations
+### The 16 combinations
 
 | # | Methodology | Challenge |
 |---|---|---|
-| 1 | adversarial | tier-1-mandala |
-| 2 | adversarial | tier-2-isometric-room |
-| 3 | adversarial | tier-3-mountain-landscape |
-| 4 | adversarial | faces |
-| 5 | six-hats | tier-1-mandala |
-| 6 | six-hats | tier-2-isometric-room |
-| 7 | six-hats | tier-3-mountain-landscape |
-| 8 | six-hats | faces |
-| 9 | prompt-mutation | tier-1-mandala |
-| 10 | prompt-mutation | tier-2-isometric-room |
-| 11 | prompt-mutation | tier-3-mountain-landscape |
-| 12 | prompt-mutation | faces |
+| 1 | baseline | tier-1-mandala |
+| 2 | baseline | tier-2-isometric-room |
+| 3 | baseline | tier-3-mountain-landscape |
+| 4 | baseline | faces |
+| 5 | adversarial | tier-1-mandala |
+| 6 | adversarial | tier-2-isometric-room |
+| 7 | adversarial | tier-3-mountain-landscape |
+| 8 | adversarial | faces |
+| 9 | six-hats | tier-1-mandala |
+| 10 | six-hats | tier-2-isometric-room |
+| 11 | six-hats | tier-3-mountain-landscape |
+| 12 | six-hats | faces |
+| 13 | prompt-mutation | tier-1-mandala |
+| 14 | prompt-mutation | tier-2-isometric-room |
+| 15 | prompt-mutation | tier-3-mountain-landscape |
+| 16 | prompt-mutation | faces |
 
 ### Agent prompt template for parallel runs
 
-Each of the 12 agents should be prompted with:
+Each of the 16 agents should be prompted with:
 
 ```
 You are running a single Agent Crucible experiment. Your job is to execute the methodology
@@ -184,7 +188,7 @@ and save all output files. Work autonomously — do not ask questions, just exec
 Create this directory and an iterations/ subdirectory inside it.
 
 ## Config
-Save config.json with: methodology, challenge, tier, timestamp, agent_call_budget: 6
+Save config.json with: methodology, challenge, tier, timestamp, agent_call_budget (from methodology)
 
 ## Challenge
 {paste full challenge file content}
@@ -220,11 +224,11 @@ Follow the methodology's interaction sequence exactly. For each step:
 - Valid SVG 1.1, self-contained, match challenge viewport
 
 ## Finalise
-Save metrics.json with: agent_calls: 6, steps, started_at, completed_at (ISO 8601)
+Save metrics.json with: agent_calls (as per methodology), steps, started_at, completed_at (ISO 8601)
 Save summary.md: 5-10 sentence narrative of how the run went
 
 ## Important
-- Budget: exactly 6 steps, no more
+- Budget: exactly as many steps as defined in the methodology file, no more
 - Adopt each agent role fully when executing that step
 - Failure is data — save bad SVGs, don't retry
 - Conversation logs are essential — document every step
@@ -267,6 +271,7 @@ Build a single self-contained `report.html` file inside the published run direct
 +-------------+-------------+-------------+-------------+--------------+
 |             | Tier 1      | Tier 2      | Tier 3      | Faces        |
 +-------------+-------------+-------------+-------------+--------------+
+| Baseline    | [final SVG] | [final SVG] | [final SVG] | [final SVG]  |
 | Adversarial | [final SVG] | [final SVG] | [final SVG] | [final SVG]  |
 | Six Hats    | [final SVG] | [final SVG] | [final SVG] | [final SVG]  |
 | Prompt Mut. | [final SVG] | [final SVG] | [final SVG] | [final SVG]  |
@@ -278,7 +283,7 @@ Build a single self-contained `report.html` file inside the published run direct
 - **Inline all SVGs** as `<svg>` elements directly in the HTML (not as `<img>` or `<object>`)
 - **All CSS and JS inline** — no external files, the report must work as a standalone file
 - **Metrics table** at the top showing: methodology, challenge, tier, agent calls, time elapsed
-- **3×4 grid** of final SVGs, labelled by methodology (rows) and challenge (columns)
+- **4×4 grid** of final SVGs, labelled by methodology (rows) and challenge (columns)
 - **Click to expand** each cell to reveal:
   - An iteration filmstrip: all step SVGs displayed left-to-right, small, showing the trajectory
   - Conversation logs: collapsible sections for each step's conversation log, rendered as formatted text
@@ -289,7 +294,7 @@ Build a single self-contained `report.html` file inside the published run direct
 ## Important Rules
 
 - **Agent model:** Use the default model for all agents. Do not specify a model override. All agents must use the same model to keep methodology as the only variable.
-- **Budget enforcement:** Each methodology gets exactly 6 agent calls. Do not add extra calls, retries, or bonus rounds.
+- **Budget enforcement:** Each methodology gets exactly the number of agent calls defined in its methodology file (1 for baseline, 6 for others). Do not add extra calls, retries, or bonus rounds.
 - **Failure is data:** If an agent produces bad SVG or misunderstands the task, save it anyway. The methodology's ability to recover (or not) is part of what we're evaluating.
 - **No visual feedback to agents:** Agents work with SVG source text only. Never render an SVG and pass an image to an agent.
 - **Conversation logs are essential:** The logs are as valuable as the SVGs. Document what happened at each step — don't skip this.

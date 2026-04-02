@@ -54,14 +54,18 @@ All faces must be rendered as pencil drawings:
 - Think: an art student who has learned the fundamentals
 
 **Advanced:**
-- Portrait-quality pencil sketch with professional technique
-- Multiple hatching layers: initial directional hatching, cross-hatching for deeper shadows, stippling or fine strokes for texture
-- Full tonal range from paper-white highlights to dense dark shadows
-- Subtle facial anatomy — cheekbone structure, orbital ridge, philtrum
-- Hair with individual strand groups, varying direction and density
-- Clothing suggestion (collar/neckline) with fabric folds rendered in hatching
-- Background shading to lift the portrait off the page (vignette of loose hatching around the head)
-- Think: a professional graphite portrait that someone would commission and pay for
+This is the stress test. The advanced face should aim for the quality of a professional commissioned graphite portrait. This means an extremely high SVG element count — expect **200+ individual `<line>` or `<path>` elements per face** just for hatching alone. The specific technical requirements are:
+
+- **Face contour:** NOT a single ellipse or path. The jawline, chin, and forehead should be built from multiple overlapping strokes of varying weight (stroke-width 1-2px), like a real pencil being drawn and redrawn to find the form
+- **Hatching for shading:** Parallel `<line>` elements at approximately 45° for base shadows. Lines should be spaced 2-4px apart in mid-tones, 1-2px apart in deep shadows, and absent in highlights (paper shows through). Use stroke-width 0.5-1px for hatching lines
+- **Cross-hatching for depth:** A second layer of lines at approximately 135° (perpendicular to the first) in the darkest areas only — under the chin, side of the nose, deep eye sockets. This creates the richest darks
+- **Tonal range:** At least 4 distinct tonal zones per face — paper-white highlights (no strokes), light tone (sparse hatching), mid-tone (dense hatching), dark (cross-hatching). The transitions between zones should be gradual, achieved by changing line spacing
+- **Hair:** Individual stroke groups (5-10 `<line>` elements per group) following the direction of hair growth. Varying stroke-width (0.5-1.5px) and spacing to show light/dark areas in the hair. NOT a solid filled shape with lines on top
+- **Eyes:** The most detailed feature. Iris rendered with tiny radial strokes. Heavy lids drawn with multiple overlapping strokes. Highlight dot left as negative space (no stroke). Lashes as individual fine lines
+- **Nose:** Built entirely from shadow hatching — minimal outline. The nose shape should emerge from the hatching beneath it and beside it, not from a drawn contour line
+- **Clothing suggestion:** Collar/neckline with fabric folds rendered as directional hatching following the drape of fabric
+- **Background vignette:** Loose, long hatching strokes (stroke-width 1-2px) radiating behind the head, denser near the head and fading out toward the edges. This lifts the portrait off the page
+- Think: a professional graphite portrait like those sold on Etsy for £100+ — someone would frame this
 
 ### Emotion Requirements
 
@@ -83,7 +87,7 @@ All faces must be rendered as pencil drawings:
 
 ## Complexity Indicators
 - Facial proportions are extremely sensitive — humans detect errors instantly (uncanny valley)
-- Pencil hatching in SVG requires many individual path strokes — the advanced faces could need hundreds of paths
+- Pencil hatching in SVG requires many individual path strokes — each advanced face needs 200+ elements for hatching alone, so the full SVG could contain 500+ elements
 - Cross-hatching requires coordinating stroke angles and density to create tonal variation
 - Varied stroke weight tests precise `stroke-width` control
 - Deliberate skill-level variation is harder than a single quality level — the agent must control its own technique

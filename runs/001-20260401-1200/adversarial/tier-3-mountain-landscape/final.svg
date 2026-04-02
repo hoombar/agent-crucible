@@ -1,0 +1,395 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0325"/>
+      <stop offset="20%" stop-color="#1a0533"/>
+      <stop offset="40%" stop-color="#2d1b69"/>
+      <stop offset="60%" stop-color="#8b3a62"/>
+      <stop offset="80%" stop-color="#d4654a"/>
+      <stop offset="100%" stop-color="#f0a04b"/>
+    </linearGradient>
+
+    <!-- Lake gradient: muted sky reflection -->
+    <linearGradient id="lakeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4805a" stop-opacity="0.85"/>
+      <stop offset="25%" stop-color="#a85848" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#7a4070" stop-opacity="0.65"/>
+      <stop offset="80%" stop-color="#3a2050" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#1a1030" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Mountain gradients -->
+    <linearGradient id="mtFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a7baa"/>
+      <stop offset="100%" stop-color="#a095c0"/>
+    </linearGradient>
+    <linearGradient id="mtFarShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a5b8a"/>
+      <stop offset="100%" stop-color="#8075a0"/>
+    </linearGradient>
+    <linearGradient id="mtMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4578"/>
+      <stop offset="100%" stop-color="#6e5a8a"/>
+    </linearGradient>
+    <linearGradient id="mtMidLit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7a5580"/>
+      <stop offset="50%" stop-color="#8a6590"/>
+      <stop offset="100%" stop-color="#7a5a88"/>
+    </linearGradient>
+    <linearGradient id="mtMidShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2558"/>
+      <stop offset="100%" stop-color="#4a3568"/>
+    </linearGradient>
+    <linearGradient id="mtNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2555"/>
+      <stop offset="100%" stop-color="#4a3568"/>
+    </linearGradient>
+    <linearGradient id="mtNearLit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a3560"/>
+      <stop offset="50%" stop-color="#6a4570"/>
+      <stop offset="100%" stop-color="#5a3a68"/>
+    </linearGradient>
+    <linearGradient id="mtNearShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#250e3a"/>
+      <stop offset="100%" stop-color="#30184a"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="cloudBlur"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="cloudBlur2"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="hazeFilter"><feGaussianBlur stdDeviation="1.5"/></filter>
+    <filter id="reflFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015 0.08" numOctaves="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Sun glow -->
+    <radialGradient id="sunGlow" cx="50%" cy="100%" r="60%">
+      <stop offset="0%" stop-color="#ffe080" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#f0a04b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f0a04b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Haze gradients that fade near sun (center) -->
+    <linearGradient id="hazeG1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b6a80" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#8b6a80" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="hazeG2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a4a60" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#6a4a60" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <!-- Mask to fade haze away from sun center -->
+    <mask id="hazeMask">
+      <rect x="0" y="0" width="1000" height="600" fill="white"/>
+      <ellipse cx="500" cy="395" rx="200" ry="80" fill="black"/>
+    </mask>
+
+    <!-- Lake clip -->
+    <clipPath id="lakeClip">
+      <rect x="0" y="458" width="1000" height="142"/>
+    </clipPath>
+
+    <!-- Sun warm glow on mountains -->
+    <radialGradient id="sunWarm" cx="50%" cy="85%" r="50%">
+      <stop offset="0%" stop-color="#f0a050" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#f0a050" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#f0a050" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky: full viewport -->
+  <rect x="0" y="0" width="1000" height="600" fill="url(#skyGrad)"/>
+
+  <!-- Stars in upper sky -->
+  <circle cx="80" cy="25" r="1.2" fill="white" opacity="0.6"/>
+  <circle cx="200" cy="50" r="0.8" fill="white" opacity="0.4"/>
+  <circle cx="350" cy="18" r="1" fill="white" opacity="0.5"/>
+  <circle cx="520" cy="42" r="1.5" fill="white" opacity="0.35"/>
+  <circle cx="650" cy="15" r="1" fill="white" opacity="0.55"/>
+  <circle cx="780" cy="60" r="0.8" fill="white" opacity="0.4"/>
+  <circle cx="900" cy="30" r="1.3" fill="white" opacity="0.5"/>
+  <circle cx="140" cy="80" r="0.7" fill="white" opacity="0.3"/>
+  <circle cx="450" cy="70" r="0.9" fill="white" opacity="0.35"/>
+  <circle cx="850" cy="90" r="1.1" fill="white" opacity="0.3"/>
+
+  <!-- Sun glow -->
+  <ellipse cx="500" cy="395" rx="300" ry="100" fill="url(#sunGlow)"/>
+
+  <!-- Sun disc: lower position, partially behind mountains -->
+  <circle cx="500" cy="393" r="32" fill="#ffe680" opacity="0.9"/>
+
+  <!-- Cloud 1: upper left with shading -->
+  <g filter="url(#cloudBlur)" opacity="0.5">
+    <ellipse cx="200" cy="108" rx="85" ry="28" fill="#9070a0"/>
+    <ellipse cx="215" cy="100" rx="75" ry="24" fill="#b090b8"/>
+    <ellipse cx="235" cy="93" rx="60" ry="18" fill="#d0b0c8"/>
+    <ellipse cx="250" cy="88" rx="40" ry="12" fill="#e0c8d8"/>
+    <ellipse cx="175" cy="112" rx="45" ry="15" fill="#806090"/>
+  </g>
+
+  <!-- Cloud 2: upper right with shading -->
+  <g filter="url(#cloudBlur)" opacity="0.45">
+    <ellipse cx="750" cy="138" rx="95" ry="26" fill="#907098"/>
+    <ellipse cx="770" cy="130" rx="80" ry="22" fill="#b090b0"/>
+    <ellipse cx="790" cy="123" rx="60" ry="16" fill="#d0a8c0"/>
+    <ellipse cx="805" cy="118" rx="35" ry="10" fill="#e0c0d0"/>
+    <ellipse cx="715" cy="142" rx="50" ry="14" fill="#806090"/>
+  </g>
+
+  <!-- Cloud 3: near horizon, warm tones -->
+  <g filter="url(#cloudBlur2)" opacity="0.55">
+    <ellipse cx="400" cy="260" rx="110" ry="20" fill="#a05545"/>
+    <ellipse cx="420" cy="253" rx="85" ry="16" fill="#c07060"/>
+    <ellipse cx="440" cy="247" rx="65" ry="12" fill="#e0a080"/>
+    <ellipse cx="455" cy="243" rx="40" ry="8" fill="#f0c098"/>
+    <ellipse cx="365" cy="264" rx="55" ry="13" fill="#904838"/>
+  </g>
+
+  <!-- Far mountains: irregular, hazy, with lit/shadow faces -->
+  <g filter="url(#hazeFilter)" opacity="0.6">
+    <!-- Mountain A: lit right face, shadow left -->
+    <path d="M-20,400 L60,310 L100,330 L150,255 Z" fill="url(#mtFarShadow)"/>
+    <path d="M150,255 L190,290 L230,270 L300,400 L-20,400 Z" fill="url(#mtFar)"/>
+
+    <!-- Mountain B -->
+    <path d="M200,400 L280,320 L340,295 L400,225 L500,240 Z" fill="url(#mtFarShadow)"/>
+    <path d="M400,225 L440,260 L500,240 L560,280 L600,400 L200,400 Z" fill="url(#mtFar)"/>
+
+    <!-- Mountain C -->
+    <path d="M480,400 L560,310 L620,280 L700,265 Z" fill="url(#mtFarShadow)"/>
+    <path d="M700,265 L740,290 L800,310 L880,400 L480,400 Z" fill="url(#mtFar)"/>
+
+    <!-- Mountain D -->
+    <path d="M700,400 L760,330 L810,290 L850,245 Z" fill="url(#mtFarShadow)"/>
+    <path d="M850,245 L890,280 L930,310 L1020,400 L700,400 Z" fill="url(#mtFar)"/>
+  </g>
+
+  <!-- Far snow caps -->
+  <g filter="url(#hazeFilter)" opacity="0.5">
+    <path d="M150,255 L138,278 L162,280 Z" fill="#d0d0e8"/>
+    <path d="M400,225 L385,252 L415,255 Z" fill="#d0d0e8"/>
+    <path d="M500,240 L488,262 L512,265 Z" fill="#d0d0e8"/>
+    <path d="M700,265 L688,288 L712,290 Z" fill="#d0d0e8"/>
+    <path d="M850,245 L838,272 L862,275 Z" fill="#d0d0e8"/>
+  </g>
+
+  <!-- Haze layer 1: masked to avoid washing out sun -->
+  <rect x="0" y="350" width="1000" height="60" fill="url(#hazeG1)" mask="url(#hazeMask)"/>
+
+  <!-- Mid mountains: lit/shadow faces -->
+  <!-- Mountain E: peak at 295, lit face (right/center, facing sun) -->
+  <path d="M-30,420 L50,340 L100,355 L160,310 L200,295 Z" fill="url(#mtMidShadow)"/>
+  <path d="M200,295 L240,320 L300,340 L400,420 L-30,420 Z" fill="url(#mtMidLit)"/>
+
+  <!-- Mountain F -->
+  <path d="M280,420 L360,350 L420,320 L480,290 L550,275 Z" fill="url(#mtMidShadow)"/>
+  <path d="M550,275 L600,300 L660,330 L750,420 L280,420 Z" fill="url(#mtMidLit)"/>
+
+  <!-- Mountain G -->
+  <path d="M620,420 L700,360 L760,330 L820,310 L880,305 Z" fill="url(#mtMidShadow)"/>
+  <path d="M880,305 L920,330 L1020,420 L620,420 Z" fill="url(#mtMidLit)"/>
+
+  <!-- Mid snow caps -->
+  <path d="M200,295 L188,318 L212,320 Z" fill="#e0e0f0"/>
+  <path d="M550,275 L535,300 L565,303 Z" fill="#e0e0f0"/>
+  <path d="M880,305 L868,328 L892,330 Z" fill="#e0e0f0"/>
+
+  <!-- Haze layer 2 -->
+  <rect x="0" y="390" width="1000" height="40" fill="url(#hazeG2)" mask="url(#hazeMask)"/>
+
+  <!-- Warm sun glow overlay on mountain area -->
+  <rect x="0" y="250" width="1000" height="200" fill="url(#sunWarm)"/>
+
+  <!-- Near mountains: darkest, lit/shadow faces -->
+  <!-- Mountain H: left side -->
+  <path d="M-60,448 L-10,380 L30,360 L70,335 L100,315 Z" fill="url(#mtNearShadow)"/>
+  <path d="M100,315 L130,340 L160,365 L200,380 L280,448 L-60,448 Z" fill="url(#mtNearLit)"/>
+
+  <!-- Mountain I: right side -->
+  <path d="M680,448 L730,385 L770,355 L810,335 L850,325 Z" fill="url(#mtNearLit)"/>
+  <path d="M850,325 L885,340 L920,370 L960,390 L1060,448 L680,448 Z" fill="url(#mtNearShadow)"/>
+
+  <!-- Near snow caps -->
+  <path d="M100,315 L88,340 L112,343 Z" fill="#f0f0ff"/>
+  <path d="M850,325 L838,348 L862,350 Z" fill="#f0f0ff"/>
+
+  <!-- Distant tree line: small, light, irregular spacing -->
+  <g opacity="0.4" fill="#4a3868">
+    <polygon points="25,432 29,414 33,432"/>
+    <polygon points="52,430 57,410 62,430"/>
+    <polygon points="78,431 83,412 88,431"/>
+    <polygon points="118,432 122,409 126,432"/>
+    <polygon points="145,430 150,411 155,430"/>
+    <polygon points="188,432 193,408 198,432"/>
+    <polygon points="222,430 228,410 234,430"/>
+    <polygon points="255,431 260,412 265,431"/>
+    <polygon points="298,432 302,408 306,432"/>
+    <polygon points="332,430 338,410 344,430"/>
+    <polygon points="378,432 382,409 386,432"/>
+    <polygon points="410,430 416,411 422,430"/>
+    <polygon points="450,431 455,408 460,431"/>
+    <polygon points="492,432 496,410 500,432"/>
+    <polygon points="535,430 540,409 545,430"/>
+    <polygon points="568,431 573,411 578,431"/>
+    <polygon points="612,432 616,408 620,432"/>
+    <polygon points="648,430 654,410 660,430"/>
+    <polygon points="695,432 700,409 705,432"/>
+    <polygon points="730,430 736,411 742,430"/>
+    <polygon points="772,431 776,409 780,431"/>
+    <polygon points="818,432 822,410 826,432"/>
+    <polygon points="858,430 863,408 868,430"/>
+    <polygon points="905,432 910,410 915,432"/>
+    <polygon points="948,430 953,411 958,430"/>
+  </g>
+
+  <!-- Mid tree line: medium, irregular spacing and sizes -->
+  <g opacity="0.6" fill="#2e1e4a">
+    <polygon points="10,446 18,420 26,446"/>
+    <polygon points="42,444 51,416 60,444"/>
+    <polygon points="88,445 98,418 108,445"/>
+    <polygon points="132,446 140,415 148,446"/>
+    <polygon points="178,444 186,418 194,444"/>
+    <polygon points="215,446 224,414 233,446"/>
+    <polygon points="262,444 270,418 278,444"/>
+    <polygon points="305,446 314,416 323,446"/>
+    <polygon points="348,444 356,415 364,444"/>
+    <polygon points="398,445 406,418 414,445"/>
+    <polygon points="440,446 450,414 460,446"/>
+    <polygon points="488,444 496,416 504,444"/>
+    <polygon points="535,445 544,418 553,445"/>
+    <polygon points="575,446 584,414 593,446"/>
+    <polygon points="628,444 636,416 644,444"/>
+    <polygon points="668,445 676,418 684,445"/>
+    <polygon points="718,446 728,414 738,446"/>
+    <polygon points="770,444 778,416 786,444"/>
+    <polygon points="815,446 824,414 833,446"/>
+    <polygon points="862,444 870,418 878,444"/>
+    <polygon points="918,445 926,416 934,445"/>
+    <polygon points="968,446 976,418 984,446"/>
+  </g>
+
+  <!-- Near tree line: large, dark, detailed, varying sizes, irregular spacing -->
+  <g fill="#1a0e30">
+    <!-- Extra large tree: left edge -->
+    <polygon points="-15,458 15,395 45,458"/>
+    <polygon points="-8,440 15,385 38,440"/>
+    <polygon points="-2,422 15,375 32,422"/>
+    <polygon points="3,408 15,368 27,408"/>
+
+    <!-- Large tree -->
+    <polygon points="60,458 85,400 110,458"/>
+    <polygon points="66,440 85,392 104,440"/>
+    <polygon points="72,424 85,384 98,424"/>
+
+    <!-- Medium tree -->
+    <polygon points="135,458 152,408 169,458"/>
+    <polygon points="139,443 152,400 165,443"/>
+    <polygon points="143,430 152,393 161,430"/>
+
+    <!-- Large tree cluster -->
+    <polygon points="195,458 220,398 245,458"/>
+    <polygon points="201,440 220,390 239,440"/>
+    <polygon points="207,424 220,382 233,424"/>
+
+    <polygon points="255,458 275,408 295,458"/>
+    <polygon points="260,443 275,400 290,443"/>
+    <polygon points="264,430 275,394 286,430"/>
+
+    <!-- Medium tree -->
+    <polygon points="320,458 340,412 360,458"/>
+    <polygon points="325,445 340,404 355,445"/>
+    <polygon points="330,432 340,396 350,432"/>
+
+    <!-- Gap then cluster -->
+    <polygon points="395,458 415,410 435,458"/>
+    <polygon points="400,444 415,402 430,444"/>
+    <polygon points="405,432 415,396 425,432"/>
+
+    <polygon points="448,458 468,406 488,458"/>
+    <polygon points="453,442 468,398 483,442"/>
+    <polygon points="458,428 468,390 478,428"/>
+
+    <!-- Small tree in gap -->
+    <polygon points="510,458 522,418 534,458"/>
+    <polygon points="514,446 522,410 530,446"/>
+
+    <!-- Large cluster right of center -->
+    <polygon points="565,458 590,400 615,458"/>
+    <polygon points="571,440 590,392 609,440"/>
+    <polygon points="577,424 590,384 603,424"/>
+
+    <polygon points="630,458 650,408 670,458"/>
+    <polygon points="635,443 650,400 665,443"/>
+    <polygon points="640,430 650,393 660,430"/>
+
+    <!-- Medium -->
+    <polygon points="695,458 715,410 735,458"/>
+    <polygon points="700,444 715,402 730,444"/>
+    <polygon points="705,432 715,396 725,432"/>
+
+    <!-- Large tree -->
+    <polygon points="762,458 788,398 814,458"/>
+    <polygon points="768,440 788,390 808,440"/>
+    <polygon points="774,424 788,382 802,424"/>
+
+    <!-- Cluster right edge -->
+    <polygon points="845,458 870,402 895,458"/>
+    <polygon points="851,440 870,394 889,440"/>
+    <polygon points="857,425 870,386 883,425"/>
+
+    <!-- Extra large tree: right edge -->
+    <polygon points="920,458 955,390 990,458"/>
+    <polygon points="928,438 955,380 982,438"/>
+    <polygon points="935,420 955,372 975,420"/>
+    <polygon points="940,406 955,365 970,406"/>
+  </g>
+
+  <!-- Warm foreground tint -->
+  <rect x="0" y="430" width="1000" height="28" fill="#d46040" opacity="0.07"/>
+
+  <!-- Lake: irregular shoreline using path instead of rect -->
+  <path d="M0,458 Q50,456 100,459 Q200,461 300,457 Q400,460 500,458 Q600,461 700,457 Q800,460 900,458 Q950,456 1000,459 L1000,600 L0,600 Z" fill="url(#lakeGrad)"/>
+
+  <!-- Lake reflections clipped -->
+  <g clip-path="url(#lakeClip)">
+    <!-- Reflected sky shimmer -->
+    <rect x="0" y="458" width="1000" height="142" fill="#c08060" opacity="0.12"/>
+
+    <!-- Reflected mountain silhouettes -->
+    <g filter="url(#reflFilter)" opacity="0.22">
+      <path d="M-30,495 L50,550 L100,540 L160,570 L200,585 L240,565 L300,550 L400,495 Z" fill="#3a2558"/>
+      <path d="M280,495 L360,545 L420,565 L480,585 L550,595 L600,575 L660,555 L750,495 Z" fill="#3a2558"/>
+      <path d="M620,495 L700,540 L760,560 L820,575 L880,580 L920,560 L1020,495 Z" fill="#3a2558"/>
+    </g>
+
+    <!-- Reflected near tree silhouettes -->
+    <g filter="url(#reflFilter)" opacity="0.12">
+      <rect x="0" y="458" width="1000" height="18" fill="#1a0e30"/>
+    </g>
+  </g>
+
+  <!-- Lake surface ripples -->
+  <g opacity="0.1" stroke="#f0a04b" stroke-width="0.5" fill="none">
+    <path d="M60,472 Q250,470 420,473 Q620,476 940,471"/>
+    <path d="M30,488 Q180,486 480,489 Q720,492 970,487"/>
+    <path d="M90,505 Q320,503 540,506 Q710,509 910,504"/>
+    <path d="M50,524 Q260,521 460,525 Q660,528 950,522"/>
+    <path d="M130,542 Q340,540 540,543 Q690,546 860,541"/>
+    <path d="M80,560 Q280,558 490,561 Q700,564 920,559"/>
+    <path d="M160,580 Q380,577 580,581 Q740,584 840,579"/>
+  </g>
+
+  <!-- Shoreline detail: small rocks/pebbles -->
+  <g fill="#2a1a40" opacity="0.5">
+    <ellipse cx="120" cy="459" rx="4" ry="2"/>
+    <ellipse cx="280" cy="458" rx="3" ry="1.5"/>
+    <ellipse cx="350" cy="460" rx="5" ry="2"/>
+    <ellipse cx="520" cy="458" rx="3" ry="1.5"/>
+    <ellipse cx="640" cy="459" rx="4" ry="2"/>
+    <ellipse cx="750" cy="458" rx="3" ry="1.5"/>
+    <ellipse cx="880" cy="459" rx="5" ry="2"/>
+  </g>
+</svg>

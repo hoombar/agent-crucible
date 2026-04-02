@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <!-- Sky gradient: warm orange/pink at horizon to deep purple/navy at top -->
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a0533"/>
+      <stop offset="30%" stop-color="#2d1b69"/>
+      <stop offset="60%" stop-color="#c44e52"/>
+      <stop offset="80%" stop-color="#e8875b"/>
+      <stop offset="100%" stop-color="#f4a261"/>
+    </linearGradient>
+
+    <!-- Lake reflection gradient (muted version of sky) -->
+    <linearGradient id="lakeGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9896a"/>
+      <stop offset="40%" stop-color="#8b5e5e"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
+    </linearGradient>
+
+    <!-- Snow cap gradient -->
+    <linearGradient id="snowGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dde4ee"/>
+    </linearGradient>
+
+    <!-- Mountain gradients: progressively lighter/hazier for distant mountains -->
+    <linearGradient id="mountain1Gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b7b99"/>
+      <stop offset="100%" stop-color="#8494ad"/>
+    </linearGradient>
+    <linearGradient id="mountain2Gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5568"/>
+      <stop offset="100%" stop-color="#6b7b8d"/>
+    </linearGradient>
+    <linearGradient id="mountain3Gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d3748"/>
+      <stop offset="100%" stop-color="#4a5568"/>
+    </linearGradient>
+
+    <!-- Cloud filter for soft edges -->
+    <filter id="cloudBlur">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <!-- Atmospheric haze filter for distant elements -->
+    <filter id="hazeFilter">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Lake ripple filter -->
+    <filter id="lakeRipple">
+      <feTurbulence type="turbulence" baseFrequency="0.01 0.06" numOctaves="3" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- Layer 1: Sky -->
+  <rect x="0" y="0" width="1000" height="600" fill="url(#skyGradient)"/>
+
+  <!-- Layer 2: Clouds -->
+  <g opacity="0.6">
+    <!-- Cloud 1 - upper left -->
+    <ellipse cx="200" cy="80" rx="120" ry="30" fill="#c8a0b8" filter="url(#cloudBlur)" opacity="0.5"/>
+    <ellipse cx="230" cy="75" rx="80" ry="25" fill="#d4b0c4" filter="url(#cloudBlur)" opacity="0.6"/>
+    <!-- Cloud 2 - upper right -->
+    <ellipse cx="700" cy="120" rx="140" ry="35" fill="#b8879e" filter="url(#cloudBlur)" opacity="0.5"/>
+    <ellipse cx="730" cy="115" rx="100" ry="28" fill="#c9a0b5" filter="url(#cloudBlur)" opacity="0.6"/>
+    <!-- Cloud 3 - near horizon -->
+    <ellipse cx="500" cy="200" rx="160" ry="25" fill="#d4a88a" filter="url(#cloudBlur)" opacity="0.4"/>
+    <ellipse cx="520" cy="195" rx="110" ry="20" fill="#e0b8a0" filter="url(#cloudBlur)" opacity="0.5"/>
+  </g>
+
+  <!-- Layer 3: Distant mountain (lightest, haziest) -->
+  <g filter="url(#hazeFilter)" opacity="0.7">
+    <polygon points="50,350 200,180 350,350" fill="url(#mountain1Gradient)"/>
+    <polygon points="200,200 200,180 230,180" fill="url(#snowGradient)" opacity="0.7"/>
+    <polygon points="600,350 780,160 960,350" fill="url(#mountain1Gradient)"/>
+    <polygon points="770,185 780,160 810,185" fill="url(#snowGradient)" opacity="0.7"/>
+  </g>
+
+  <!-- Layer 4: Mid-distance mountain -->
+  <g opacity="0.85">
+    <polygon points="150,380 380,140 600,380" fill="url(#mountain2Gradient)"/>
+    <polygon points="365,170 380,140 410,175" fill="url(#snowGradient)" opacity="0.8"/>
+    <polygon points="500,380 700,190 900,380" fill="url(#mountain2Gradient)"/>
+    <polygon points="688,215 700,190 725,218" fill="url(#snowGradient)" opacity="0.8"/>
+  </g>
+
+  <!-- Layer 5: Nearest mountain (darkest) -->
+  <g opacity="1">
+    <polygon points="0,420 250,200 500,420" fill="url(#mountain3Gradient)"/>
+    <polygon points="237,228 250,200 275,230" fill="url(#snowGradient)" opacity="0.9"/>
+    <polygon points="400,420 620,220 850,420" fill="url(#mountain3Gradient)"/>
+    <polygon points="607,248 620,220 645,250" fill="url(#snowGradient)" opacity="0.9"/>
+  </g>
+
+  <!-- Layer 6: Tree line (mid-ground) -->
+  <g>
+    <!-- Distant trees (smaller, lighter) -->
+    <polygon points="80,395 90,365 100,395" fill="#3a5040" opacity="0.6"/>
+    <polygon points="110,395 120,360 130,395" fill="#3d5343" opacity="0.6"/>
+    <polygon points="140,398 152,362 164,398" fill="#3a5040" opacity="0.6"/>
+    <polygon points="870,398 882,358 894,398" fill="#3a5040" opacity="0.6"/>
+    <polygon points="900,395 912,365 924,395" fill="#3d5343" opacity="0.6"/>
+
+    <!-- Mid trees -->
+    <polygon points="200,410 218,360 236,410" fill="#2d4233" opacity="0.75"/>
+    <polygon points="260,412 280,355 300,412" fill="#2a3f30" opacity="0.75"/>
+    <polygon points="750,410 768,358 786,410" fill="#2d4233" opacity="0.75"/>
+    <polygon points="810,412 830,352 850,412" fill="#2a3f30" opacity="0.75"/>
+
+    <!-- Near trees (larger, darker, more detailed) -->
+    <polygon points="350,420 378,340 406,420" fill="#1a2e1f" opacity="0.9"/>
+    <polygon points="355,400 378,350 401,400" fill="#1e3324" opacity="0.9"/>
+    <polygon points="430,425 462,330 494,425" fill="#172a1c" opacity="0.95"/>
+    <polygon points="436,405 462,342 488,405" fill="#1b2f20" opacity="0.95"/>
+    <polygon points="540,422 570,335 600,422" fill="#1a2e1f" opacity="0.9"/>
+    <polygon points="546,402 570,345 594,402" fill="#1e3324" opacity="0.9"/>
+    <polygon points="620,425 655,325 690,425" fill="#152817" opacity="1"/>
+    <polygon points="628,400 655,338 682,400" fill="#1a2d1c" opacity="1"/>
+  </g>
+
+  <!-- Layer 7: Lake -->
+  <rect x="0" y="430" width="1000" height="170" fill="url(#lakeGradient)" opacity="0.9"/>
+
+  <!-- Lake reflections (flipped, muted mountains) -->
+  <g opacity="0.3" filter="url(#lakeRipple)" transform="translate(0, 860) scale(1, -1)">
+    <polygon points="0,420 250,200 500,420" fill="#2d3748"/>
+    <polygon points="400,420 620,220 850,420" fill="#2d3748"/>
+  </g>
+
+  <!-- Lake surface highlight -->
+  <rect x="0" y="430" width="1000" height="170" fill="none" stroke="none"/>
+  <ellipse cx="500" cy="500" rx="300" ry="8" fill="#f4a261" opacity="0.15"/>
+</svg>

@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <!-- Background atmosphere -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="55%" stop-color="#0d0d1a"/>
+      <stop offset="100%" stop-color="#050510"/>
+    </radialGradient>
+
+    <!-- Mandala-wide ambient glow -->
+    <radialGradient id="mandala-aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7b1fa2" stop-opacity="0.12"/>
+      <stop offset="70%" stop-color="#4a148c" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#4a148c" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Centre glow -->
+    <radialGradient id="centre-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#e6a800" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#b8860b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Petal gradient -->
+    <linearGradient id="petal-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7b2d8e"/>
+      <stop offset="50%" stop-color="#c2185b"/>
+      <stop offset="100%" stop-color="#e91e63"/>
+    </linearGradient>
+
+    <!-- Secondary petal gradient -->
+    <linearGradient id="petal-grad-2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4a148c"/>
+      <stop offset="100%" stop-color="#7b1fa2"/>
+    </linearGradient>
+
+    <!-- Triangle gradient -->
+    <linearGradient id="tri-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#ff8f00"/>
+    </linearGradient>
+
+    <!-- Warm amber connector gradient -->
+    <linearGradient id="amber-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff8f00"/>
+      <stop offset="100%" stop-color="#c2185b"/>
+    </linearGradient>
+
+    <!-- Inner gem radial gradient -->
+    <radialGradient id="gem-grad" cx="50%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#ffecb3" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#ffd700" stop-opacity="0.85"/>
+    </radialGradient>
+
+    <!-- Soft glow filter -->
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Outer glow filter -->
+    <filter id="outer-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Atmospheric background -->
+  <rect width="800" height="800" fill="url(#bg-grad)"/>
+
+  <!-- Ambient mandala aura -->
+  <circle cx="400" cy="400" r="395" fill="url(#mandala-aura)"/>
+
+  <!-- === DECORATIVE BORDER === -->
+  <circle cx="400" cy="400" r="392" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.5" filter="url(#outer-glow)"/>
+  <circle cx="400" cy="400" r="382" fill="none" stroke="#7b1fa2" stroke-width="2.5"/>
+  <circle cx="400" cy="400" r="377" fill="none" stroke="#ffd700" stroke-width="0.8" opacity="0.35"/>
+
+  <!-- 32 border ticks at 11.25-degree intervals -->
+  <g id="border-tick">
+    <line x1="400" y1="10" x2="400" y2="24" stroke="#ffd700" stroke-width="1.2" opacity="0.55"/>
+  </g>
+  <use href="#border-tick" transform="rotate(0 400 400)"/>
+  <use href="#border-tick" transform="rotate(11.25 400 400)"/>
+  <use href="#border-tick" transform="rotate(22.5 400 400)"/>
+  <use href="#border-tick" transform="rotate(33.75 400 400)"/>
+  <use href="#border-tick" transform="rotate(45 400 400)"/>
+  <use href="#border-tick" transform="rotate(56.25 400 400)"/>
+  <use href="#border-tick" transform="rotate(67.5 400 400)"/>
+  <use href="#border-tick" transform="rotate(78.75 400 400)"/>
+  <use href="#border-tick" transform="rotate(90 400 400)"/>
+  <use href="#border-tick" transform="rotate(101.25 400 400)"/>
+  <use href="#border-tick" transform="rotate(112.5 400 400)"/>
+  <use href="#border-tick" transform="rotate(123.75 400 400)"/>
+  <use href="#border-tick" transform="rotate(135 400 400)"/>
+  <use href="#border-tick" transform="rotate(146.25 400 400)"/>
+  <use href="#border-tick" transform="rotate(157.5 400 400)"/>
+  <use href="#border-tick" transform="rotate(168.75 400 400)"/>
+  <use href="#border-tick" transform="rotate(180 400 400)"/>
+  <use href="#border-tick" transform="rotate(191.25 400 400)"/>
+  <use href="#border-tick" transform="rotate(202.5 400 400)"/>
+  <use href="#border-tick" transform="rotate(213.75 400 400)"/>
+  <use href="#border-tick" transform="rotate(225 400 400)"/>
+  <use href="#border-tick" transform="rotate(236.25 400 400)"/>
+  <use href="#border-tick" transform="rotate(247.5 400 400)"/>
+  <use href="#border-tick" transform="rotate(258.75 400 400)"/>
+  <use href="#border-tick" transform="rotate(270 400 400)"/>
+  <use href="#border-tick" transform="rotate(281.25 400 400)"/>
+  <use href="#border-tick" transform="rotate(292.5 400 400)"/>
+  <use href="#border-tick" transform="rotate(303.75 400 400)"/>
+  <use href="#border-tick" transform="rotate(315 400 400)"/>
+  <use href="#border-tick" transform="rotate(326.25 400 400)"/>
+  <use href="#border-tick" transform="rotate(337.5 400 400)"/>
+  <use href="#border-tick" transform="rotate(348.75 400 400)"/>
+
+  <!-- 8 diamond ornaments on border at primary 45-degree positions -->
+  <g id="border-diamond">
+    <polygon points="400,2 394,18 400,34 406,18" fill="#ffd700" opacity="0.85"/>
+  </g>
+  <use href="#border-diamond" transform="rotate(0 400 400)"/>
+  <use href="#border-diamond" transform="rotate(45 400 400)"/>
+  <use href="#border-diamond" transform="rotate(90 400 400)"/>
+  <use href="#border-diamond" transform="rotate(135 400 400)"/>
+  <use href="#border-diamond" transform="rotate(180 400 400)"/>
+  <use href="#border-diamond" transform="rotate(225 400 400)"/>
+  <use href="#border-diamond" transform="rotate(270 400 400)"/>
+  <use href="#border-diamond" transform="rotate(315 400 400)"/>
+
+  <!-- === OUTER RING: Triangles/pointed elements (8-fold symmetry) === -->
+  <g id="outer-point">
+    <polygon points="400,46 374,134 400,112 426,134" fill="url(#tri-grad)" opacity="0.9"/>
+    <polygon points="400,60 388,126 400,108 412,126" fill="#ffd700" opacity="0.2"/>
+  </g>
+  <use href="#outer-point" transform="rotate(0 400 400)"/>
+  <use href="#outer-point" transform="rotate(45 400 400)"/>
+  <use href="#outer-point" transform="rotate(90 400 400)"/>
+  <use href="#outer-point" transform="rotate(135 400 400)"/>
+  <use href="#outer-point" transform="rotate(180 400 400)"/>
+  <use href="#outer-point" transform="rotate(225 400 400)"/>
+  <use href="#outer-point" transform="rotate(270 400 400)"/>
+  <use href="#outer-point" transform="rotate(315 400 400)"/>
+
+  <!-- Secondary smaller points at 22.5-degree offsets -->
+  <g id="outer-tri-sm">
+    <polygon points="400,70 391,118 400,108 409,118" fill="#7b1fa2" opacity="0.55"/>
+  </g>
+  <use href="#outer-tri-sm" transform="rotate(22.5 400 400)"/>
+  <use href="#outer-tri-sm" transform="rotate(67.5 400 400)"/>
+  <use href="#outer-tri-sm" transform="rotate(112.5 400 400)"/>
+  <use href="#outer-tri-sm" transform="rotate(157.5 400 400)"/>
+  <use href="#outer-tri-sm" transform="rotate(202.5 400 400)"/>
+  <use href="#outer-tri-sm" transform="rotate(247.5 400 400)"/>
+  <use href="#outer-tri-sm" transform="rotate(292.5 400 400)"/>
+  <use href="#outer-tri-sm" transform="rotate(337.5 400 400)"/>
+
+  <!-- Teardrop connectors bridging outer to middle ring -->
+  <g id="connector-drop">
+    <path d="M400,132 Q406,145 400,158 Q394,145 400,132 Z" fill="url(#amber-grad)" opacity="0.45"/>
+  </g>
+  <use href="#connector-drop" transform="rotate(0 400 400)"/>
+  <use href="#connector-drop" transform="rotate(45 400 400)"/>
+  <use href="#connector-drop" transform="rotate(90 400 400)"/>
+  <use href="#connector-drop" transform="rotate(135 400 400)"/>
+  <use href="#connector-drop" transform="rotate(180 400 400)"/>
+  <use href="#connector-drop" transform="rotate(225 400 400)"/>
+  <use href="#connector-drop" transform="rotate(270 400 400)"/>
+  <use href="#connector-drop" transform="rotate(315 400 400)"/>
+
+  <!-- Outer/middle transition ring -->
+  <circle cx="400" cy="400" r="262" fill="none" stroke="#7b1fa2" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.25"/>
+
+  <!-- === MIDDLE RING: Petals/leaf shapes (8-fold symmetry) === -->
+  <g id="petal-main">
+    <path d="M400,138 Q438,222 400,305 Q362,222 400,138 Z" fill="url(#petal-grad)" opacity="0.85"/>
+    <path d="M400,155 Q427,224 400,292 Q373,224 400,155 Z" fill="#e91e63" opacity="0.18"/>
+  </g>
+  <use href="#petal-main" transform="rotate(0 400 400)"/>
+  <use href="#petal-main" transform="rotate(45 400 400)"/>
+  <use href="#petal-main" transform="rotate(90 400 400)"/>
+  <use href="#petal-main" transform="rotate(135 400 400)"/>
+  <use href="#petal-main" transform="rotate(180 400 400)"/>
+  <use href="#petal-main" transform="rotate(225 400 400)"/>
+  <use href="#petal-main" transform="rotate(270 400 400)"/>
+  <use href="#petal-main" transform="rotate(315 400 400)"/>
+
+  <!-- Secondary petals at 22.5-degree offsets -->
+  <g id="petal-sm">
+    <path d="M400,172 Q422,237 400,300 Q378,237 400,172 Z" fill="url(#petal-grad-2)" opacity="0.45"/>
+  </g>
+  <use href="#petal-sm" transform="rotate(22.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(67.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(112.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(157.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(202.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(247.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(292.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(337.5 400 400)"/>
+
+  <!-- Middle/inner transition ring -->
+  <circle cx="400" cy="400" r="128" fill="none" stroke="#4a148c" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.22"/>
+
+  <!-- === INNER RING: Circles/dots (8-fold symmetry) === -->
+  <!-- Primary gem dots with radial gradient and glow -->
+  <g id="inner-gem">
+    <circle cx="400" cy="272" r="16" fill="url(#gem-grad)" filter="url(#soft-glow)"/>
+  </g>
+  <use href="#inner-gem" transform="rotate(0 400 400)"/>
+  <use href="#inner-gem" transform="rotate(45 400 400)"/>
+  <use href="#inner-gem" transform="rotate(90 400 400)"/>
+  <use href="#inner-gem" transform="rotate(135 400 400)"/>
+  <use href="#inner-gem" transform="rotate(180 400 400)"/>
+  <use href="#inner-gem" transform="rotate(225 400 400)"/>
+  <use href="#inner-gem" transform="rotate(270 400 400)"/>
+  <use href="#inner-gem" transform="rotate(315 400 400)"/>
+
+  <!-- Dot chain extending toward centre -->
+  <g id="inner-chain">
+    <circle cx="400" cy="296" r="5.5" fill="#c2185b" opacity="0.6"/>
+    <circle cx="400" cy="312" r="3" fill="#7b1fa2" opacity="0.4"/>
+  </g>
+  <use href="#inner-chain" transform="rotate(0 400 400)"/>
+  <use href="#inner-chain" transform="rotate(45 400 400)"/>
+  <use href="#inner-chain" transform="rotate(90 400 400)"/>
+  <use href="#inner-chain" transform="rotate(135 400 400)"/>
+  <use href="#inner-chain" transform="rotate(180 400 400)"/>
+  <use href="#inner-chain" transform="rotate(225 400 400)"/>
+  <use href="#inner-chain" transform="rotate(270 400 400)"/>
+  <use href="#inner-chain" transform="rotate(315 400 400)"/>
+
+  <!-- Interstitial gold accent dots at 22.5-degree offsets -->
+  <g id="accent-dot">
+    <circle cx="400" cy="286" r="3.5" fill="#ffd700" opacity="0.4"/>
+  </g>
+  <use href="#accent-dot" transform="rotate(22.5 400 400)"/>
+  <use href="#accent-dot" transform="rotate(67.5 400 400)"/>
+  <use href="#accent-dot" transform="rotate(112.5 400 400)"/>
+  <use href="#accent-dot" transform="rotate(157.5 400 400)"/>
+  <use href="#accent-dot" transform="rotate(202.5 400 400)"/>
+  <use href="#accent-dot" transform="rotate(247.5 400 400)"/>
+  <use href="#accent-dot" transform="rotate(292.5 400 400)"/>
+  <use href="#accent-dot" transform="rotate(337.5 400 400)"/>
+
+  <!-- === CENTRE === -->
+  <!-- Soft radiant glow -->
+  <circle cx="400" cy="400" r="75" fill="url(#centre-glow)" opacity="0.38"/>
+
+  <!-- Layered concentric centre ornament -->
+  <circle cx="400" cy="400" r="52" fill="#4a148c" opacity="0.88"/>
+  <circle cx="400" cy="400" r="42" fill="#7b1fa2" opacity="0.78"/>
+  <circle cx="400" cy="400" r="30" fill="#c2185b" opacity="0.82"/>
+  <circle cx="400" cy="400" r="18" fill="#ffd700" opacity="0.9"/>
+  <circle cx="400" cy="400" r="8" fill="#ffffff" opacity="0.95"/>
+
+  <!-- Centre starburst: 16 lines -->
+  <g id="starburst">
+    <line x1="400" y1="348" x2="400" y2="330" stroke="#ffd700" stroke-width="0.7" opacity="0.3"/>
+  </g>
+  <use href="#starburst" transform="rotate(0 400 400)"/>
+  <use href="#starburst" transform="rotate(22.5 400 400)"/>
+  <use href="#starburst" transform="rotate(45 400 400)"/>
+  <use href="#starburst" transform="rotate(67.5 400 400)"/>
+  <use href="#starburst" transform="rotate(90 400 400)"/>
+  <use href="#starburst" transform="rotate(112.5 400 400)"/>
+  <use href="#starburst" transform="rotate(135 400 400)"/>
+  <use href="#starburst" transform="rotate(157.5 400 400)"/>
+  <use href="#starburst" transform="rotate(180 400 400)"/>
+  <use href="#starburst" transform="rotate(202.5 400 400)"/>
+  <use href="#starburst" transform="rotate(225 400 400)"/>
+  <use href="#starburst" transform="rotate(247.5 400 400)"/>
+  <use href="#starburst" transform="rotate(270 400 400)"/>
+  <use href="#starburst" transform="rotate(292.5 400 400)"/>
+  <use href="#starburst" transform="rotate(315 400 400)"/>
+  <use href="#starburst" transform="rotate(337.5 400 400)"/>
+
+  <!-- Centre gold dot ring -->
+  <g id="centre-dot">
+    <circle cx="400" cy="334" r="5" fill="#ffd700" opacity="0.6"/>
+  </g>
+  <use href="#centre-dot" transform="rotate(0 400 400)"/>
+  <use href="#centre-dot" transform="rotate(45 400 400)"/>
+  <use href="#centre-dot" transform="rotate(90 400 400)"/>
+  <use href="#centre-dot" transform="rotate(135 400 400)"/>
+  <use href="#centre-dot" transform="rotate(180 400 400)"/>
+  <use href="#centre-dot" transform="rotate(225 400 400)"/>
+  <use href="#centre-dot" transform="rotate(270 400 400)"/>
+  <use href="#centre-dot" transform="rotate(315 400 400)"/>
+
+  <!-- Centre rose accent dots at 22.5-degree offsets -->
+  <g id="centre-dot-sm">
+    <circle cx="400" cy="340" r="2.5" fill="#c2185b" opacity="0.38"/>
+  </g>
+  <use href="#centre-dot-sm" transform="rotate(22.5 400 400)"/>
+  <use href="#centre-dot-sm" transform="rotate(67.5 400 400)"/>
+  <use href="#centre-dot-sm" transform="rotate(112.5 400 400)"/>
+  <use href="#centre-dot-sm" transform="rotate(157.5 400 400)"/>
+  <use href="#centre-dot-sm" transform="rotate(202.5 400 400)"/>
+  <use href="#centre-dot-sm" transform="rotate(247.5 400 400)"/>
+  <use href="#centre-dot-sm" transform="rotate(292.5 400 400)"/>
+  <use href="#centre-dot-sm" transform="rotate(337.5 400 400)"/>
+</svg>

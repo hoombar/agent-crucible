@@ -6,21 +6,69 @@ You are the orchestrator for Agent Crucible, a framework for evaluating AI agent
 
 When the user says:
 - **"Run {methodology} against {challenge}"** — execute a single run (see Single Run Procedure below)
-- **"Run all experiments"** — execute all 9 combinations (3 methodologies × 3 challenges), sequentially
-- **"Generate the report"** — build `runs/report.html` from all completed runs (see Report Generation below)
+- **"Run all experiments"** — execute all 9 combinations (3 methodologies × 3 challenges), then publish results
+- **"Generate the report"** — build `report.html` from the most recent workspace data (see Report Generation below)
 
 ## File Locations
 
 - Challenges: `challenges/tier-{N}-{name}.md`
 - Methodologies: `methodologies/{name}.md`
-- Output: `runs/{methodology}-{challenge}-{YYYYMMDD-HHmm}/`
+- Workspace (raw data, gitignored): `workspace/{methodology}-{challenge}-{YYYYMMDD-HHmm}/`
+- Published runs: `runs/{NNN}-{YYYYMMDD-HHmm}/`
+
+## Directory Structure
+
+```
+workspace/                              # gitignored — raw agent working data
+  adversarial-tier-1-mandala-20260401-1200/
+    config.json
+    metrics.json
+    summary.md
+    challenge.md
+    final.svg
+    iterations/
+      step-01.svg
+      step-01-conversation.md
+      step-02-conversation.md       # critic-only steps have no SVG
+      step-03.svg
+      ...
+
+runs/                                   # committed — publishable output
+  001-20260401-1200/
+    report.html                         # self-contained HTML with all SVGs + logs inline
+    adversarial/
+      tier-1-mandala/
+        final.svg
+        step-01.svg
+        step-03.svg
+        step-05.svg
+      tier-2-isometric-room/
+        ...
+      tier-3-mountain-landscape/
+        ...
+    six-hats/
+      tier-1-mandala/
+        ...
+      ...
+    prompt-mutation/
+      ...
+```
+
+## Run Numbering
+
+Published runs use a sequential three-digit number plus timestamp: `{NNN}-{YYYYMMDD-HHmm}`.
+
+To determine the next run number:
+1. List existing directories in `runs/`
+2. Extract the highest NNN prefix
+3. Increment by 1 (start at 001 if none exist)
 
 ## Single Run Procedure
 
 ### 1. Setup
 
 1. Read the specified methodology file and challenge file
-2. Create the output directory: `runs/{methodology}-{challenge}-{YYYYMMDD-HHmm}/`
+2. Create the workspace directory: `workspace/{methodology}-{challenge}-{YYYYMMDD-HHmm}/`
 3. Create the `iterations/` subdirectory inside it
 4. Save `config.json`:
    ```json
@@ -32,7 +80,7 @@ When the user says:
      "agent_call_budget": 6
    }
    ```
-5. Copy the challenge file as `challenge.md` into the run directory
+5. Copy the challenge file as `challenge.md` into the workspace directory
 
 ### 2. Execute the Methodology
 
@@ -62,7 +110,7 @@ Follow the interaction sequence defined in the methodology file **exactly**. For
 
 ### 3. Finalise
 
-1. Copy the final step's SVG as `final.svg` in the run directory
+1. Copy the final step's SVG as `final.svg` in the workspace directory
 2. Save `metrics.json`:
    ```json
    {
@@ -95,15 +143,15 @@ All 9 runs execute **in parallel** — there are no dependencies between runs. E
 1. **Spawn 9 agents in a single message** using the Agent tool with `run_in_background: true`. Each agent receives:
    - The full methodology file content
    - The full challenge file content
-   - The output directory path for that run
+   - The workspace directory path for that run
    - The complete Single Run Procedure (copy the relevant sections into the agent prompt so it is self-contained)
-   - Instruction to write all output files (config.json, iterations/, final.svg, metrics.json, summary.md) directly to the output directory
+   - Instruction to write all output files (config.json, iterations/, final.svg, metrics.json, summary.md) directly to the workspace directory
 
 2. Each agent prompt must be **fully self-contained** — include the methodology definition, challenge prompt, SVG extraction rules, conversation log format, and output file structure. The agent cannot read CLAUDE.md, so everything it needs must be in its prompt.
 
 3. As agents complete, they will report back. Note completions and any failures.
 
-4. Once all 9 are done, report a summary: which runs completed successfully, one-line assessment per run.
+4. Once all 9 are done, **publish the results** (see Publish Procedure below).
 
 ### The 9 combinations
 
@@ -128,7 +176,7 @@ You are running a single Agent Crucible experiment. Your job is to execute the m
 and save all output files. Work autonomously — do not ask questions, just execute.
 
 ## Output Directory
-{runs/methodology-challenge-YYYYMMDD-HHmm/}
+{workspace/methodology-challenge-YYYYMMDD-HHmm/}
 
 Create this directory and an iterations/ subdirectory inside it.
 
@@ -179,28 +227,47 @@ Save summary.md: 5-10 sentence narrative of how the run went
 - Conversation logs are essential — document every step
 ```
 
+## Publish Procedure
+
+After all experiments complete (or when asked to publish), organise the results for committing.
+
+### Steps
+
+1. **Determine the run number**: check `runs/` for the highest existing NNN prefix, increment by 1.
+2. **Create the published run directory**: `runs/{NNN}-{YYYYMMDD-HHmm}/`
+3. **Copy SVGs** from each workspace directory into a clean hierarchy:
+   ```
+   runs/{NNN}-{YYYYMMDD-HHmm}/{methodology}/{challenge}/
+     final.svg
+     step-01.svg
+     step-02.svg   (only steps that produced SVGs)
+     ...
+   ```
+4. **Generate the report** as `runs/{NNN}-{YYYYMMDD-HHmm}/report.html` (see Report Generation below). The report reads from the workspace directories (which have the full data including conversation logs and summaries) and embeds everything inline.
+5. **Report the published path** to the user so they can commit/push.
+
 ## Report Generation
 
-When asked to generate the report, build a single self-contained `runs/report.html` file.
+Build a single self-contained `report.html` file inside the published run directory.
 
 ### Report structure:
 
-1. **Read all run directories** in `runs/` (skip `report.html` itself)
+1. **Read all workspace directories** matching the current run's timestamp
 2. For each run, read: `config.json`, `metrics.json`, `summary.md`, `final.svg`, and all `iterations/step-*.svg` and `iterations/step-*-conversation.md` files
 
 ### HTML layout:
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  Agent Crucible Report — {date}                         │
-│  Metrics summary table                                  │
-├─────────────┬─────────────┬─────────────────────────────┤
-│             │ Tier 1      │ Tier 2      │ Tier 3        │
-├─────────────┼─────────────┼─────────────┤───────────────┤
-│ Adversarial │ [final SVG] │ [final SVG] │ [final SVG]   │
-│ Six Hats    │ [final SVG] │ [final SVG] │ [final SVG]   │
-│ Prompt Mut. │ [final SVG] │ [final SVG] │ [final SVG]   │
-└─────────────┴─────────────┴─────────────┴───────────────┘
++---------------------------------------------------------+
+|  Agent Crucible Report - {date}                         |
+|  Metrics summary table                                  |
++-------------+-------------+-----------------------------+
+|             | Tier 1      | Tier 2      | Tier 3        |
++-------------+-------------+-------------+---------------+
+| Adversarial | [final SVG] | [final SVG] | [final SVG]   |
+| Six Hats    | [final SVG] | [final SVG] | [final SVG]   |
+| Prompt Mut. | [final SVG] | [final SVG] | [final SVG]   |
++-------------+-------------+-------------+---------------+
   Each cell expands to show iteration filmstrip + conversation logs
 ```
 
@@ -208,13 +275,13 @@ When asked to generate the report, build a single self-contained `runs/report.ht
 - **Inline all SVGs** as `<svg>` elements directly in the HTML (not as `<img>` or `<object>`)
 - **All CSS and JS inline** — no external files, the report must work as a standalone file
 - **Metrics table** at the top showing: methodology, challenge, tier, agent calls, time elapsed
-- **3×3 grid** of final SVGs, labelled by methodology (rows) and tier (columns)
+- **3x3 grid** of final SVGs, labelled by methodology (rows) and tier (columns)
 - **Click to expand** each cell to reveal:
   - An iteration filmstrip: all step SVGs displayed left-to-right, small, showing the trajectory
   - Conversation logs: collapsible sections for each step's conversation log, rendered as formatted text
   - The run summary
 - **Clean, readable styling** — dark background works well for SVG display. Use a monospace font for conversation logs.
-- Each SVG in the grid should be rendered at a consistent size (e.g. 300×225 for the grid, larger when expanded)
+- Each SVG in the grid should be rendered at a consistent size (e.g. 300x225 for the grid, larger when expanded)
 
 ## Important Rules
 

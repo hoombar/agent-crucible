@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <!-- Colours: jewel tones palette -->
+    <!-- #1A1A2E deep navy, #16213E dark blue, #0F3460 medium blue, #E94560 ruby, #533483 amethyst -->
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="#1A1A2E"/>
+
+  <!-- Decorative border: double circle -->
+  <circle cx="400" cy="400" r="390" fill="none" stroke="#533483" stroke-width="4"/>
+  <circle cx="400" cy="400" r="380" fill="none" stroke="#0F3460" stroke-width="2"/>
+  <circle cx="400" cy="400" r="375" fill="none" stroke="#533483" stroke-width="1"/>
+
+  <!-- Outer decorative border with triangular points -->
+  <g>
+    <g id="border-tick">
+      <line x1="400" y1="15" x2="400" y2="30" stroke="#E94560" stroke-width="2"/>
+    </g>
+    <!-- 32 ticks around the border (every 11.25 degrees) -->
+    <use href="#border-tick" transform="rotate(11.25 400 400)"/>
+    <use href="#border-tick" transform="rotate(22.5 400 400)"/>
+    <use href="#border-tick" transform="rotate(33.75 400 400)"/>
+    <use href="#border-tick" transform="rotate(45 400 400)"/>
+    <use href="#border-tick" transform="rotate(56.25 400 400)"/>
+    <use href="#border-tick" transform="rotate(67.5 400 400)"/>
+    <use href="#border-tick" transform="rotate(78.75 400 400)"/>
+    <use href="#border-tick" transform="rotate(90 400 400)"/>
+    <use href="#border-tick" transform="rotate(101.25 400 400)"/>
+    <use href="#border-tick" transform="rotate(112.5 400 400)"/>
+    <use href="#border-tick" transform="rotate(123.75 400 400)"/>
+    <use href="#border-tick" transform="rotate(135 400 400)"/>
+    <use href="#border-tick" transform="rotate(146.25 400 400)"/>
+    <use href="#border-tick" transform="rotate(157.5 400 400)"/>
+    <use href="#border-tick" transform="rotate(168.75 400 400)"/>
+    <use href="#border-tick" transform="rotate(180 400 400)"/>
+    <use href="#border-tick" transform="rotate(191.25 400 400)"/>
+    <use href="#border-tick" transform="rotate(202.5 400 400)"/>
+    <use href="#border-tick" transform="rotate(213.75 400 400)"/>
+    <use href="#border-tick" transform="rotate(225 400 400)"/>
+    <use href="#border-tick" transform="rotate(236.25 400 400)"/>
+    <use href="#border-tick" transform="rotate(247.5 400 400)"/>
+    <use href="#border-tick" transform="rotate(258.75 400 400)"/>
+    <use href="#border-tick" transform="rotate(270 400 400)"/>
+    <use href="#border-tick" transform="rotate(281.25 400 400)"/>
+    <use href="#border-tick" transform="rotate(292.5 400 400)"/>
+    <use href="#border-tick" transform="rotate(303.75 400 400)"/>
+    <use href="#border-tick" transform="rotate(315 400 400)"/>
+    <use href="#border-tick" transform="rotate(326.25 400 400)"/>
+    <use href="#border-tick" transform="rotate(337.5 400 400)"/>
+    <use href="#border-tick" transform="rotate(348.75 400 400)"/>
+  </g>
+
+  <!-- OUTER RING: Triangles/pointed elements at radius 320, 8-fold symmetry -->
+  <g id="outer-triangle">
+    <polygon points="400,80 385,120 415,120" fill="#E94560" stroke="#533483" stroke-width="1"/>
+  </g>
+  <use href="#outer-triangle" transform="rotate(0 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(45 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(90 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(135 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(180 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(225 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(270 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(315 400 400)"/>
+
+  <!-- Outer ring: smaller secondary triangles offset by 22.5 degrees -->
+  <g id="outer-triangle-sm">
+    <polygon points="400,95 390,120 410,120" fill="#0F3460" stroke="#533483" stroke-width="1"/>
+  </g>
+  <use href="#outer-triangle-sm" transform="rotate(22.5 400 400)"/>
+  <use href="#outer-triangle-sm" transform="rotate(67.5 400 400)"/>
+  <use href="#outer-triangle-sm" transform="rotate(112.5 400 400)"/>
+  <use href="#outer-triangle-sm" transform="rotate(157.5 400 400)"/>
+  <use href="#outer-triangle-sm" transform="rotate(202.5 400 400)"/>
+  <use href="#outer-triangle-sm" transform="rotate(247.5 400 400)"/>
+  <use href="#outer-triangle-sm" transform="rotate(292.5 400 400)"/>
+  <use href="#outer-triangle-sm" transform="rotate(337.5 400 400)"/>
+
+  <!-- Outer ring guide circle -->
+  <circle cx="400" cy="400" r="300" fill="none" stroke="#16213E" stroke-width="1.5"/>
+
+  <!-- MIDDLE RING: Petals/leaf shapes at radius ~220, 8-fold symmetry -->
+  <g id="petal">
+    <ellipse cx="400" cy="200" rx="25" ry="60" fill="#0F3460" stroke="#533483" stroke-width="1.5" transform="rotate(0 400 200)"/>
+  </g>
+  <use href="#petal" transform="rotate(0 400 400)"/>
+  <use href="#petal" transform="rotate(45 400 400)"/>
+  <use href="#petal" transform="rotate(90 400 400)"/>
+  <use href="#petal" transform="rotate(135 400 400)"/>
+  <use href="#petal" transform="rotate(180 400 400)"/>
+  <use href="#petal" transform="rotate(225 400 400)"/>
+  <use href="#petal" transform="rotate(270 400 400)"/>
+  <use href="#petal" transform="rotate(315 400 400)"/>
+
+  <!-- Middle ring: secondary petals offset by 22.5 degrees, slightly smaller -->
+  <g id="petal-sm">
+    <ellipse cx="400" cy="220" rx="18" ry="45" fill="#16213E" stroke="#533483" stroke-width="1"/>
+  </g>
+  <use href="#petal-sm" transform="rotate(22.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(67.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(112.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(157.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(202.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(247.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(292.5 400 400)"/>
+  <use href="#petal-sm" transform="rotate(337.5 400 400)"/>
+
+  <!-- Middle ring guide circle -->
+  <circle cx="400" cy="400" r="180" fill="none" stroke="#16213E" stroke-width="1"/>
+
+  <!-- INNER RING: Circles/dots at radius ~120, 8-fold symmetry -->
+  <g id="inner-dot-group">
+    <circle cx="400" cy="280" r="12" fill="#E94560" stroke="#533483" stroke-width="1"/>
+    <circle cx="400" cy="300" r="6" fill="#533483"/>
+    <circle cx="400" cy="320" r="4" fill="#0F3460"/>
+  </g>
+  <use href="#inner-dot-group" transform="rotate(0 400 400)"/>
+  <use href="#inner-dot-group" transform="rotate(45 400 400)"/>
+  <use href="#inner-dot-group" transform="rotate(90 400 400)"/>
+  <use href="#inner-dot-group" transform="rotate(135 400 400)"/>
+  <use href="#inner-dot-group" transform="rotate(180 400 400)"/>
+  <use href="#inner-dot-group" transform="rotate(225 400 400)"/>
+  <use href="#inner-dot-group" transform="rotate(270 400 400)"/>
+  <use href="#inner-dot-group" transform="rotate(315 400 400)"/>
+
+  <!-- Inner ring guide circle -->
+  <circle cx="400" cy="400" r="100" fill="none" stroke="#16213E" stroke-width="1"/>
+
+  <!-- Centre ornament -->
+  <circle cx="400" cy="400" r="40" fill="#0F3460" stroke="#533483" stroke-width="2"/>
+  <circle cx="400" cy="400" r="25" fill="#16213E" stroke="#E94560" stroke-width="1.5"/>
+  <circle cx="400" cy="400" r="10" fill="#E94560"/>
+
+  <!-- Centre dot ring: 8 small dots at radius 60 -->
+  <g id="centre-dot">
+    <circle cx="400" cy="340" r="5" fill="#E94560"/>
+  </g>
+  <use href="#centre-dot" transform="rotate(0 400 400)"/>
+  <use href="#centre-dot" transform="rotate(45 400 400)"/>
+  <use href="#centre-dot" transform="rotate(90 400 400)"/>
+  <use href="#centre-dot" transform="rotate(135 400 400)"/>
+  <use href="#centre-dot" transform="rotate(180 400 400)"/>
+  <use href="#centre-dot" transform="rotate(225 400 400)"/>
+  <use href="#centre-dot" transform="rotate(270 400 400)"/>
+  <use href="#centre-dot" transform="rotate(315 400 400)"/>
+</svg>

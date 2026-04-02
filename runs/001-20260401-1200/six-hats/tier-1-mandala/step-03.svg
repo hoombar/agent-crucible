@@ -1,0 +1,433 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <title>Mandala - Jewel Tones</title>
+
+  <defs>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f9a825"/>
+      <stop offset="100%" stop-color="#c62828"/>
+    </radialGradient>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background with subtle gradient -->
+  <rect width="800" height="800" fill="url(#bgGrad)"/>
+
+  <!-- Outermost decorative border -->
+  <circle cx="400" cy="400" r="395" fill="none" stroke="#f9a825" stroke-width="1" opacity="0.4"/>
+  <circle cx="400" cy="400" r="392" fill="none" stroke="#f9a825" stroke-width="2"/>
+  <circle cx="400" cy="400" r="388" fill="none" stroke="#7b2d8e" stroke-width="1"/>
+
+  <!-- Border dots - alternating sizes -->
+  <g>
+    <g transform="rotate(0, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(15, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(30, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(45, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(60, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(75, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(90, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(105, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(120, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(135, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(150, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(165, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(180, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(195, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(210, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(225, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(240, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(255, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(270, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(285, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(300, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(315, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+    <g transform="rotate(330, 400, 400)"><circle cx="400" cy="12" r="3" fill="#f9a825"/></g>
+    <g transform="rotate(345, 400, 400)"><circle cx="400" cy="12" r="2" fill="#7b2d8e"/></g>
+  </g>
+  <circle cx="400" cy="400" r="382" fill="none" stroke="#f9a825" stroke-width="1"/>
+  <circle cx="400" cy="400" r="375" fill="none" stroke="#1a3a5c" stroke-width="2" stroke-dasharray="8,4"/>
+
+  <!-- NEW: Diamond ring between border and outer triangles -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <polygon points="400,35 396,45 400,55 404,45" fill="#f9a825" opacity="0.6"/>
+    </g>
+    <g transform="rotate(22.5, 400, 400)">
+      <polygon points="400,38 397,46 400,54 403,46" fill="#7b2d8e" opacity="0.4"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <polygon points="400,35 396,45 400,55 404,45" fill="#f9a825" opacity="0.6"/>
+    </g>
+    <g transform="rotate(67.5, 400, 400)">
+      <polygon points="400,38 397,46 400,54 403,46" fill="#7b2d8e" opacity="0.4"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <polygon points="400,35 396,45 400,55 404,45" fill="#f9a825" opacity="0.6"/>
+    </g>
+    <g transform="rotate(112.5, 400, 400)">
+      <polygon points="400,38 397,46 400,54 403,46" fill="#7b2d8e" opacity="0.4"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <polygon points="400,35 396,45 400,55 404,45" fill="#f9a825" opacity="0.6"/>
+    </g>
+    <g transform="rotate(157.5, 400, 400)">
+      <polygon points="400,38 397,46 400,54 403,46" fill="#7b2d8e" opacity="0.4"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <polygon points="400,35 396,45 400,55 404,45" fill="#f9a825" opacity="0.6"/>
+    </g>
+    <g transform="rotate(202.5, 400, 400)">
+      <polygon points="400,38 397,46 400,54 403,46" fill="#7b2d8e" opacity="0.4"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <polygon points="400,35 396,45 400,55 404,45" fill="#f9a825" opacity="0.6"/>
+    </g>
+    <g transform="rotate(247.5, 400, 400)">
+      <polygon points="400,38 397,46 400,54 403,46" fill="#7b2d8e" opacity="0.4"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <polygon points="400,35 396,45 400,55 404,45" fill="#f9a825" opacity="0.6"/>
+    </g>
+    <g transform="rotate(292.5, 400, 400)">
+      <polygon points="400,38 397,46 400,54 403,46" fill="#7b2d8e" opacity="0.4"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <polygon points="400,35 396,45 400,55 404,45" fill="#f9a825" opacity="0.6"/>
+    </g>
+    <g transform="rotate(337.5, 400, 400)">
+      <polygon points="400,38 397,46 400,54 403,46" fill="#7b2d8e" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- Outer ring: elaborate pointed elements -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <polygon points="400,60 386,130 400,115 414,130" fill="#c62828" stroke="#f9a825" stroke-width="0.5"/>
+      <polygon points="400,130 393,155 407,155" fill="#7b2d8e" opacity="0.7"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <polygon points="400,60 386,130 400,115 414,130" fill="#c62828" stroke="#f9a825" stroke-width="0.5"/>
+      <polygon points="400,130 393,155 407,155" fill="#7b2d8e" opacity="0.7"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <polygon points="400,60 386,130 400,115 414,130" fill="#c62828" stroke="#f9a825" stroke-width="0.5"/>
+      <polygon points="400,130 393,155 407,155" fill="#7b2d8e" opacity="0.7"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <polygon points="400,60 386,130 400,115 414,130" fill="#c62828" stroke="#f9a825" stroke-width="0.5"/>
+      <polygon points="400,130 393,155 407,155" fill="#7b2d8e" opacity="0.7"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <polygon points="400,60 386,130 400,115 414,130" fill="#c62828" stroke="#f9a825" stroke-width="0.5"/>
+      <polygon points="400,130 393,155 407,155" fill="#7b2d8e" opacity="0.7"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <polygon points="400,60 386,130 400,115 414,130" fill="#c62828" stroke="#f9a825" stroke-width="0.5"/>
+      <polygon points="400,130 393,155 407,155" fill="#7b2d8e" opacity="0.7"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <polygon points="400,60 386,130 400,115 414,130" fill="#c62828" stroke="#f9a825" stroke-width="0.5"/>
+      <polygon points="400,130 393,155 407,155" fill="#7b2d8e" opacity="0.7"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <polygon points="400,60 386,130 400,115 414,130" fill="#c62828" stroke="#f9a825" stroke-width="0.5"/>
+      <polygon points="400,130 393,155 407,155" fill="#7b2d8e" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Smaller interstitial triangles -->
+  <g>
+    <g transform="rotate(22.5, 400, 400)">
+      <polygon points="400,85 394,115 406,115" fill="#1a3a5c" opacity="0.8"/>
+    </g>
+    <g transform="rotate(67.5, 400, 400)">
+      <polygon points="400,85 394,115 406,115" fill="#1a3a5c" opacity="0.8"/>
+    </g>
+    <g transform="rotate(112.5, 400, 400)">
+      <polygon points="400,85 394,115 406,115" fill="#1a3a5c" opacity="0.8"/>
+    </g>
+    <g transform="rotate(157.5, 400, 400)">
+      <polygon points="400,85 394,115 406,115" fill="#1a3a5c" opacity="0.8"/>
+    </g>
+    <g transform="rotate(202.5, 400, 400)">
+      <polygon points="400,85 394,115 406,115" fill="#1a3a5c" opacity="0.8"/>
+    </g>
+    <g transform="rotate(247.5, 400, 400)">
+      <polygon points="400,85 394,115 406,115" fill="#1a3a5c" opacity="0.8"/>
+    </g>
+    <g transform="rotate(292.5, 400, 400)">
+      <polygon points="400,85 394,115 406,115" fill="#1a3a5c" opacity="0.8"/>
+    </g>
+    <g transform="rotate(337.5, 400, 400)">
+      <polygon points="400,85 394,115 406,115" fill="#1a3a5c" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Ring separator with decorative dots -->
+  <circle cx="400" cy="400" r="280" fill="none" stroke="#1a3a5c" stroke-width="1.5"/>
+  <g>
+    <g transform="rotate(0, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(22.5, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(45, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(67.5, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(90, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(112.5, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(135, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(157.5, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(180, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(202.5, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(225, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(247.5, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(270, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(292.5, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(315, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+    <g transform="rotate(337.5, 400, 400)"><circle cx="400" cy="120" r="2.5" fill="#f9a825"/></g>
+  </g>
+
+  <!-- NEW: Filigree arcs connecting outer ring to middle ring -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <path d="M394,160 Q380,180 390,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+      <path d="M406,160 Q420,180 410,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <path d="M394,160 Q380,180 390,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+      <path d="M406,160 Q420,180 410,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <path d="M394,160 Q380,180 390,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+      <path d="M406,160 Q420,180 410,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <path d="M394,160 Q380,180 390,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+      <path d="M406,160 Q420,180 410,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <path d="M394,160 Q380,180 390,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+      <path d="M406,160 Q420,180 410,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <path d="M394,160 Q380,180 390,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+      <path d="M406,160 Q420,180 410,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <path d="M394,160 Q380,180 390,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+      <path d="M406,160 Q420,180 410,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <path d="M394,160 Q380,180 390,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+      <path d="M406,160 Q420,180 410,200" fill="none" stroke="#f9a825" stroke-width="0.8" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- Middle ring: elaborate petal/leaf shapes -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <path d="M400,195 Q422,240 400,285 Q378,240 400,195Z" fill="#2e7d32" opacity="0.9"/>
+      <path d="M400,208 Q413,240 400,272 Q387,240 400,208Z" fill="#4caf50" opacity="0.6"/>
+      <line x1="400" y1="200" x2="400" y2="280" stroke="#1a3a5c" stroke-width="0.5" opacity="0.4"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <path d="M400,195 Q422,240 400,285 Q378,240 400,195Z" fill="#2e7d32" opacity="0.9"/>
+      <path d="M400,208 Q413,240 400,272 Q387,240 400,208Z" fill="#4caf50" opacity="0.6"/>
+      <line x1="400" y1="200" x2="400" y2="280" stroke="#1a3a5c" stroke-width="0.5" opacity="0.4"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <path d="M400,195 Q422,240 400,285 Q378,240 400,195Z" fill="#2e7d32" opacity="0.9"/>
+      <path d="M400,208 Q413,240 400,272 Q387,240 400,208Z" fill="#4caf50" opacity="0.6"/>
+      <line x1="400" y1="200" x2="400" y2="280" stroke="#1a3a5c" stroke-width="0.5" opacity="0.4"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <path d="M400,195 Q422,240 400,285 Q378,240 400,195Z" fill="#2e7d32" opacity="0.9"/>
+      <path d="M400,208 Q413,240 400,272 Q387,240 400,208Z" fill="#4caf50" opacity="0.6"/>
+      <line x1="400" y1="200" x2="400" y2="280" stroke="#1a3a5c" stroke-width="0.5" opacity="0.4"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <path d="M400,195 Q422,240 400,285 Q378,240 400,195Z" fill="#2e7d32" opacity="0.9"/>
+      <path d="M400,208 Q413,240 400,272 Q387,240 400,208Z" fill="#4caf50" opacity="0.6"/>
+      <line x1="400" y1="200" x2="400" y2="280" stroke="#1a3a5c" stroke-width="0.5" opacity="0.4"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <path d="M400,195 Q422,240 400,285 Q378,240 400,195Z" fill="#2e7d32" opacity="0.9"/>
+      <path d="M400,208 Q413,240 400,272 Q387,240 400,208Z" fill="#4caf50" opacity="0.6"/>
+      <line x1="400" y1="200" x2="400" y2="280" stroke="#1a3a5c" stroke-width="0.5" opacity="0.4"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <path d="M400,195 Q422,240 400,285 Q378,240 400,195Z" fill="#2e7d32" opacity="0.9"/>
+      <path d="M400,208 Q413,240 400,272 Q387,240 400,208Z" fill="#4caf50" opacity="0.6"/>
+      <line x1="400" y1="200" x2="400" y2="280" stroke="#1a3a5c" stroke-width="0.5" opacity="0.4"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <path d="M400,195 Q422,240 400,285 Q378,240 400,195Z" fill="#2e7d32" opacity="0.9"/>
+      <path d="M400,208 Q413,240 400,272 Q387,240 400,208Z" fill="#4caf50" opacity="0.6"/>
+      <line x1="400" y1="200" x2="400" y2="280" stroke="#1a3a5c" stroke-width="0.5" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- Small interstitial petals -->
+  <g>
+    <g transform="rotate(22.5, 400, 400)">
+      <path d="M400,220 Q410,245 400,270 Q390,245 400,220Z" fill="#1a3a5c" opacity="0.5"/>
+    </g>
+    <g transform="rotate(67.5, 400, 400)">
+      <path d="M400,220 Q410,245 400,270 Q390,245 400,220Z" fill="#1a3a5c" opacity="0.5"/>
+    </g>
+    <g transform="rotate(112.5, 400, 400)">
+      <path d="M400,220 Q410,245 400,270 Q390,245 400,220Z" fill="#1a3a5c" opacity="0.5"/>
+    </g>
+    <g transform="rotate(157.5, 400, 400)">
+      <path d="M400,220 Q410,245 400,270 Q390,245 400,220Z" fill="#1a3a5c" opacity="0.5"/>
+    </g>
+    <g transform="rotate(202.5, 400, 400)">
+      <path d="M400,220 Q410,245 400,270 Q390,245 400,220Z" fill="#1a3a5c" opacity="0.5"/>
+    </g>
+    <g transform="rotate(247.5, 400, 400)">
+      <path d="M400,220 Q410,245 400,270 Q390,245 400,220Z" fill="#1a3a5c" opacity="0.5"/>
+    </g>
+    <g transform="rotate(292.5, 400, 400)">
+      <path d="M400,220 Q410,245 400,270 Q390,245 400,220Z" fill="#1a3a5c" opacity="0.5"/>
+    </g>
+    <g transform="rotate(337.5, 400, 400)">
+      <path d="M400,220 Q410,245 400,270 Q390,245 400,220Z" fill="#1a3a5c" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- NEW: Teardrop accents at petal tips -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <path d="M400,188 Q404,194 400,200 Q396,194 400,188Z" fill="#f9a825" opacity="0.7"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <path d="M400,188 Q404,194 400,200 Q396,194 400,188Z" fill="#f9a825" opacity="0.7"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <path d="M400,188 Q404,194 400,200 Q396,194 400,188Z" fill="#f9a825" opacity="0.7"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <path d="M400,188 Q404,194 400,200 Q396,194 400,188Z" fill="#f9a825" opacity="0.7"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <path d="M400,188 Q404,194 400,200 Q396,194 400,188Z" fill="#f9a825" opacity="0.7"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <path d="M400,188 Q404,194 400,200 Q396,194 400,188Z" fill="#f9a825" opacity="0.7"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <path d="M400,188 Q404,194 400,200 Q396,194 400,188Z" fill="#f9a825" opacity="0.7"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <path d="M400,188 Q404,194 400,200 Q396,194 400,188Z" fill="#f9a825" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Inner ring separator -->
+  <circle cx="400" cy="400" r="170" fill="none" stroke="#1a3a5c" stroke-width="1.5"/>
+
+  <!-- Inner ring: circles/dots pattern - triple layered -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <circle cx="400" cy="310" r="16" fill="#7b2d8e" opacity="0.8"/>
+      <circle cx="400" cy="310" r="9" fill="#c62828" opacity="0.7"/>
+      <circle cx="400" cy="310" r="4" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <circle cx="400" cy="310" r="16" fill="#7b2d8e" opacity="0.8"/>
+      <circle cx="400" cy="310" r="9" fill="#c62828" opacity="0.7"/>
+      <circle cx="400" cy="310" r="4" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <circle cx="400" cy="310" r="16" fill="#7b2d8e" opacity="0.8"/>
+      <circle cx="400" cy="310" r="9" fill="#c62828" opacity="0.7"/>
+      <circle cx="400" cy="310" r="4" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <circle cx="400" cy="310" r="16" fill="#7b2d8e" opacity="0.8"/>
+      <circle cx="400" cy="310" r="9" fill="#c62828" opacity="0.7"/>
+      <circle cx="400" cy="310" r="4" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <circle cx="400" cy="310" r="16" fill="#7b2d8e" opacity="0.8"/>
+      <circle cx="400" cy="310" r="9" fill="#c62828" opacity="0.7"/>
+      <circle cx="400" cy="310" r="4" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <circle cx="400" cy="310" r="16" fill="#7b2d8e" opacity="0.8"/>
+      <circle cx="400" cy="310" r="9" fill="#c62828" opacity="0.7"/>
+      <circle cx="400" cy="310" r="4" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <circle cx="400" cy="310" r="16" fill="#7b2d8e" opacity="0.8"/>
+      <circle cx="400" cy="310" r="9" fill="#c62828" opacity="0.7"/>
+      <circle cx="400" cy="310" r="4" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <circle cx="400" cy="310" r="16" fill="#7b2d8e" opacity="0.8"/>
+      <circle cx="400" cy="310" r="9" fill="#c62828" opacity="0.7"/>
+      <circle cx="400" cy="310" r="4" fill="#f9a825"/>
+    </g>
+  </g>
+
+  <!-- Interstitial dots between inner ring -->
+  <g>
+    <g transform="rotate(22.5, 400, 400)"><circle cx="400" cy="310" r="4" fill="#2e7d32" opacity="0.6"/></g>
+    <g transform="rotate(67.5, 400, 400)"><circle cx="400" cy="310" r="4" fill="#2e7d32" opacity="0.6"/></g>
+    <g transform="rotate(112.5, 400, 400)"><circle cx="400" cy="310" r="4" fill="#2e7d32" opacity="0.6"/></g>
+    <g transform="rotate(157.5, 400, 400)"><circle cx="400" cy="310" r="4" fill="#2e7d32" opacity="0.6"/></g>
+    <g transform="rotate(202.5, 400, 400)"><circle cx="400" cy="310" r="4" fill="#2e7d32" opacity="0.6"/></g>
+    <g transform="rotate(247.5, 400, 400)"><circle cx="400" cy="310" r="4" fill="#2e7d32" opacity="0.6"/></g>
+    <g transform="rotate(292.5, 400, 400)"><circle cx="400" cy="310" r="4" fill="#2e7d32" opacity="0.6"/></g>
+    <g transform="rotate(337.5, 400, 400)"><circle cx="400" cy="310" r="4" fill="#2e7d32" opacity="0.6"/></g>
+  </g>
+
+  <!-- Innermost ring separator -->
+  <circle cx="400" cy="400" r="130" fill="none" stroke="#7b2d8e" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- NEW: Inner star ring near center -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <polygon points="400,348 398,354 392,354 397,358 395,364 400,360 405,364 403,358 408,354 402,354" fill="#f9a825" opacity="0.5" transform="scale(0.7)" transform-origin="400 356"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <polygon points="400,348 398,354 392,354 397,358 395,364 400,360 405,364 403,358 408,354 402,354" fill="#f9a825" opacity="0.5" transform="scale(0.7)" transform-origin="400 356"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <polygon points="400,348 398,354 392,354 397,358 395,364 400,360 405,364 403,358 408,354 402,354" fill="#f9a825" opacity="0.5" transform="scale(0.7)" transform-origin="400 356"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <polygon points="400,348 398,354 392,354 397,358 395,364 400,360 405,364 403,358 408,354 402,354" fill="#f9a825" opacity="0.5" transform="scale(0.7)" transform-origin="400 356"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <polygon points="400,348 398,354 392,354 397,358 395,364 400,360 405,364 403,358 408,354 402,354" fill="#f9a825" opacity="0.5" transform="scale(0.7)" transform-origin="400 356"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <polygon points="400,348 398,354 392,354 397,358 395,364 400,360 405,364 403,358 408,354 402,354" fill="#f9a825" opacity="0.5" transform="scale(0.7)" transform-origin="400 356"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <polygon points="400,348 398,354 392,354 397,358 395,364 400,360 405,364 403,358 408,354 402,354" fill="#f9a825" opacity="0.5" transform="scale(0.7)" transform-origin="400 356"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <polygon points="400,348 398,354 392,354 397,358 395,364 400,360 405,364 403,358 408,354 402,354" fill="#f9a825" opacity="0.5" transform="scale(0.7)" transform-origin="400 356"/>
+    </g>
+  </g>
+
+  <!-- Center - gradient and layered -->
+  <circle cx="400" cy="400" r="38" fill="url(#centerGlow)"/>
+  <circle cx="400" cy="400" r="24" fill="#f9a825" opacity="0.8"/>
+  <circle cx="400" cy="400" r="12" fill="#c62828"/>
+  <circle cx="400" cy="400" r="5" fill="#f9a825"/>
+
+  <!-- Center radiating dots -->
+  <g>
+    <g transform="rotate(0, 400, 400)"><circle cx="400" cy="355" r="3" fill="#f9a825" opacity="0.5"/></g>
+    <g transform="rotate(45, 400, 400)"><circle cx="400" cy="355" r="3" fill="#f9a825" opacity="0.5"/></g>
+    <g transform="rotate(90, 400, 400)"><circle cx="400" cy="355" r="3" fill="#f9a825" opacity="0.5"/></g>
+    <g transform="rotate(135, 400, 400)"><circle cx="400" cy="355" r="3" fill="#f9a825" opacity="0.5"/></g>
+    <g transform="rotate(180, 400, 400)"><circle cx="400" cy="355" r="3" fill="#f9a825" opacity="0.5"/></g>
+    <g transform="rotate(225, 400, 400)"><circle cx="400" cy="355" r="3" fill="#f9a825" opacity="0.5"/></g>
+    <g transform="rotate(270, 400, 400)"><circle cx="400" cy="355" r="3" fill="#f9a825" opacity="0.5"/></g>
+    <g transform="rotate(315, 400, 400)"><circle cx="400" cy="355" r="3" fill="#f9a825" opacity="0.5"/></g>
+  </g>
+</svg>

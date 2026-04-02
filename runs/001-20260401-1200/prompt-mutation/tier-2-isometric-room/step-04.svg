@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <radialGradient id="bg-warmth" cx="40%" cy="55%" r="70%">
+      <stop offset="0%" stop-color="#3a2a1a"/>
+      <stop offset="100%" stop-color="#1a1020"/>
+    </radialGradient>
+
+    <linearGradient id="floor-wood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6b4f3a"/>
+      <stop offset="50%" stop-color="#7a5c42"/>
+      <stop offset="100%" stop-color="#5e4230"/>
+    </linearGradient>
+
+    <linearGradient id="left-wall" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5a4838"/>
+      <stop offset="40%" stop-color="#6b5545"/>
+      <stop offset="100%" stop-color="#4a3828"/>
+    </linearGradient>
+    <linearGradient id="right-wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#655848"/>
+      <stop offset="100%" stop-color="#554838"/>
+    </linearGradient>
+
+    <linearGradient id="night-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050520"/>
+      <stop offset="60%" stop-color="#0a0a3a"/>
+      <stop offset="100%" stop-color="#151540"/>
+    </linearGradient>
+
+    <linearGradient id="rug-base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b3a3a"/>
+      <stop offset="100%" stop-color="#6b2a2a"/>
+    </linearGradient>
+
+    <radialGradient id="lamp-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe490" stop-opacity="0.6"/>
+      <stop offset="40%" stop-color="#ffcc44" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffaa00" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="room-light" cx="42%" cy="52%" r="55%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#ffdd88" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#ffcc66" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="vignette" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.35"/>
+    </radialGradient>
+
+    <!-- NEW: Lamp shade glow gradient (warm light passing through) -->
+    <linearGradient id="shade-glow" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#e8a030"/>
+      <stop offset="100%" stop-color="#f0c060"/>
+    </linearGradient>
+
+    <filter id="soft-shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+      <feOffset dx="3" dy="5" result="offset"/>
+      <feFlood flood-color="#1a0a00" flood-opacity="0.3" result="color"/>
+      <feComposite in="color" in2="offset" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="bulb-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- NEW: Floor shadow filter for bookshelf -->
+    <filter id="floor-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+      <feFlood flood-color="#1a0800" flood-opacity="0.25" result="color"/>
+      <feComposite in="color" in2="blur" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg-warmth)"/>
+
+  <!-- === ROOM STRUCTURE === -->
+  <polygon points="400,460 670,320 400,180 130,320" fill="url(#floor-wood)"/>
+  <!-- Floor wood grain -->
+  <g stroke="#5a3f2a" stroke-width="0.5" opacity="0.2">
+    <line x1="190" y1="340" x2="460" y2="200"/>
+    <line x1="230" y1="360" x2="500" y2="220"/>
+    <line x1="270" y1="380" x2="540" y2="240"/>
+    <line x1="310" y1="400" x2="580" y2="260"/>
+    <line x1="350" y1="420" x2="620" y2="280"/>
+    <line x1="390" y1="440" x2="660" y2="300"/>
+  </g>
+
+  <!-- Left wall -->
+  <polygon points="130,320 400,180 400,30 130,170" fill="url(#left-wall)"/>
+  <!-- NEW: Subtle wallpaper pattern on left wall (small diamond grid) -->
+  <g stroke="#5a4838" stroke-width="0.3" opacity="0.15">
+    <line x1="170" y1="190" x2="210" y2="210"/>
+    <line x1="210" y1="210" x2="170" y2="230"/>
+    <line x1="210" y1="190" x2="250" y2="210"/>
+    <line x1="250" y1="210" x2="210" y2="230"/>
+    <line x1="250" y1="190" x2="290" y2="210"/>
+    <line x1="290" y1="210" x2="250" y2="230"/>
+    <line x1="170" y1="230" x2="210" y2="250"/>
+    <line x1="210" y1="250" x2="170" y2="270"/>
+    <line x1="210" y1="230" x2="250" y2="250"/>
+    <line x1="250" y1="250" x2="210" y2="270"/>
+    <line x1="250" y1="230" x2="290" y2="250"/>
+    <line x1="290" y1="250" x2="250" y2="270"/>
+    <line x1="170" y1="270" x2="210" y2="290"/>
+    <line x1="210" y1="290" x2="170" y2="310"/>
+    <line x1="210" y1="270" x2="250" y2="290"/>
+    <line x1="250" y1="290" x2="210" y2="310"/>
+  </g>
+
+  <!-- Right wall -->
+  <polygon points="400,180 670,320 670,170 400,30" fill="url(#right-wall)"/>
+
+  <!-- Room corner lines -->
+  <line x1="400" y1="30" x2="400" y2="180" stroke="#3a2818" stroke-width="1.5"/>
+  <line x1="130" y1="170" x2="130" y2="320" stroke="#3a2818" stroke-width="1"/>
+  <line x1="670" y1="170" x2="670" y2="320" stroke="#3a2818" stroke-width="1"/>
+
+  <!-- NEW: Baseboard/molding where walls meet floor -->
+  <!-- Left wall baseboard -->
+  <line x1="130" y1="320" x2="400" y2="180" stroke="#4a3420" stroke-width="3"/>
+  <!-- Right wall baseboard -->
+  <line x1="400" y1="180" x2="670" y2="320" stroke="#4a3420" stroke-width="3"/>
+
+  <!-- === RUG === -->
+  <g opacity="0.85">
+    <polygon points="310,395 460,320 380,275 230,350" fill="url(#rug-base)"/>
+    <!-- Fringes -->
+    <g stroke="#a05040" stroke-width="1.5" opacity="0.5">
+      <line x1="235" y1="349" x2="229" y2="355"/>
+      <line x1="247" y1="355" x2="241" y2="361"/>
+      <line x1="259" y1="361" x2="253" y2="367"/>
+      <line x1="271" y1="367" x2="265" y2="373"/>
+      <line x1="283" y1="373" x2="277" y2="379"/>
+      <line x1="295" y1="379" x2="289" y2="385"/>
+      <line x1="307" y1="385" x2="301" y2="391"/>
+    </g>
+    <!-- Fringes on right side too -->
+    <g stroke="#a05040" stroke-width="1.5" opacity="0.5">
+      <line x1="318" y1="392" x2="324" y2="398"/>
+      <line x1="340" y1="381" x2="346" y2="387"/>
+      <line x1="362" y1="370" x2="368" y2="376"/>
+      <line x1="384" y1="359" x2="390" y2="365"/>
+      <line x1="406" y1="348" x2="412" y2="354"/>
+      <line x1="428" y1="337" x2="434" y2="343"/>
+      <line x1="450" y1="326" x2="456" y2="332"/>
+    </g>
+    <!-- Border patterns -->
+    <polygon points="310,385 448,315 376,280 238,350" fill="none" stroke="#d4956a" stroke-width="1.5"/>
+    <polygon points="310,370 432,308 372,278 250,340" fill="none" stroke="#cc7a50" stroke-width="1"/>
+    <!-- Central motif -->
+    <polygon points="325,348 400,308 362,288 287,328" fill="#7a2828" opacity="0.5"/>
+    <polygon points="325,340 390,306 360,292 295,326" fill="none" stroke="#e8a878" stroke-width="1"/>
+    <polygon points="325,332 380,305 358,296 303,323" fill="none" stroke="#d4956a" stroke-width="0.8"/>
+    <circle cx="325" cy="335" r="2" fill="#e8a878" opacity="0.6"/>
+    <circle cx="345" cy="320" r="1.5" fill="#e8a878" opacity="0.5"/>
+    <circle cx="305" cy="325" r="1.5" fill="#e8a878" opacity="0.5"/>
+  </g>
+
+  <!-- === BOOKSHELF === -->
+  <!-- NEW: Floor shadow beneath bookshelf -->
+  <polygon points="170,310 290,248 320,265 200,327" fill="#1a0800" opacity="0.2" filter="url(#floor-shadow)"/>
+
+  <g filter="url(#soft-shadow)">
+    <polygon points="160,305 278,243 278,115 160,177" fill="#5c3216"/>
+    <polygon points="278,243 312,260 312,132 278,115" fill="#4a2610"/>
+    <polygon points="160,177 278,115 312,132 194,194" fill="#6b3e20"/>
+
+    <!-- Shelf planks -->
+    <line x1="160" y1="218" x2="278" y2="156" stroke="#4a2610" stroke-width="2.5"/>
+    <line x1="278" y1="156" x2="312" y2="173" stroke="#3a1a08" stroke-width="2.5"/>
+    <line x1="160" y1="260" x2="278" y2="198" stroke="#4a2610" stroke-width="2.5"/>
+    <line x1="278" y1="198" x2="312" y2="215" stroke="#3a1a08" stroke-width="2.5"/>
+
+    <!-- TOP SHELF BOOKS -->
+    <polygon points="170,216 182,210 182,182 170,188" fill="#8b2252"/>
+    <line x1="176" y1="213" x2="176" y2="185" stroke="#6b1842" stroke-width="0.5"/>
+    <polygon points="185,209 196,203 196,183 185,189" fill="#2a3a7a"/>
+    <line x1="190" y1="206" x2="190" y2="186" stroke="#1a2a5a" stroke-width="0.5"/>
+    <polygon points="199,202 208,198 208,186 199,190" fill="#2a6a3a"/>
+    <polygon points="211,197 223,191 223,158 211,164" fill="#c87830"/>
+    <line x1="217" y1="194" x2="217" y2="161" stroke="#a86020" stroke-width="0.5"/>
+    <polygon points="226,190 236,185 236,170 226,175" fill="#b06878"/>
+    <polygon points="239,184 250,179 250,165 239,170" fill="#2a7a7a"/>
+    <line x1="244" y1="181" x2="244" y2="167" stroke="#1a5a5a" stroke-width="0.5"/>
+    <polygon points="253,178 264,173 262,162 251,167" fill="#7a5a2a"/>
+
+    <!-- MIDDLE SHELF BOOKS -->
+    <polygon points="170,258 182,252 182,225 170,231" fill="#c04848"/>
+    <polygon points="185,251 198,244 198,228 185,235" fill="#4858a8"/>
+    <polygon points="201,243 210,239 210,230 201,234" fill="#48a858"/>
+    <polygon points="213,238 225,232 225,222 213,228" fill="#a87838"/>
+
+    <!-- Plant on shelf -->
+    <ellipse cx="265" cy="196" rx="6" ry="3" fill="#4a2610"/>
+    <line x1="265" y1="194" x2="265" y2="186" stroke="#3a7a3a" stroke-width="1.5"/>
+    <circle cx="262" cy="186" r="3" fill="#4a9a4a" opacity="0.8"/>
+    <circle cx="268" cy="187" r="2.5" fill="#3a8a3a" opacity="0.7"/>
+    <circle cx="265" cy="184" r="2.5" fill="#5aaa5a" opacity="0.8"/>
+  </g>
+
+  <!-- === WINDOW === -->
+  <g>
+    <polygon points="480,110 590,165 590,62 480,8" fill="#6a5a48" stroke="#7a6a58" stroke-width="2"/>
+    <polygon points="488,105 582,157 582,70 488,16" fill="#3a3040"/>
+    <polygon points="492,102 578,154 578,73 492,20" fill="url(#night-sky)"/>
+
+    <!-- Stars -->
+    <circle cx="510" cy="45" r="1.8" fill="#fff" opacity="0.9"/>
+    <circle cx="510" cy="45" r="4" fill="#aaccff" opacity="0.1"/>
+    <circle cx="530" cy="32" r="1" fill="#fff" opacity="0.7"/>
+    <circle cx="555" cy="58" r="1.5" fill="#fff" opacity="0.85"/>
+    <circle cx="555" cy="58" r="3" fill="#aaccff" opacity="0.08"/>
+    <circle cx="518" cy="78" r="1" fill="#ffe" opacity="0.6"/>
+    <circle cx="560" cy="90" r="1.2" fill="#fff" opacity="0.7"/>
+    <circle cx="502" cy="65" r="0.8" fill="#ffe" opacity="0.5"/>
+    <circle cx="545" cy="42" r="1.3" fill="#fff" opacity="0.8"/>
+    <circle cx="570" cy="105" r="0.9" fill="#ffe" opacity="0.5"/>
+    <circle cx="525" cy="95" r="0.7" fill="#fff" opacity="0.6"/>
+
+    <!-- Crescent moon -->
+    <circle cx="555" cy="38" r="14" fill="#f5e878" opacity="0.15"/>
+    <circle cx="555" cy="38" r="12" fill="#f5e878"/>
+    <circle cx="561" cy="34" r="10" fill="url(#night-sky)"/>
+
+    <!-- Mullions -->
+    <line x1="537" y1="62" x2="537" y2="128" stroke="#6a5a48" stroke-width="2.5"/>
+    <line x1="492" y1="61" x2="578" y2="113" stroke="#6a5a48" stroke-width="2.5"/>
+
+    <!-- Window sill -->
+    <polygon points="480,110 590,165 600,160 490,105" fill="#7a6a58"/>
+
+    <!-- NEW: Moonlight spill on right wall below window -->
+    <polygon points="490,112 585,162 585,200 490,150" fill="#8888cc" opacity="0.04"/>
+  </g>
+
+  <!-- === DESK === -->
+  <g filter="url(#soft-shadow)">
+    <polygon points="410,315 570,240 500,205 340,280" fill="#8a6848"/>
+    <g stroke="#7a5838" stroke-width="0.5" opacity="0.25">
+      <line x1="370" y1="290" x2="530" y2="215"/>
+      <line x1="385" y1="298" x2="545" y2="223"/>
+      <line x1="400" y1="306" x2="560" y2="231"/>
+    </g>
+
+    <polygon points="570,240 570,285 500,255 500,205" fill="#705030"/>
+    <polygon points="340,280 500,205 500,255 340,330" fill="#604028"/>
+
+    <!-- Drawer -->
+    <polygon points="555,248 555,270 510,247 510,225" fill="#685038" stroke="#5a4028" stroke-width="0.5"/>
+    <circle cx="530" cy="248" r="1.5" fill="#b09060"/>
+
+    <!-- Legs -->
+    <line x1="350" y1="285" x2="350" y2="328" stroke="#504020" stroke-width="4"/>
+    <line x1="560" y1="244" x2="560" y2="283" stroke="#504020" stroke-width="4"/>
+    <line x1="495" y1="210" x2="495" y2="253" stroke="#504020" stroke-width="3" opacity="0.6"/>
+
+    <!-- OPEN BOOK -->
+    <g>
+      <polygon points="435,280 478,260 467,253 424,273" fill="#f5ecd8"/>
+      <polygon points="478,260 525,242 514,235 467,253" fill="#eee4cc"/>
+      <line x1="467" y1="253" x2="478" y2="260" stroke="#b0a080" stroke-width="1.5"/>
+      <g stroke="#baa888" stroke-width="0.4" opacity="0.6">
+        <line x1="430" y1="277" x2="462" y2="260"/>
+        <line x1="432" y1="274" x2="460" y2="258"/>
+        <line x1="434" y1="271" x2="458" y2="256"/>
+      </g>
+      <g stroke="#baa888" stroke-width="0.4" opacity="0.6">
+        <line x1="483" y1="257" x2="518" y2="240"/>
+        <line x1="485" y1="254" x2="516" y2="238"/>
+        <line x1="487" y1="251" x2="514" y2="236"/>
+      </g>
+      <line x1="424" y1="274" x2="435" y2="281" stroke="#6a4a2a" stroke-width="1"/>
+      <line x1="525" y1="243" x2="514" y2="236" stroke="#6a4a2a" stroke-width="1"/>
+    </g>
+
+    <!-- LAMP -->
+    <g>
+      <ellipse cx="382" cy="268" rx="14" ry="7" fill="#4a4a4a"/>
+      <ellipse cx="382" cy="266" rx="12" ry="5" fill="#5a5a5a"/>
+      <line x1="382" y1="264" x2="382" y2="222" stroke="#4a4a4a" stroke-width="3"/>
+      <!-- NEW: Lamp shade with glow gradient -->
+      <polygon points="365,222 399,222 394,205 370,205" fill="url(#shade-glow)"/>
+      <polygon points="365,222 399,222 394,224 370,224" fill="#c08838"/>
+      <!-- Bulb glow -->
+      <ellipse cx="382" cy="222" rx="10" ry="5" fill="#ffe888" opacity="0.8" filter="url(#bulb-glow)"/>
+      <!-- Light cone -->
+      <polygon points="368,224 396,224 430,290 340,290" fill="#ffdd66" opacity="0.05"/>
+    </g>
+  </g>
+
+  <!-- === ATMOSPHERIC LIGHTING === -->
+  <ellipse cx="382" cy="300" rx="200" ry="150" fill="url(#lamp-glow)" opacity="0.35"/>
+  <rect width="800" height="600" fill="url(#room-light)"/>
+  <rect width="800" height="600" fill="url(#vignette)"/>
+</svg>

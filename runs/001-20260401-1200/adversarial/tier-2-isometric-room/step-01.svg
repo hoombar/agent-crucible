@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Warm lamp glow gradient -->
+    <radialGradient id="lampGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#FFA500" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFA500" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Night sky gradient -->
+    <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B0B3B"/>
+      <stop offset="100%" stop-color="#1a1a4e"/>
+    </linearGradient>
+    <!-- Rug pattern -->
+    <pattern id="rugPattern" x="0" y="0" width="40" height="20" patternUnits="userSpaceOnUse" patternTransform="skewX(-30) scale(1, 0.5)">
+      <rect width="40" height="20" fill="#8B4513"/>
+      <rect x="5" y="5" width="15" height="10" fill="#A0522D"/>
+      <rect x="20" y="5" width="15" height="10" fill="#D2691E"/>
+    </pattern>
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset dx="3" dy="3" result="offset"/>
+      <feFlood flood-color="#000000" flood-opacity="0.3"/>
+      <feComposite in2="offset" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a1520"/>
+
+  <!-- === ROOM STRUCTURE (Isometric) === -->
+  <!-- Floor -->
+  <polygon points="400,450 100,280 400,110 700,280" fill="#3d2b1f"/>
+  <!-- Left wall -->
+  <polygon points="100,280 400,110 400,10 100,180" fill="#5c4033"/>
+  <!-- Right wall -->
+  <polygon points="400,110 700,280 700,180 400,10" fill="#4a3228"/>
+
+  <!-- Floor shadow/ambient -->
+  <polygon points="400,450 100,280 400,110 700,280" fill="#000000" opacity="0.15"/>
+
+  <!-- === RUG on floor === -->
+  <polygon points="400,350 250,265 400,180 550,265" fill="#8B4513" opacity="0.9"/>
+  <!-- Rug geometric pattern - diamond shapes -->
+  <polygon points="400,330 280,275 400,210 520,275" fill="#A0522D"/>
+  <polygon points="400,310 310,280 400,240 490,280" fill="#D2691E"/>
+  <polygon points="400,290 340,270 400,255 460,270" fill="#CD853F"/>
+  <!-- Rug border lines -->
+  <line x1="250" y1="265" x2="400" y2="180" stroke="#6B3410" stroke-width="2"/>
+  <line x1="400" y1="180" x2="550" y2="265" stroke="#6B3410" stroke-width="2"/>
+  <line x1="550" y1="265" x2="400" y2="350" stroke="#6B3410" stroke-width="2"/>
+  <line x1="400" y1="350" x2="250" y2="265" stroke="#6B3410" stroke-width="2"/>
+
+  <!-- === WINDOW on right wall === -->
+  <!-- Window frame -->
+  <polygon points="530,80 640,135 640,225 530,170" fill="#2a1f1a" stroke="#8B7355" stroke-width="3"/>
+  <!-- Window glass - night sky -->
+  <polygon points="535,85 635,138 635,220 535,165" fill="url(#nightSky)"/>
+  <!-- Stars -->
+  <circle cx="560" cy="110" r="1.5" fill="#FFFFFF"/>
+  <circle cx="580" cy="100" r="1" fill="#FFFFFF"/>
+  <circle cx="600" cy="120" r="1.5" fill="#FFFFFF"/>
+  <circle cx="615" cy="105" r="1" fill="#FFFFFF"/>
+  <circle cx="570" cy="130" r="1" fill="#FFFFFF"/>
+  <circle cx="595" cy="145" r="1.2" fill="#FFFFFF"/>
+  <circle cx="555" cy="145" r="0.8" fill="#FFFFFF"/>
+  <circle cx="620" cy="150" r="1" fill="#FFFFFF"/>
+  <!-- Crescent Moon -->
+  <circle cx="590" cy="110" r="10" fill="#F0E68C"/>
+  <circle cx="595" cy="107" r="8" fill="#0B0B3B"/>
+  <!-- Window cross frame -->
+  <line x1="585" y1="85" x2="585" y2="220" stroke="#8B7355" stroke-width="2" transform="skewY(27)"/>
+  <line x1="535" y1="125" x2="635" y2="178" stroke="#8B7355" stroke-width="2"/>
+
+  <!-- === BOOKSHELF on left wall === -->
+  <!-- Bookshelf shadow on wall -->
+  <polygon points="155,105 295,35 295,195 155,265" fill="#000000" opacity="0.2"/>
+  <!-- Bookshelf back -->
+  <polygon points="160,110 290,40 290,200 160,270" fill="#654321"/>
+  <!-- Bookshelf left side -->
+  <polygon points="160,110 160,270 175,278 175,118" fill="#5a3a1a"/>
+  <!-- Bookshelf shelves -->
+  <!-- Top shelf -->
+  <polygon points="160,130 290,60 305,68 175,138" fill="#7a5a3a"/>
+  <!-- Middle shelf -->
+  <polygon points="160,170 290,100 305,108 175,178" fill="#7a5a3a"/>
+  <!-- Bottom shelf -->
+  <polygon points="160,210 290,140 305,148 175,218" fill="#7a5a3a"/>
+  <!-- Shelf base -->
+  <polygon points="160,250 290,180 305,188 175,258" fill="#7a5a3a"/>
+
+  <!-- Books on top shelf -->
+  <polygon points="170,130 170,115 178,111 178,126" fill="#C41E3A"/>
+  <polygon points="180,126 180,108 188,104 188,122" fill="#1E90FF"/>
+  <polygon points="190,122 190,110 196,107 196,119" fill="#228B22"/>
+  <polygon points="198,119 198,104 206,100 206,115" fill="#FF8C00"/>
+  <polygon points="208,115 208,103 214,100 214,112" fill="#9932CC"/>
+  <polygon points="216,112 216,99 224,95 224,108" fill="#DC143C"/>
+  <polygon points="226,108 226,98 232,95 232,105" fill="#4169E1"/>
+
+  <!-- Books on middle shelf -->
+  <polygon points="170,170 170,152 178,148 178,166" fill="#FF6347"/>
+  <polygon points="180,166 180,150 188,146 188,162" fill="#2E8B57"/>
+  <polygon points="190,162 190,148 198,144 198,158" fill="#DAA520"/>
+  <polygon points="200,158 200,146 206,143 206,155" fill="#8A2BE2"/>
+  <polygon points="208,155 208,140 216,136 216,151" fill="#FF4500"/>
+  <polygon points="218,151 218,142 224,139 224,148" fill="#006400"/>
+
+  <!-- Books on bottom shelf -->
+  <polygon points="170,210 170,192 178,188 178,206" fill="#B22222"/>
+  <polygon points="180,206 180,190 188,186 188,202" fill="#4682B4"/>
+  <polygon points="190,202 190,192 196,189 196,199" fill="#FFD700"/>
+  <polygon points="198,199 198,184 206,180 206,195" fill="#800080"/>
+  <polygon points="208,195 208,185 214,182 214,192" fill="#FF69B4"/>
+  <polygon points="216,192 216,178 224,174 224,188" fill="#008080"/>
+
+  <!-- === DESK (right side of room) === -->
+  <!-- Desk shadow on floor -->
+  <ellipse cx="530" cy="350" rx="80" ry="25" fill="#000000" opacity="0.2"/>
+  <!-- Desk top surface (isometric) -->
+  <polygon points="460,260 580,195 650,230 530,295" fill="#8B6914"/>
+  <!-- Desk front face -->
+  <polygon points="530,295 650,230 650,270 530,335" fill="#6B4F12"/>
+  <!-- Desk left face -->
+  <polygon points="460,260 530,295 530,335 460,300" fill="#7A5A13"/>
+  <!-- Desk legs visible -->
+  <line x1="465" y1="300" x2="465" y2="330" stroke="#5a3a10" stroke-width="4"/>
+  <line x1="645" y1="270" x2="645" y2="300" stroke="#5a3a10" stroke-width="4"/>
+
+  <!-- === OPEN BOOK on desk === -->
+  <!-- Left page -->
+  <polygon points="510,250 540,235 540,220 510,235" fill="#F5F5DC"/>
+  <!-- Right page -->
+  <polygon points="540,235 570,248 570,233 540,220" fill="#FFFFF0"/>
+  <!-- Book spine -->
+  <line x1="540" y1="220" x2="540" y2="235" stroke="#8B4513" stroke-width="1.5"/>
+  <!-- Text lines on pages -->
+  <line x1="515" y1="240" x2="535" y2="232" stroke="#666" stroke-width="0.5"/>
+  <line x1="515" y1="244" x2="535" y2="236" stroke="#666" stroke-width="0.5"/>
+  <line x1="545" y1="232" x2="565" y2="241" stroke="#666" stroke-width="0.5"/>
+  <line x1="545" y1="236" x2="565" y2="245" stroke="#666" stroke-width="0.5"/>
+
+  <!-- === LAMP on desk === -->
+  <!-- Lamp base -->
+  <ellipse cx="600" cy="218" rx="12" ry="6" fill="#B8860B"/>
+  <!-- Lamp pole -->
+  <line x1="600" y1="218" x2="600" y2="175" stroke="#B8860B" stroke-width="3"/>
+  <!-- Lamp shade -->
+  <polygon points="585,175 615,175 610,158 590,158" fill="#DAA520"/>
+  <!-- Lamp shade isometric adjustment -->
+  <ellipse cx="600" cy="175" rx="15" ry="5" fill="#C4961A"/>
+  <!-- Lamp bulb glow -->
+  <ellipse cx="600" cy="168" rx="5" ry="3" fill="#FFFFE0"/>
+
+  <!-- === WARM LAMP GLOW OVERLAY === -->
+  <ellipse cx="560" cy="250" rx="200" ry="150" fill="url(#lampGlow)"/>
+
+  <!-- === Ambient warm overlay for cozy feel === -->
+  <rect width="800" height="600" fill="#FF8C00" opacity="0.05"/>
+</svg>

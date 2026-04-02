@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Mandala: 8-fold symmetry, jewel tones, 3 rings + decorative border -->
+  <!-- Palette: amethyst #6B3FA0, sapphire #2E5FA1, emerald #2D8F6F, ruby #C0392B, gold #D4A537, dark bg #1A1A2E -->
+
+  <defs>
+    <!-- Inner ring unit: dots at radius ~110 from centre -->
+    <g id="inner-dots">
+      <circle cx="400" cy="290" r="10" fill="#2E5FA1"/>
+      <circle cx="400" cy="275" r="6" fill="#D4A537"/>
+      <circle cx="400" cy="310" r="5" fill="#D4A537"/>
+    </g>
+
+    <!-- Middle ring: petal shape using cubic bezier paths at radius ~190 -->
+    <g id="petal">
+      <path d="M400,170 C415,190 418,230 400,260 C382,230 385,190 400,170Z" fill="#2D8F6F"/>
+      <path d="M400,180 C410,195 412,228 400,250 C388,228 390,195 400,180Z" fill="#6B3FA0"/>
+    </g>
+
+    <!-- Middle ring secondary petal (smaller, offset) -->
+    <g id="petal-small">
+      <path d="M400,190 C410,205 412,235 400,255 C388,235 390,205 400,190Z" fill="#C0392B"/>
+    </g>
+
+    <!-- Outer ring: large pointed triangles at radius ~310 -->
+    <g id="outer-triangle">
+      <polygon points="400,60 375,150 425,150" fill="#C0392B"/>
+      <polygon points="400,75 383,143 417,143" fill="#D4A537"/>
+    </g>
+
+    <!-- Outer ring secondary triangle (offset) -->
+    <g id="outer-triangle-small">
+      <polygon points="400,95 388,145 412,145" fill="#2E5FA1"/>
+    </g>
+
+    <!-- Decoration zone: small diamonds between outer ring and border -->
+    <g id="border-diamond">
+      <polygon points="400,35 395,50 400,65 405,50" fill="#2D8F6F"/>
+    </g>
+
+    <!-- Decorative border scallop -->
+    <g id="border-scallop">
+      <path d="M385,18 Q400,0 415,18" fill="none" stroke="#D4A537" stroke-width="2"/>
+      <circle cx="400" cy="20" r="4" fill="#D4A537"/>
+    </g>
+
+    <!-- Border ornament between scallops -->
+    <g id="border-ornament">
+      <circle cx="400" cy="25" r="2.5" fill="#6B3FA0"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="#1A1A2E"/>
+
+  <!-- === DECORATIVE BORDER === -->
+  <!-- Outer border circles -->
+  <circle cx="400" cy="400" r="390" fill="none" stroke="#D4A537" stroke-width="2.5"/>
+  <circle cx="400" cy="400" r="382" fill="none" stroke="#6B3FA0" stroke-width="1.5"/>
+  <circle cx="400" cy="400" r="376" fill="none" stroke="#D4A537" stroke-width="1"/>
+
+  <!-- Scalloped border pattern: 32 scallops -->
+  <use href="#border-scallop" transform="rotate(0 400 400)"/>
+  <use href="#border-scallop" transform="rotate(11.25 400 400)"/>
+  <use href="#border-scallop" transform="rotate(22.5 400 400)"/>
+  <use href="#border-scallop" transform="rotate(33.75 400 400)"/>
+  <use href="#border-scallop" transform="rotate(45 400 400)"/>
+  <use href="#border-scallop" transform="rotate(56.25 400 400)"/>
+  <use href="#border-scallop" transform="rotate(67.5 400 400)"/>
+  <use href="#border-scallop" transform="rotate(78.75 400 400)"/>
+  <use href="#border-scallop" transform="rotate(90 400 400)"/>
+  <use href="#border-scallop" transform="rotate(101.25 400 400)"/>
+  <use href="#border-scallop" transform="rotate(112.5 400 400)"/>
+  <use href="#border-scallop" transform="rotate(123.75 400 400)"/>
+  <use href="#border-scallop" transform="rotate(135 400 400)"/>
+  <use href="#border-scallop" transform="rotate(146.25 400 400)"/>
+  <use href="#border-scallop" transform="rotate(157.5 400 400)"/>
+  <use href="#border-scallop" transform="rotate(168.75 400 400)"/>
+  <use href="#border-scallop" transform="rotate(180 400 400)"/>
+  <use href="#border-scallop" transform="rotate(191.25 400 400)"/>
+  <use href="#border-scallop" transform="rotate(202.5 400 400)"/>
+  <use href="#border-scallop" transform="rotate(213.75 400 400)"/>
+  <use href="#border-scallop" transform="rotate(225 400 400)"/>
+  <use href="#border-scallop" transform="rotate(236.25 400 400)"/>
+  <use href="#border-scallop" transform="rotate(247.5 400 400)"/>
+  <use href="#border-scallop" transform="rotate(258.75 400 400)"/>
+  <use href="#border-scallop" transform="rotate(270 400 400)"/>
+  <use href="#border-scallop" transform="rotate(281.25 400 400)"/>
+  <use href="#border-scallop" transform="rotate(292.5 400 400)"/>
+  <use href="#border-scallop" transform="rotate(303.75 400 400)"/>
+  <use href="#border-scallop" transform="rotate(315 400 400)"/>
+  <use href="#border-scallop" transform="rotate(326.25 400 400)"/>
+  <use href="#border-scallop" transform="rotate(337.5 400 400)"/>
+  <use href="#border-scallop" transform="rotate(348.75 400 400)"/>
+
+  <!-- Border ornaments offset by 5.625 degrees -->
+  <use href="#border-ornament" transform="rotate(5.625 400 400)"/>
+  <use href="#border-ornament" transform="rotate(16.875 400 400)"/>
+  <use href="#border-ornament" transform="rotate(28.125 400 400)"/>
+  <use href="#border-ornament" transform="rotate(39.375 400 400)"/>
+  <use href="#border-ornament" transform="rotate(50.625 400 400)"/>
+  <use href="#border-ornament" transform="rotate(61.875 400 400)"/>
+  <use href="#border-ornament" transform="rotate(73.125 400 400)"/>
+  <use href="#border-ornament" transform="rotate(84.375 400 400)"/>
+  <use href="#border-ornament" transform="rotate(95.625 400 400)"/>
+  <use href="#border-ornament" transform="rotate(106.875 400 400)"/>
+  <use href="#border-ornament" transform="rotate(118.125 400 400)"/>
+  <use href="#border-ornament" transform="rotate(129.375 400 400)"/>
+  <use href="#border-ornament" transform="rotate(140.625 400 400)"/>
+  <use href="#border-ornament" transform="rotate(151.875 400 400)"/>
+  <use href="#border-ornament" transform="rotate(163.125 400 400)"/>
+  <use href="#border-ornament" transform="rotate(174.375 400 400)"/>
+  <use href="#border-ornament" transform="rotate(185.625 400 400)"/>
+  <use href="#border-ornament" transform="rotate(196.875 400 400)"/>
+  <use href="#border-ornament" transform="rotate(208.125 400 400)"/>
+  <use href="#border-ornament" transform="rotate(219.375 400 400)"/>
+  <use href="#border-ornament" transform="rotate(230.625 400 400)"/>
+  <use href="#border-ornament" transform="rotate(241.875 400 400)"/>
+  <use href="#border-ornament" transform="rotate(253.125 400 400)"/>
+  <use href="#border-ornament" transform="rotate(264.375 400 400)"/>
+  <use href="#border-ornament" transform="rotate(275.625 400 400)"/>
+  <use href="#border-ornament" transform="rotate(286.875 400 400)"/>
+  <use href="#border-ornament" transform="rotate(298.125 400 400)"/>
+  <use href="#border-ornament" transform="rotate(309.375 400 400)"/>
+  <use href="#border-ornament" transform="rotate(320.625 400 400)"/>
+  <use href="#border-ornament" transform="rotate(331.875 400 400)"/>
+  <use href="#border-ornament" transform="rotate(343.125 400 400)"/>
+  <use href="#border-ornament" transform="rotate(354.375 400 400)"/>
+
+  <!-- === DECORATION ZONE: diamonds between outer ring and border === -->
+  <use href="#border-diamond" transform="rotate(0 400 400)"/>
+  <use href="#border-diamond" transform="rotate(22.5 400 400)"/>
+  <use href="#border-diamond" transform="rotate(45 400 400)"/>
+  <use href="#border-diamond" transform="rotate(67.5 400 400)"/>
+  <use href="#border-diamond" transform="rotate(90 400 400)"/>
+  <use href="#border-diamond" transform="rotate(112.5 400 400)"/>
+  <use href="#border-diamond" transform="rotate(135 400 400)"/>
+  <use href="#border-diamond" transform="rotate(157.5 400 400)"/>
+  <use href="#border-diamond" transform="rotate(180 400 400)"/>
+  <use href="#border-diamond" transform="rotate(202.5 400 400)"/>
+  <use href="#border-diamond" transform="rotate(225 400 400)"/>
+  <use href="#border-diamond" transform="rotate(247.5 400 400)"/>
+  <use href="#border-diamond" transform="rotate(270 400 400)"/>
+  <use href="#border-diamond" transform="rotate(292.5 400 400)"/>
+  <use href="#border-diamond" transform="rotate(315 400 400)"/>
+  <use href="#border-diamond" transform="rotate(337.5 400 400)"/>
+
+  <!-- === OUTER RING: Large triangles, 8-fold === -->
+  <use href="#outer-triangle" transform="rotate(0 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(45 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(90 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(135 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(180 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(225 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(270 400 400)"/>
+  <use href="#outer-triangle" transform="rotate(315 400 400)"/>
+
+  <!-- Secondary triangles offset 22.5 degrees -->
+  <use href="#outer-triangle-small" transform="rotate(22.5 400 400)"/>
+  <use href="#outer-triangle-small" transform="rotate(67.5 400 400)"/>
+  <use href="#outer-triangle-small" transform="rotate(112.5 400 400)"/>
+  <use href="#outer-triangle-small" transform="rotate(157.5 400 400)"/>
+  <use href="#outer-triangle-small" transform="rotate(202.5 400 400)"/>
+  <use href="#outer-triangle-small" transform="rotate(247.5 400 400)"/>
+  <use href="#outer-triangle-small" transform="rotate(292.5 400 400)"/>
+  <use href="#outer-triangle-small" transform="rotate(337.5 400 400)"/>
+
+  <!-- Ring divider: outer ring boundary -->
+  <circle cx="400" cy="400" r="340" fill="none" stroke="#D4A537" stroke-width="1.5"/>
+
+  <!-- === MIDDLE RING: Bezier petals, 8-fold === -->
+  <use href="#petal" transform="rotate(0 400 400)"/>
+  <use href="#petal" transform="rotate(45 400 400)"/>
+  <use href="#petal" transform="rotate(90 400 400)"/>
+  <use href="#petal" transform="rotate(135 400 400)"/>
+  <use href="#petal" transform="rotate(180 400 400)"/>
+  <use href="#petal" transform="rotate(225 400 400)"/>
+  <use href="#petal" transform="rotate(270 400 400)"/>
+  <use href="#petal" transform="rotate(315 400 400)"/>
+
+  <!-- Secondary petals offset 22.5 degrees -->
+  <use href="#petal-small" transform="rotate(22.5 400 400)"/>
+  <use href="#petal-small" transform="rotate(67.5 400 400)"/>
+  <use href="#petal-small" transform="rotate(112.5 400 400)"/>
+  <use href="#petal-small" transform="rotate(157.5 400 400)"/>
+  <use href="#petal-small" transform="rotate(202.5 400 400)"/>
+  <use href="#petal-small" transform="rotate(247.5 400 400)"/>
+  <use href="#petal-small" transform="rotate(292.5 400 400)"/>
+  <use href="#petal-small" transform="rotate(337.5 400 400)"/>
+
+  <!-- Ring divider: middle ring boundary -->
+  <circle cx="400" cy="400" r="265" fill="none" stroke="#D4A537" stroke-width="1"/>
+  <circle cx="400" cy="400" r="160" fill="none" stroke="#D4A537" stroke-width="1"/>
+
+  <!-- === INNER RING: Dots, 8-fold === -->
+  <use href="#inner-dots" transform="rotate(0 400 400)"/>
+  <use href="#inner-dots" transform="rotate(45 400 400)"/>
+  <use href="#inner-dots" transform="rotate(90 400 400)"/>
+  <use href="#inner-dots" transform="rotate(135 400 400)"/>
+  <use href="#inner-dots" transform="rotate(180 400 400)"/>
+  <use href="#inner-dots" transform="rotate(225 400 400)"/>
+  <use href="#inner-dots" transform="rotate(270 400 400)"/>
+  <use href="#inner-dots" transform="rotate(315 400 400)"/>
+
+  <!-- === CENTRE === -->
+  <circle cx="400" cy="400" r="30" fill="#D4A537"/>
+  <circle cx="400" cy="400" r="22" fill="#6B3FA0"/>
+  <circle cx="400" cy="400" r="13" fill="#D4A537"/>
+  <circle cx="400" cy="400" r="6" fill="#2D8F6F"/>
+</svg>

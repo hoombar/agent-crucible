@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <title>Mandala - Jewel Tones</title>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="#0d1117"/>
+
+  <!-- Decorative border -->
+  <circle cx="400" cy="400" r="390" fill="none" stroke="#f9a825" stroke-width="3"/>
+  <circle cx="400" cy="400" r="380" fill="none" stroke="#7b2d8e" stroke-width="1.5"/>
+  <circle cx="400" cy="400" r="375" fill="none" stroke="#f9a825" stroke-width="3"/>
+
+  <!-- Center circle -->
+  <circle cx="400" cy="400" r="30" fill="#c62828"/>
+  <circle cx="400" cy="400" r="20" fill="#f9a825"/>
+
+  <!-- Inner ring: circles/dots pattern at radius ~80 -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <circle cx="400" cy="320" r="12" fill="#7b2d8e"/>
+      <circle cx="400" cy="320" r="6" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <circle cx="400" cy="320" r="12" fill="#7b2d8e"/>
+      <circle cx="400" cy="320" r="6" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <circle cx="400" cy="320" r="12" fill="#7b2d8e"/>
+      <circle cx="400" cy="320" r="6" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <circle cx="400" cy="320" r="12" fill="#7b2d8e"/>
+      <circle cx="400" cy="320" r="6" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <circle cx="400" cy="320" r="12" fill="#7b2d8e"/>
+      <circle cx="400" cy="320" r="6" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <circle cx="400" cy="320" r="12" fill="#7b2d8e"/>
+      <circle cx="400" cy="320" r="6" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <circle cx="400" cy="320" r="12" fill="#7b2d8e"/>
+      <circle cx="400" cy="320" r="6" fill="#f9a825"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <circle cx="400" cy="320" r="12" fill="#7b2d8e"/>
+      <circle cx="400" cy="320" r="6" fill="#f9a825"/>
+    </g>
+  </g>
+
+  <!-- Middle ring: petal shapes at radius ~180 -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <ellipse cx="400" cy="240" rx="18" ry="40" fill="#2e7d32" opacity="0.85"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <ellipse cx="400" cy="240" rx="18" ry="40" fill="#2e7d32" opacity="0.85"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <ellipse cx="400" cy="240" rx="18" ry="40" fill="#2e7d32" opacity="0.85"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <ellipse cx="400" cy="240" rx="18" ry="40" fill="#2e7d32" opacity="0.85"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <ellipse cx="400" cy="240" rx="18" ry="40" fill="#2e7d32" opacity="0.85"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <ellipse cx="400" cy="240" rx="18" ry="40" fill="#2e7d32" opacity="0.85"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <ellipse cx="400" cy="240" rx="18" ry="40" fill="#2e7d32" opacity="0.85"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <ellipse cx="400" cy="240" rx="18" ry="40" fill="#2e7d32" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- Outer ring: triangles/pointed elements at radius ~300 -->
+  <g>
+    <g transform="rotate(0, 400, 400)">
+      <polygon points="400,70 385,130 415,130" fill="#c62828"/>
+    </g>
+    <g transform="rotate(45, 400, 400)">
+      <polygon points="400,70 385,130 415,130" fill="#c62828"/>
+    </g>
+    <g transform="rotate(90, 400, 400)">
+      <polygon points="400,70 385,130 415,130" fill="#c62828"/>
+    </g>
+    <g transform="rotate(135, 400, 400)">
+      <polygon points="400,70 385,130 415,130" fill="#c62828"/>
+    </g>
+    <g transform="rotate(180, 400, 400)">
+      <polygon points="400,70 385,130 415,130" fill="#c62828"/>
+    </g>
+    <g transform="rotate(225, 400, 400)">
+      <polygon points="400,70 385,130 415,130" fill="#c62828"/>
+    </g>
+    <g transform="rotate(270, 400, 400)">
+      <polygon points="400,70 385,130 415,130" fill="#c62828"/>
+    </g>
+    <g transform="rotate(315, 400, 400)">
+      <polygon points="400,70 385,130 415,130" fill="#c62828"/>
+    </g>
+  </g>
+
+  <!-- Ring separators -->
+  <circle cx="400" cy="400" r="290" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+  <circle cx="400" cy="400" r="195" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+  <circle cx="400" cy="400" r="140" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+</svg>

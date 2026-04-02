@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Warm light gradient for lamp glow -->
+    <radialGradient id="lampGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#FFA500" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFA500" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Night sky gradient -->
+    <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B0B2B"/>
+      <stop offset="100%" stop-color="#1a1a4e"/>
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset dx="3" dy="3" result="offsetBlur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.3"/>
+      <feComposite in2="offsetBlur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Rug pattern -->
+    <pattern id="rugPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#8B4513"/>
+      <rect x="5" y="5" width="10" height="10" fill="#A0522D"/>
+      <rect x="8" y="8" width="4" height="4" fill="#CD853F"/>
+    </pattern>
+  </defs>
+
+  <!-- Background - dark room ambient -->
+  <rect width="800" height="600" fill="#1a1520"/>
+
+  <!-- ROOM STRUCTURE - Isometric box -->
+  <!-- Floor -->
+  <polygon points="400,450 150,300 400,150 650,300" fill="#3d2b1f"/>
+  <!-- Left wall -->
+  <polygon points="150,300 150,80 400,230 400,450" fill="#4a3728"/>
+  <!-- Right wall -->
+  <polygon points="400,230 400,450 650,300 650,80" fill="#3a2a1e"/>
+
+  <!-- FLOOR - Rug (isometric diamond on floor) -->
+  <polygon points="400,380 280,310 400,240 520,310" fill="#8B4513" opacity="0.8"/>
+  <polygon points="400,360 310,315 400,270 490,315" fill="#A0522D"/>
+  <polygon points="400,340 340,310 400,280 460,310" fill="#CD853F"/>
+  <polygon points="400,330 360,310 400,290 440,310" fill="#DEB887"/>
+
+  <!-- BOOKSHELF - Against left wall -->
+  <!-- Shelf frame - isometric rectangle on left wall -->
+  <g filter="url(#shadow)">
+    <!-- Back of shelf (on wall) -->
+    <polygon points="175,250 175,120 310,195 310,325" fill="#5C3317"/>
+    <!-- Top shelf surface -->
+    <polygon points="175,120 310,195 330,183 195,108" fill="#6B3A20"/>
+    <!-- Right side -->
+    <polygon points="310,195 330,183 330,313 310,325" fill="#4A2810"/>
+    <!-- Shelf dividers -->
+    <polygon points="175,160 310,235 330,223 195,148" fill="#6B3A20"/>
+    <polygon points="175,200 310,275 330,263 195,188" fill="#6B3A20"/>
+
+    <!-- Books on top shelf -->
+    <rect x="180" y="125" width="8" height="32" fill="#C41E3A" transform="skewY(30)"/>
+    <rect x="190" y="125" width="6" height="28" fill="#1E90FF" transform="skewY(30)"/>
+    <rect x="198" y="125" width="9" height="35" fill="#228B22" transform="skewY(30)"/>
+    <rect x="209" y="125" width="7" height="30" fill="#FFD700" transform="skewY(30)"/>
+    <rect x="218" y="125" width="8" height="33" fill="#8B008B" transform="skewY(30)"/>
+    <rect x="228" y="125" width="10" height="36" fill="#FF6347" transform="skewY(30)"/>
+    <rect x="240" y="125" width="7" height="25" fill="#4682B4" transform="skewY(30)"/>
+  </g>
+
+  <!-- WINDOW - On right wall showing night sky -->
+  <g>
+    <!-- Window frame -->
+    <polygon points="500,100 500,220 600,165 600,45" fill="#2F1F0F"/>
+    <!-- Window glass - night sky -->
+    <polygon points="510,108 510,210 590,160 590,53" fill="url(#nightSky)"/>
+    <!-- Stars -->
+    <circle cx="530" cy="130" r="1.5" fill="white"/>
+    <circle cx="555" cy="95" r="1" fill="white"/>
+    <circle cx="570" cy="120" r="1.5" fill="white"/>
+    <circle cx="545" cy="75" r="1" fill="white"/>
+    <circle cx="560" cy="145" r="1" fill="white"/>
+    <circle cx="575" cy="80" r="1.2" fill="white"/>
+    <circle cx="525" cy="100" r="0.8" fill="white"/>
+    <!-- Crescent moon -->
+    <circle cx="565" cy="70" r="10" fill="#FFFACD"/>
+    <circle cx="570" cy="67" r="9" fill="url(#nightSky)"/>
+    <!-- Window cross bars -->
+    <line x1="550" y1="80" x2="550" y2="188" stroke="#2F1F0F" stroke-width="3"/>
+    <line x1="508" y1="158" x2="592" y2="108" stroke="#2F1F0F" stroke-width="3"/>
+  </g>
+
+  <!-- DESK - Isometric desk in center-right area -->
+  <g filter="url(#shadow)">
+    <!-- Desk top surface -->
+    <polygon points="380,320 480,265 580,320 480,375" fill="#6B3A20"/>
+    <!-- Desk front face -->
+    <polygon points="380,320 480,375 480,415 380,360" fill="#5C3317"/>
+    <!-- Desk right face -->
+    <polygon points="480,375 580,320 580,360 480,415" fill="#4A2810"/>
+    <!-- Desk legs -->
+    <line x1="385" y1="320" x2="385" y2="360" stroke="#3d2510" stroke-width="4"/>
+    <line x1="480" y1="375" x2="480" y2="415" stroke="#3d2510" stroke-width="4"/>
+    <line x1="575" y1="320" x2="575" y2="360" stroke="#3d2510" stroke-width="4"/>
+  </g>
+
+  <!-- LAMP on desk -->
+  <g>
+    <!-- Lamp base -->
+    <ellipse cx="430" cy="300" rx="15" ry="8" fill="#B8860B"/>
+    <!-- Lamp pole -->
+    <line x1="430" y1="300" x2="430" y2="250" stroke="#B8860B" stroke-width="3"/>
+    <!-- Lamp shade (isometric cone) -->
+    <polygon points="415,250 445,250 450,235 410,235" fill="#DAA520"/>
+    <polygon points="410,235 450,235 445,228 415,228" fill="#FFD700"/>
+    <!-- Lamp glow effect -->
+    <ellipse cx="430" cy="310" rx="60" ry="40" fill="url(#lampGlow)"/>
+  </g>
+
+  <!-- OPEN BOOK on desk -->
+  <g>
+    <!-- Left page -->
+    <polygon points="490,295 490,275 510,262 510,282" fill="#FFFEF0"/>
+    <!-- Right page -->
+    <polygon points="510,262 510,282 530,295 530,275" fill="#F5F0DC"/>
+    <!-- Spine -->
+    <line x1="510" y1="262" x2="510" y2="282" stroke="#8B4513" stroke-width="1.5"/>
+    <!-- Text lines on pages -->
+    <line x1="494" y1="280" x2="506" y2="272" stroke="#666" stroke-width="0.5"/>
+    <line x1="494" y1="284" x2="506" y2="276" stroke="#666" stroke-width="0.5"/>
+    <line x1="514" y1="272" x2="526" y2="280" stroke="#666" stroke-width="0.5"/>
+    <line x1="514" y1="276" x2="526" y2="284" stroke="#666" stroke-width="0.5"/>
+  </g>
+
+  <!-- Warm ambient overlay from lamp -->
+  <ellipse cx="430" cy="320" rx="150" ry="100" fill="#FFA500" opacity="0.05"/>
+</svg>

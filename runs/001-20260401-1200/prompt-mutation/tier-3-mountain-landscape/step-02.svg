@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <!-- Rich sky gradient with many stops for smooth transition -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0221"/>
+      <stop offset="15%" stop-color="#1a0533"/>
+      <stop offset="28%" stop-color="#2e1065"/>
+      <stop offset="42%" stop-color="#6b2176"/>
+      <stop offset="55%" stop-color="#a8325a"/>
+      <stop offset="68%" stop-color="#d4583e"/>
+      <stop offset="80%" stop-color="#e8873a"/>
+      <stop offset="90%" stop-color="#f2b040"/>
+      <stop offset="97%" stop-color="#fcd668"/>
+      <stop offset="100%" stop-color="#fff0a0"/>
+    </linearGradient>
+
+    <!-- Sun glow -->
+    <radialGradient id="sunGlow" cx="0.5" cy="0.95" r="0.6">
+      <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.6"/>
+      <stop offset="30%" stop-color="#f0c050" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#d06030" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#d06030" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Lake gradient - dreamy muted reflection -->
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4a050" stop-opacity="0.8"/>
+      <stop offset="15%" stop-color="#b06848"/>
+      <stop offset="35%" stop-color="#7a3858"/>
+      <stop offset="60%" stop-color="#4a2060"/>
+      <stop offset="100%" stop-color="#150820"/>
+    </linearGradient>
+
+    <!-- Atmospheric haze overlay for distant elements -->
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b4090" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#d08050" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Mountain gradients - each layer gets its own for richness -->
+    <linearGradient id="mtnFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a090b8"/>
+      <stop offset="100%" stop-color="#8878a8"/>
+    </linearGradient>
+    <linearGradient id="mtnMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7060a0"/>
+      <stop offset="40%" stop-color="#5c4888"/>
+      <stop offset="100%" stop-color="#4a3870"/>
+    </linearGradient>
+    <linearGradient id="mtnNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3070"/>
+      <stop offset="50%" stop-color="#352050"/>
+      <stop offset="100%" stop-color="#251838"/>
+    </linearGradient>
+
+    <!-- Cloud filters -->
+    <filter id="cloudSoft">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="cloudMed">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <!-- Glow filter for sun area -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Lake distortion - organic ripples -->
+    <filter id="ripple">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.04" numOctaves="4" seed="42" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Soft edge for treeline -->
+    <filter id="treeHaze">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+  </defs>
+
+  <!-- Sky background -->
+  <rect x="0" y="0" width="1000" height="430" fill="url(#sky)"/>
+
+  <!-- Sun glow overlay -->
+  <rect x="0" y="0" width="1000" height="430" fill="url(#sunGlow)"/>
+
+  <!-- Sun orb peeking at horizon -->
+  <circle cx="500" cy="415" r="35" fill="#fff0c0" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="500" cy="415" r="18" fill="#fffae0" opacity="0.7"/>
+
+  <!-- Clouds - organic layered shapes -->
+  <!-- Cloud 1: high, purple-tinted -->
+  <ellipse cx="180" cy="70" rx="130" ry="25" fill="#3a1860" opacity="0.4" filter="url(#cloudSoft)"/>
+  <ellipse cx="210" cy="65" rx="90" ry="20" fill="#4a2870" opacity="0.5" filter="url(#cloudSoft)"/>
+  <ellipse cx="160" cy="72" rx="60" ry="18" fill="#5a3880" opacity="0.3" filter="url(#cloudSoft)"/>
+
+  <!-- Cloud 2: mid-height, pink-purple -->
+  <ellipse cx="720" cy="150" rx="150" ry="30" fill="#6a3870" opacity="0.35" filter="url(#cloudMed)"/>
+  <ellipse cx="760" cy="145" rx="100" ry="22" fill="#8a4878" opacity="0.4" filter="url(#cloudMed)"/>
+  <ellipse cx="690" cy="155" rx="70" ry="18" fill="#7a4075" opacity="0.3" filter="url(#cloudMed)"/>
+
+  <!-- Cloud 3: low, warm-tinted, catching sunset light -->
+  <ellipse cx="380" cy="250" rx="170" ry="22" fill="#c07050" opacity="0.3" filter="url(#cloudMed)"/>
+  <ellipse cx="420" cy="245" rx="110" ry="18" fill="#d08060" opacity="0.35" filter="url(#cloudMed)"/>
+  <ellipse cx="350" cy="252" rx="80" ry="15" fill="#b06848" opacity="0.25" filter="url(#cloudMed)"/>
+
+  <!-- Farthest mountains - hazy, light, cool tones -->
+  <path d="M-50,430 L80,240 L180,340 L280,200 L400,330 L520,230 L650,350 L780,210 L900,320 L1050,430 Z"
+        fill="url(#mtnFar)" opacity="0.45"/>
+  <!-- Snow caps on far peaks -->
+  <path d="M280,200 L260,230 L300,230 Z" fill="#e0ddf0" opacity="0.5"/>
+  <path d="M520,230 L500,255 L540,258 Z" fill="#e0ddf0" opacity="0.45"/>
+  <path d="M780,210 L760,240 L800,242 Z" fill="#e0ddf0" opacity="0.5"/>
+
+  <!-- Haze overlay on far mountains -->
+  <path d="M-50,430 L80,240 L180,340 L280,200 L400,330 L520,230 L650,350 L780,210 L900,320 L1050,430 Z"
+        fill="url(#haze)" opacity="0.3"/>
+
+  <!-- Middle mountains - more saturated purple -->
+  <path d="M-30,430 L120,280 L250,370 L400,260 L530,360 L680,280 L830,370 L950,290 L1050,430 Z"
+        fill="url(#mtnMid)" opacity="0.7"/>
+  <!-- Snow caps -->
+  <path d="M400,260 L380,290 L420,292 Z" fill="#d0cce0" opacity="0.6"/>
+  <path d="M680,280 L660,305 L700,308 Z" fill="#d0cce0" opacity="0.55"/>
+  <path d="M950,290 L932,315 L968,318 Z" fill="#d0cce0" opacity="0.6"/>
+
+  <!-- Nearest mountains - dark, saturated, imposing -->
+  <path d="M-20,430 L150,300 L320,400 L480,290 L650,400 L800,310 L1020,430 Z"
+        fill="url(#mtnNear)" opacity="0.9"/>
+  <!-- Snow caps -->
+  <path d="M150,300 L130,328 L170,330 Z" fill="#c0b8d8" opacity="0.7"/>
+  <path d="M480,290 L458,320 L502,322 Z" fill="#c0b8d8" opacity="0.65"/>
+  <path d="M800,310 L780,338 L820,340 Z" fill="#c0b8d8" opacity="0.7"/>
+
+  <!-- Distant tree line - small, light, blurred -->
+  <g filter="url(#treeHaze)" opacity="0.5">
+    <path d="M0,430 L8,412 L16,430 M20,430 L28,414 L36,430 M40,430 L49,410 L58,430 M62,430 L70,414 L78,430 M85,430 L94,411 L103,430 M110,430 L118,415 L126,430 M132,430 L141,410 L150,430 M155,430 L163,413 L171,430 M178,430 L187,411 L196,430 M202,430 L210,414 L218,430 M225,430 L234,410 L243,430 M248,430 L256,413 L264,430 M270,430 L279,411 L288,430 M295,430 L303,414 L311,430 M318,430 L327,410 L336,430 M340,430 L348,413 L356,430 M362,430 L371,411 L380,430"
+          fill="#3a4838" stroke="none"/>
+  </g>
+
+  <!-- Mid-distance trees - medium, moderate detail -->
+  <g opacity="0.7">
+    <path d="M390,430 L402,400 L414,430 M390,415 L402,392 L414,415" fill="#2a3a28"/>
+    <path d="M420,430 L434,396 L448,430 M422,412 L434,390 L446,412" fill="#283828"/>
+    <path d="M455,430 L468,398 L481,430 M457,414 L468,393 L479,414" fill="#2a3a28"/>
+    <path d="M488,430 L502,395 L516,430 M490,413 L502,390 L514,413" fill="#283828"/>
+    <path d="M522,430 L536,397 L550,430 M524,414 L536,392 L548,414" fill="#2a3a28"/>
+    <path d="M558,430 L572,394 L586,430 M560,412 L572,389 L584,412" fill="#283828"/>
+    <path d="M594,430 L608,396 L622,430 M596,413 L608,391 L620,413" fill="#2a3a28"/>
+    <path d="M628,430 L642,398 L656,430 M630,415 L642,393 L654,415" fill="#283828"/>
+  </g>
+
+  <!-- Near trees - large, dark, detailed with layered branches -->
+  <g opacity="0.95">
+    <!-- Tree A - tall prominent pine -->
+    <rect x="673" y="405" width="5" height="25" fill="#0e120c"/>
+    <path d="M650,430 L676,375 L702,430 Z" fill="#14201a"/>
+    <path d="M655,415 L676,380 L697,415 Z" fill="#182418"/>
+    <path d="M660,402 L676,372 L692,402 Z" fill="#1c281c"/>
+    <path d="M665,390 L676,368 L687,390 Z" fill="#1e2c1e"/>
+
+    <!-- Tree B -->
+    <rect x="723" y="400" width="6" height="30" fill="#0e120c"/>
+    <path d="M698,430 L726,365 L754,430 Z" fill="#121e12"/>
+    <path d="M704,412 L726,372 L748,412 Z" fill="#162216"/>
+    <path d="M710,398 L726,365 L742,398 Z" fill="#1a261a"/>
+    <path d="M716,385 L726,358 L736,385 Z" fill="#1e2a1e"/>
+
+    <!-- Tree C -->
+    <rect x="775" y="402" width="5" height="28" fill="#0e120c"/>
+    <path d="M753,430 L778,370 L803,430 Z" fill="#14201a"/>
+    <path d="M758,414 L778,376 L798,414 Z" fill="#182418"/>
+    <path d="M763,400 L778,370 L793,400 Z" fill="#1c281c"/>
+    <path d="M768,388 L778,364 L788,388 Z" fill="#1e2c1e"/>
+
+    <!-- Tree D - largest, most prominent -->
+    <rect x="836" y="395" width="7" height="35" fill="#0e120c"/>
+    <path d="M808,430 L840,352 L872,430 Z" fill="#101c10"/>
+    <path d="M815,410 L840,360 L865,410 Z" fill="#142014"/>
+    <path d="M822,395 L840,358 L858,395 Z" fill="#182418"/>
+    <path d="M828,382 L840,352 L852,382 Z" fill="#1c281c"/>
+
+    <!-- Tree E -->
+    <rect x="896" y="400" width="6" height="30" fill="#0e120c"/>
+    <path d="M873,430 L899,365 L925,430 Z" fill="#121e12"/>
+    <path d="M879,413 L899,372 L919,413 Z" fill="#162216"/>
+    <path d="M885,399 L899,365 L913,399 Z" fill="#1a261a"/>
+
+    <!-- Tree F -->
+    <rect x="948" y="403" width="5" height="27" fill="#0e120c"/>
+    <path d="M930,430 L951,372 L972,430 Z" fill="#14201a"/>
+    <path d="M935,415 L951,378 L967,415 Z" fill="#182418"/>
+    <path d="M940,402 L951,372 L962,402 Z" fill="#1c281c"/>
+  </g>
+
+  <!-- Lake base -->
+  <rect x="0" y="430" width="1000" height="170" fill="url(#lake)"/>
+
+  <!-- Lake reflections - muted, distorted -->
+  <g opacity="0.3" filter="url(#ripple)" transform="translate(0, 860) scale(1, -1)">
+    <!-- Reflected nearest mountains -->
+    <path d="M-20,430 L150,300 L320,400 L480,290 L650,400 L800,310 L1020,430 Z"
+          fill="#30204a"/>
+    <!-- Reflected trees -->
+    <path d="M808,430 L840,352 L872,430 Z" fill="#101c10"/>
+    <path d="M873,430 L899,365 L925,430 Z" fill="#121e12"/>
+    <path d="M698,430 L726,365 L754,430 Z" fill="#121e12"/>
+  </g>
+
+  <!-- Sun reflection pillar on lake -->
+  <rect x="470" y="430" width="60" height="170" fill="#f0c050" opacity="0.15"/>
+  <rect x="485" y="430" width="30" height="170" fill="#fff0a0" opacity="0.1"/>
+
+  <!-- Lake surface shimmer lines -->
+  <line x1="100" y1="455" x2="400" y2="455" stroke="#f0b050" stroke-width="0.8" opacity="0.12"/>
+  <line x1="450" y1="460" x2="550" y2="460" stroke="#ffd070" stroke-width="1" opacity="0.18"/>
+  <line x1="600" y1="458" x2="850" y2="458" stroke="#f0b050" stroke-width="0.6" opacity="0.1"/>
+  <line x1="200" y1="485" x2="480" y2="485" stroke="#c08050" stroke-width="0.7" opacity="0.1"/>
+  <line x1="520" y1="490" x2="700" y2="490" stroke="#d09060" stroke-width="0.8" opacity="0.12"/>
+  <line x1="50" y1="520" x2="350" y2="520" stroke="#905060" stroke-width="0.5" opacity="0.08"/>
+  <line x1="400" y1="525" x2="600" y2="525" stroke="#906058" stroke-width="0.6" opacity="0.08"/>
+  <line x1="650" y1="518" x2="950" y2="518" stroke="#905060" stroke-width="0.5" opacity="0.07"/>
+  <line x1="100" y1="555" x2="900" y2="555" stroke="#604050" stroke-width="0.4" opacity="0.05"/>
+  <line x1="200" y1="580" x2="800" y2="580" stroke="#503848" stroke-width="0.3" opacity="0.04"/>
+</svg>

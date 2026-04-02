@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <!-- Sky gradient: deep purple/navy at top to warm orange/pink at horizon -->
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="30%" stop-color="#2d1b69"/>
+      <stop offset="60%" stop-color="#8b3a62"/>
+      <stop offset="80%" stop-color="#d4614c"/>
+      <stop offset="95%" stop-color="#f0a04b"/>
+      <stop offset="100%" stop-color="#f7c948"/>
+    </linearGradient>
+
+    <!-- Lake reflection gradient: muted version of sky -->
+    <linearGradient id="lakeGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c49045"/>
+      <stop offset="20%" stop-color="#b05040"/>
+      <stop offset="60%" stop-color="#6b2f55"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </linearGradient>
+
+    <!-- Snow cap gradient -->
+    <linearGradient id="snowGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d0d0e0"/>
+    </linearGradient>
+
+    <!-- Cloud filter for soft edges -->
+    <filter id="cloudBlur">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <!-- Subtle blur for distant mountains -->
+    <filter id="distantHaze">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+
+    <!-- Lake ripple distortion -->
+    <filter id="lakeRipple">
+      <feTurbulence type="turbulence" baseFrequency="0.01 0.06" numOctaves="3" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Reflection clip -->
+    <clipPath id="lakeClip">
+      <rect x="0" y="420" width="1000" height="180"/>
+    </clipPath>
+  </defs>
+
+  <!-- Sky -->
+  <rect x="0" y="0" width="1000" height="420" fill="url(#skyGradient)"/>
+
+  <!-- Cloud 1 - upper left -->
+  <ellipse cx="200" cy="80" rx="120" ry="30" fill="#4a2070" opacity="0.4" filter="url(#cloudBlur)"/>
+  <ellipse cx="230" cy="75" rx="80" ry="22" fill="#5a3080" opacity="0.35" filter="url(#cloudBlur)"/>
+
+  <!-- Cloud 2 - center right -->
+  <ellipse cx="700" cy="140" rx="140" ry="35" fill="#7a4070" opacity="0.35" filter="url(#cloudBlur)"/>
+  <ellipse cx="740" cy="135" rx="90" ry="25" fill="#8a5080" opacity="0.3" filter="url(#cloudBlur)"/>
+
+  <!-- Cloud 3 - lower, near horizon -->
+  <ellipse cx="450" cy="220" rx="160" ry="28" fill="#a06050" opacity="0.3" filter="url(#cloudBlur)"/>
+  <ellipse cx="490" cy="215" rx="100" ry="20" fill="#b07060" opacity="0.25" filter="url(#cloudBlur)"/>
+
+  <!-- Mountain Layer 1: Farthest - lightest, haziest -->
+  <g filter="url(#distantHaze)" opacity="0.5">
+    <polygon points="0,380 100,220 200,380" fill="#8878a0"/>
+    <polygon points="100,220 100,200 130,220" fill="#d0d0e0"/>
+    <polygon points="150,380 300,190 450,380" fill="#8070a0"/>
+    <polygon points="300,190 300,170 340,195" fill="#d0d0e0"/>
+    <polygon points="350,380 520,210 700,380" fill="#8878a8"/>
+    <polygon points="520,210 520,190 555,215" fill="#d0d0e0"/>
+    <polygon points="600,380 780,230 950,380" fill="#8070a0"/>
+    <polygon points="780,230 780,210 815,235" fill="#d0d0e0"/>
+  </g>
+
+  <!-- Mountain Layer 2: Middle distance -->
+  <g opacity="0.7">
+    <polygon points="0,400 180,260 360,400" fill="#5c4878"/>
+    <polygon points="180,260 180,240 215,265" fill="#c8c8d8"/>
+    <polygon points="250,400 450,240 650,400" fill="#604880"/>
+    <polygon points="450,240 450,218 490,248" fill="#c8c8d8"/>
+    <polygon points="550,400 750,270 1000,400" fill="#584880"/>
+    <polygon points="750,270 750,250 785,275" fill="#c8c8d8"/>
+  </g>
+
+  <!-- Mountain Layer 3: Nearest mountains - darkest, most saturated -->
+  <g opacity="0.9">
+    <polygon points="0,420 150,290 350,420" fill="#3a2858"/>
+    <polygon points="150,290 150,270 185,296" fill="#b8b8cc"/>
+    <polygon points="300,420 500,280 720,420" fill="#3c2a5c"/>
+    <polygon points="500,280 500,258 540,288" fill="#b8b8cc"/>
+    <polygon points="650,420 850,300 1000,420" fill="#382858"/>
+    <polygon points="850,300 850,280 885,308" fill="#b8b8cc"/>
+  </g>
+
+  <!-- Tree line - distant trees (smaller, lighter, simpler) -->
+  <g opacity="0.6">
+    <!-- Distant trees: simple triangles -->
+    <polygon points="50,420 58,395 66,420" fill="#3a4838"/>
+    <polygon points="80,420 87,398 94,420" fill="#3c4a3a"/>
+    <polygon points="110,420 118,393 126,420" fill="#384838"/>
+    <polygon points="140,420 147,396 154,420" fill="#3a4a3a"/>
+    <polygon points="170,420 178,392 186,420" fill="#384838"/>
+    <polygon points="200,420 207,397 214,420" fill="#3c4a3a"/>
+    <polygon points="230,420 238,394 246,420" fill="#384838"/>
+    <polygon points="260,420 268,396 276,420" fill="#3a4a3a"/>
+    <polygon points="290,420 297,393 304,420" fill="#384838"/>
+    <polygon points="320,420 328,395 336,420" fill="#3c4a3a"/>
+    <polygon points="350,420 357,397 364,420" fill="#384838"/>
+    <polygon points="380,420 388,394 396,420" fill="#3a4a3a"/>
+  </g>
+
+  <!-- Tree line - mid-distance trees -->
+  <g opacity="0.75">
+    <polygon points="400,420 410,388 420,420" fill="#2a3828"/>
+    <polygon points="435,420 446,385 457,420" fill="#2c3a2a"/>
+    <polygon points="470,420 480,390 490,420" fill="#2a382a"/>
+    <polygon points="505,420 516,383 527,420" fill="#2c3a28"/>
+    <polygon points="540,420 550,387 560,420" fill="#2a3828"/>
+    <polygon points="575,420 586,384 597,420" fill="#2c3a2a"/>
+    <polygon points="610,420 620,389 630,420" fill="#2a382a"/>
+    <polygon points="645,420 656,385 667,420" fill="#2c3a28"/>
+  </g>
+
+  <!-- Tree line - nearest trees (larger, darker, more detailed) -->
+  <g opacity="0.9">
+    <!-- Tree 1 -->
+    <rect x="695" y="400" width="6" height="20" fill="#1a1a10"/>
+    <polygon points="678,420 698,370 718,420" fill="#1a2818"/>
+    <polygon points="683,405 698,378 713,405" fill="#1e2c1a"/>
+    <polygon points="688,392 698,370 708,392" fill="#202e1c"/>
+
+    <!-- Tree 2 -->
+    <rect x="745" y="395" width="7" height="25" fill="#1a1a10"/>
+    <polygon points="725,420 748,362 771,420" fill="#182618"/>
+    <polygon points="730,402 748,370 766,402" fill="#1c2a1a"/>
+    <polygon points="735,388 748,362 761,388" fill="#1e2c1c"/>
+
+    <!-- Tree 3 -->
+    <rect x="800" y="398" width="6" height="22" fill="#1a1a10"/>
+    <polygon points="782,420 803,368 824,420" fill="#1a2818"/>
+    <polygon points="787,404 803,375 819,404" fill="#1e2c1a"/>
+    <polygon points="792,390 803,368 814,390" fill="#202e1c"/>
+
+    <!-- Tree 4 -->
+    <rect x="855" y="393" width="8" height="27" fill="#1a1a10"/>
+    <polygon points="832,420 859,355 886,420" fill="#162416"/>
+    <polygon points="838,400 859,365 880,400" fill="#1a281a"/>
+    <polygon points="844,385 859,355 874,385" fill="#1c2a1c"/>
+
+    <!-- Tree 5 -->
+    <rect x="915" y="396" width="7" height="24" fill="#1a1a10"/>
+    <polygon points="896,420 918,360 940,420" fill="#182618"/>
+    <polygon points="902,403 918,370 934,403" fill="#1c2a1a"/>
+    <polygon points="908,388 918,360 928,388" fill="#1e2c1c"/>
+
+    <!-- Tree 6 -->
+    <rect x="965" y="400" width="6" height="20" fill="#1a1a10"/>
+    <polygon points="948,420 968,372 988,420" fill="#1a2818"/>
+    <polygon points="953,405 968,380 983,405" fill="#1e2c1a"/>
+    <polygon points="958,392 968,372 978,392" fill="#202e1c"/>
+  </g>
+
+  <!-- Lake -->
+  <rect x="0" y="420" width="1000" height="180" fill="url(#lakeGradient)"/>
+
+  <!-- Lake reflections: mirrored mountains, muted and distorted -->
+  <g clip-path="url(#lakeClip)" filter="url(#lakeRipple)" opacity="0.35">
+    <!-- Reflected nearest mountains (flipped) -->
+    <polygon points="0,420 150,550 350,420" fill="#3a2858"/>
+    <polygon points="300,420 500,560 720,420" fill="#3c2a5c"/>
+    <polygon points="650,420 850,540 1000,420" fill="#382858"/>
+
+    <!-- Reflected nearest trees -->
+    <polygon points="832,420 859,485 886,420" fill="#162416"/>
+    <polygon points="896,420 918,480 940,420" fill="#182618"/>
+    <polygon points="725,420 748,478 771,420" fill="#182618"/>
+  </g>
+
+  <!-- Lake surface highlight -->
+  <rect x="0" y="418" width="1000" height="4" fill="#f0a04b" opacity="0.3"/>
+
+  <!-- Subtle horizontal ripple lines on lake -->
+  <line x1="0" y1="450" x2="1000" y2="450" stroke="#f0a04b" stroke-width="0.5" opacity="0.15"/>
+  <line x1="0" y1="480" x2="1000" y2="480" stroke="#d4614c" stroke-width="0.5" opacity="0.12"/>
+  <line x1="0" y1="510" x2="1000" y2="510" stroke="#8b3a62" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="540" x2="1000" y2="540" stroke="#6b2f55" stroke-width="0.5" opacity="0.08"/>
+  <line x1="0" y1="570" x2="1000" y2="570" stroke="#4a2060" stroke-width="0.4" opacity="0.06"/>
+</svg>

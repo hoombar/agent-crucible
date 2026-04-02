@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Mandala with 8-fold rotational symmetry, jewel tone palette -->
+  <!-- Palette: amethyst #6B3FA0, sapphire #2E5FA1, emerald #2D8F6F, ruby #C0392B, gold #D4A537 -->
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="#1A1A2E"/>
+
+  <!-- Decorative border -->
+  <circle cx="400" cy="400" r="385" fill="none" stroke="#D4A537" stroke-width="3"/>
+  <circle cx="400" cy="400" r="375" fill="none" stroke="#6B3FA0" stroke-width="2"/>
+  <circle cx="400" cy="400" r="370" fill="none" stroke="#D4A537" stroke-width="1"/>
+
+  <!-- Border scallops - 32 small circles around the border -->
+  <g>
+    <g id="border-dot">
+      <circle cx="400" cy="30" r="5" fill="#D4A537"/>
+    </g>
+    <use href="#border-dot" transform="rotate(11.25 400 400)"/>
+    <use href="#border-dot" transform="rotate(22.5 400 400)"/>
+    <use href="#border-dot" transform="rotate(33.75 400 400)"/>
+    <use href="#border-dot" transform="rotate(45 400 400)"/>
+    <use href="#border-dot" transform="rotate(56.25 400 400)"/>
+    <use href="#border-dot" transform="rotate(67.5 400 400)"/>
+    <use href="#border-dot" transform="rotate(78.75 400 400)"/>
+    <use href="#border-dot" transform="rotate(90 400 400)"/>
+    <use href="#border-dot" transform="rotate(101.25 400 400)"/>
+    <use href="#border-dot" transform="rotate(112.5 400 400)"/>
+    <use href="#border-dot" transform="rotate(123.75 400 400)"/>
+    <use href="#border-dot" transform="rotate(135 400 400)"/>
+    <use href="#border-dot" transform="rotate(146.25 400 400)"/>
+    <use href="#border-dot" transform="rotate(157.5 400 400)"/>
+    <use href="#border-dot" transform="rotate(168.75 400 400)"/>
+    <use href="#border-dot" transform="rotate(180 400 400)"/>
+    <use href="#border-dot" transform="rotate(191.25 400 400)"/>
+    <use href="#border-dot" transform="rotate(202.5 400 400)"/>
+    <use href="#border-dot" transform="rotate(213.75 400 400)"/>
+    <use href="#border-dot" transform="rotate(225 400 400)"/>
+    <use href="#border-dot" transform="rotate(236.25 400 400)"/>
+    <use href="#border-dot" transform="rotate(247.5 400 400)"/>
+    <use href="#border-dot" transform="rotate(258.75 400 400)"/>
+    <use href="#border-dot" transform="rotate(270 400 400)"/>
+    <use href="#border-dot" transform="rotate(281.25 400 400)"/>
+    <use href="#border-dot" transform="rotate(292.5 400 400)"/>
+    <use href="#border-dot" transform="rotate(303.75 400 400)"/>
+    <use href="#border-dot" transform="rotate(315 400 400)"/>
+    <use href="#border-dot" transform="rotate(326.25 400 400)"/>
+    <use href="#border-dot" transform="rotate(337.5 400 400)"/>
+    <use href="#border-dot" transform="rotate(348.75 400 400)"/>
+  </g>
+
+  <!-- Centre circle -->
+  <circle cx="400" cy="400" r="25" fill="#D4A537"/>
+  <circle cx="400" cy="400" r="18" fill="#6B3FA0"/>
+  <circle cx="400" cy="400" r="10" fill="#D4A537"/>
+
+  <!-- INNER RING: Small dots at radius 80, 8-fold symmetry -->
+  <g id="inner-ring-unit">
+    <circle cx="400" cy="320" r="8" fill="#2E5FA1"/>
+    <circle cx="400" cy="340" r="5" fill="#D4A537"/>
+  </g>
+  <use href="#inner-ring-unit" transform="rotate(0 400 400)"/>
+  <use href="#inner-ring-unit" transform="rotate(45 400 400)"/>
+  <use href="#inner-ring-unit" transform="rotate(90 400 400)"/>
+  <use href="#inner-ring-unit" transform="rotate(135 400 400)"/>
+  <use href="#inner-ring-unit" transform="rotate(180 400 400)"/>
+  <use href="#inner-ring-unit" transform="rotate(225 400 400)"/>
+  <use href="#inner-ring-unit" transform="rotate(270 400 400)"/>
+  <use href="#inner-ring-unit" transform="rotate(315 400 400)"/>
+
+  <!-- MIDDLE RING: Petal shapes at radius ~180, 8-fold symmetry -->
+  <defs>
+    <g id="petal-unit">
+      <!-- Petal shape using ellipse rotated -->
+      <ellipse cx="400" cy="220" rx="18" ry="50" fill="#2D8F6F" opacity="0.85"/>
+      <ellipse cx="400" cy="220" rx="10" ry="40" fill="#6B3FA0" opacity="0.7"/>
+    </g>
+  </defs>
+  <use href="#petal-unit" transform="rotate(0 400 400)"/>
+  <use href="#petal-unit" transform="rotate(45 400 400)"/>
+  <use href="#petal-unit" transform="rotate(90 400 400)"/>
+  <use href="#petal-unit" transform="rotate(135 400 400)"/>
+  <use href="#petal-unit" transform="rotate(180 400 400)"/>
+  <use href="#petal-unit" transform="rotate(225 400 400)"/>
+  <use href="#petal-unit" transform="rotate(270 400 400)"/>
+  <use href="#petal-unit" transform="rotate(315 400 400)"/>
+
+  <!-- Secondary petals offset by 22.5 degrees -->
+  <defs>
+    <g id="petal-unit-small">
+      <ellipse cx="400" cy="240" rx="12" ry="35" fill="#C0392B" opacity="0.75"/>
+    </g>
+  </defs>
+  <use href="#petal-unit-small" transform="rotate(22.5 400 400)"/>
+  <use href="#petal-unit-small" transform="rotate(67.5 400 400)"/>
+  <use href="#petal-unit-small" transform="rotate(112.5 400 400)"/>
+  <use href="#petal-unit-small" transform="rotate(157.5 400 400)"/>
+  <use href="#petal-unit-small" transform="rotate(202.5 400 400)"/>
+  <use href="#petal-unit-small" transform="rotate(247.5 400 400)"/>
+  <use href="#petal-unit-small" transform="rotate(292.5 400 400)"/>
+  <use href="#petal-unit-small" transform="rotate(337.5 400 400)"/>
+
+  <!-- OUTER RING: Triangles at radius ~300, 8-fold symmetry -->
+  <defs>
+    <g id="triangle-unit">
+      <!-- Pointed triangle pointing outward -->
+      <polygon points="400,100 385,150 415,150" fill="#C0392B"/>
+      <!-- Smaller accent triangle -->
+      <polygon points="400,110 390,145 410,145" fill="#D4A537"/>
+    </g>
+  </defs>
+  <use href="#triangle-unit" transform="rotate(0 400 400)"/>
+  <use href="#triangle-unit" transform="rotate(45 400 400)"/>
+  <use href="#triangle-unit" transform="rotate(90 400 400)"/>
+  <use href="#triangle-unit" transform="rotate(135 400 400)"/>
+  <use href="#triangle-unit" transform="rotate(180 400 400)"/>
+  <use href="#triangle-unit" transform="rotate(225 400 400)"/>
+  <use href="#triangle-unit" transform="rotate(270 400 400)"/>
+  <use href="#triangle-unit" transform="rotate(315 400 400)"/>
+
+  <!-- Secondary outer triangles offset -->
+  <defs>
+    <g id="triangle-small">
+      <polygon points="400,130 392,155 408,155" fill="#2E5FA1" opacity="0.8"/>
+    </g>
+  </defs>
+  <use href="#triangle-small" transform="rotate(22.5 400 400)"/>
+  <use href="#triangle-small" transform="rotate(67.5 400 400)"/>
+  <use href="#triangle-small" transform="rotate(112.5 400 400)"/>
+  <use href="#triangle-small" transform="rotate(157.5 400 400)"/>
+  <use href="#triangle-small" transform="rotate(202.5 400 400)"/>
+  <use href="#triangle-small" transform="rotate(247.5 400 400)"/>
+  <use href="#triangle-small" transform="rotate(292.5 400 400)"/>
+  <use href="#triangle-small" transform="rotate(337.5 400 400)"/>
+
+  <!-- Ring dividers -->
+  <circle cx="400" cy="400" r="290" fill="none" stroke="#D4A537" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="400" cy="400" r="165" fill="none" stroke="#D4A537" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="400" cy="400" r="80" fill="none" stroke="#D4A537" stroke-width="1" opacity="0.4"/>
+</svg>
